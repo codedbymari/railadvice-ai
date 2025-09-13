@@ -1,0 +1,429 @@
+{
+    "documents": {
+        "0adb65f8-a4e6-4ad3-93d9-514d310b6f7b": {
+            "id": "0adb65f8-a4e6-4ad3-93d9-514d310b6f7b",
+            "title": "RailAdvice - basic_info",
+            "type": "company_profile",
+            "category": "company",
+            "tags": [
+                "railadvice",
+                "company",
+                "basic_info"
+            ],
+            "created_at": "2025-09-13T16:49:47.447732",
+            "updated_at": "2025-09-13T16:49:47.447732",
+            "file_path": "0adb65f8-a4e6-4ad3-93d9-514d310b6f7b.json",
+            "metadata": {
+                "section": "basic_info",
+                "source": "company_profile"
+            }
+        },
+        "b8a00d70-cb8a-48a5-9da4-f8389f0eae08": {
+            "id": "b8a00d70-cb8a-48a5-9da4-f8389f0eae08",
+            "title": "RailAdvice - core_competencies",
+            "type": "company_profile",
+            "category": "company",
+            "tags": [
+                "railadvice",
+                "company",
+                "core_competencies"
+            ],
+            "created_at": "2025-09-13T16:49:47.447999",
+            "updated_at": "2025-09-13T16:49:47.447999",
+            "file_path": "b8a00d70-cb8a-48a5-9da4-f8389f0eae08.json",
+            "metadata": {
+                "section": "core_competencies",
+                "source": "company_profile"
+            }
+        },
+        "38438554-9c6a-4cc8-a5f6-c481bf5094d5": {
+            "id": "38438554-9c6a-4cc8-a5f6-c481bf5094d5",
+            "title": "RailAdvice - certifications",
+            "type": "company_profile",
+            "category": "company",
+            "tags": [
+                "railadvice",
+                "company",
+                "certifications"
+            ],
+            "created_at": "2025-09-13T16:49:47.448234",
+            "updated_at": "2025-09-13T16:49:47.448234",
+            "file_path": "38438554-9c6a-4cc8-a5f6-c481bf5094d5.json",
+            "metadata": {
+                "section": "certifications",
+                "source": "company_profile"
+            }
+        },
+        "88a27555-ebad-466b-8371-4ce20dfd12a6": {
+            "id": "88a27555-ebad-466b-8371-4ce20dfd12a6",
+            "title": "RailAdvice - key_personnel",
+            "type": "company_profile",
+            "category": "company",
+            "tags": [
+                "railadvice",
+                "company",
+                "key_personnel"
+            ],
+            "created_at": "2025-09-13T16:49:47.448481",
+            "updated_at": "2025-09-13T16:49:47.448481",
+            "file_path": "88a27555-ebad-466b-8371-4ce20dfd12a6.json",
+            "metadata": {
+                "section": "key_personnel",
+                "source": "company_profile"
+            }
+        },
+        "62dba298-01d8-49db-be6f-c348d4e15fdd": {
+            "id": "62dba298-01d8-49db-be6f-c348d4e15fdd",
+            "title": "RailAdvice - service_areas",
+            "type": "company_profile",
+            "category": "company",
+            "tags": [
+                "railadvice",
+                "company",
+                "service_areas"
+            ],
+            "created_at": "2025-09-13T16:49:47.448755",
+            "updated_at": "2025-09-13T16:49:47.448755",
+            "file_path": "62dba298-01d8-49db-be6f-c348d4e15fdd.json",
+            "metadata": {
+                "section": "service_areas",
+                "source": "company_profile"
+            }
+        },
+        "7bb89241-fa6a-4dcf-a8ea-252508e158fb": {
+            "id": "7bb89241-fa6a-4dcf-a8ea-252508e158fb",
+            "title": "RailAdvice - Prosjektledelse fra Konsept til Ferdigstillelse (AI Chatbot Guide)",
+            "type": "content_guide",
+            "category": "railadvice_guides",
+            "tags": [
+                "railadvice",
+                "guide",
+                "content"
+            ],
+            "created_at": "2025-09-13T16:49:47.450172",
+            "updated_at": "2025-09-13T16:49:47.450172",
+            "file_path": "7bb89241-fa6a-4dcf-a8ea-252508e158fb.json",
+            "metadata": {
+                "source_file": "RailAdvice - Prosjektledelse fra Konsept til Ferdigstillelse (AI Chatbot Guide).json"
+            }
+        },
+        "df3138a1-b528-44f4-b2dd-09285dcaf17c": {
+            "id": "df3138a1-b528-44f4-b2dd-09285dcaf17c",
+            "title": "RailAdvice - Anskaffelser og Offentlige Innkjøp (AI Chatbot Guide)",
+            "type": "content_guide",
+            "category": "railadvice_guides",
+            "tags": [
+                "railadvice",
+                "guide",
+                "content"
+            ],
+            "created_at": "2025-09-13T16:49:47.450779",
+            "updated_at": "2025-09-13T16:49:47.450779",
+            "file_path": "df3138a1-b528-44f4-b2dd-09285dcaf17c.json",
+            "metadata": {
+                "source_file": "RailAdvice - Anskaffelser og Offentlige Innkjøp (AI Chatbot Guide).json"
+            }
+        },
+        "db0d4b1b-1303-454e-ad94-0a072319b1cd": {
+            "id": "db0d4b1b-1303-454e-ad94-0a072319b1cd",
+            "title": "RailAdvice - Teknisk og Strategisk Rådgivning (AI Chatbot Guide)",
+            "type": "content_guide",
+            "category": "railadvice_guides",
+            "tags": [
+                "railadvice",
+                "guide",
+                "content"
+            ],
+            "created_at": "2025-09-13T16:49:47.451333",
+            "updated_at": "2025-09-13T16:49:47.451333",
+            "file_path": "db0d4b1b-1303-454e-ad94-0a072319b1cd.json",
+            "metadata": {
+                "source_file": "RailAdvice - Teknisk og Strategisk Rådgivning (AI Chatbot Guide).json"
+            }
+        },
+        "ccacc697-2b35-4fc0-95b7-c2cf1f670934": {
+            "id": "ccacc697-2b35-4fc0-95b7-c2cf1f670934",
+            "title": "veileder-kostnadsestimering-tidligfase-v_2019",
+            "type": "content_guide",
+            "category": "railadvice_guides",
+            "tags": [
+                "railadvice",
+                "guide",
+                "content"
+            ],
+            "created_at": "2025-09-13T16:49:47.452347",
+            "updated_at": "2025-09-13T16:49:47.452347",
+            "file_path": "ccacc697-2b35-4fc0-95b7-c2cf1f670934.json",
+            "metadata": {
+                "source_file": "veileder-kostnadsestimering-tidligfase-v_2019.json"
+            }
+        },
+        "e73d3a58-1e5e-477a-996a-895773307c73": {
+            "id": "e73d3a58-1e5e-477a-996a-895773307c73",
+            "title": "RailAdvice Hovedtjenester - Komplett Guide for AI-assistent 2",
+            "type": "content_guide",
+            "category": "railadvice_guides",
+            "tags": [
+                "railadvice",
+                "guide",
+                "content"
+            ],
+            "created_at": "2025-09-13T16:49:47.453179",
+            "updated_at": "2025-09-13T16:49:47.453179",
+            "file_path": "e73d3a58-1e5e-477a-996a-895773307c73.json",
+            "metadata": {
+                "source_file": "RailAdvice Hovedtjenester - Komplett Guide for AI-assistent 2.json"
+            }
+        },
+        "880963b1-aada-40cf-8436-42087e12ad78": {
+            "id": "880963b1-aada-40cf-8436-42087e12ad78",
+            "title": "RailAdvice - RAMS Analyser og Sikkerhetshåndtering (AI Chatbot Guide)",
+            "type": "content_guide",
+            "category": "railadvice_guides",
+            "tags": [
+                "railadvice",
+                "guide",
+                "content"
+            ],
+            "created_at": "2025-09-13T16:49:47.453878",
+            "updated_at": "2025-09-13T16:49:47.453878",
+            "file_path": "880963b1-aada-40cf-8436-42087e12ad78.json",
+            "metadata": {
+                "source_file": "RailAdvice - RAMS Analyser og Sikkerhetshåndtering (AI Chatbot Guide).json"
+            }
+        },
+        "cac61350-5036-4cbc-9ba1-674e5c3fb6bd": {
+            "id": "cac61350-5036-4cbc-9ba1-674e5c3fb6bd",
+            "title": "Veileder-i-samfunnsokonomiske-analyser-i-jernbanesektoren",
+            "type": "content_guide",
+            "category": "railadvice_guides",
+            "tags": [
+                "railadvice",
+                "guide",
+                "content"
+            ],
+            "created_at": "2025-09-13T16:49:47.457198",
+            "updated_at": "2025-09-13T16:49:47.457198",
+            "file_path": "cac61350-5036-4cbc-9ba1-674e5c3fb6bd.json",
+            "metadata": {
+                "source_file": "Veileder-i-samfunnsokonomiske-analyser-i-jernbanesektoren.json"
+            }
+        },
+        "2448442f-e8e2-468a-a280-4e7a46c0a431": {
+            "id": "2448442f-e8e2-468a-a280-4e7a46c0a431",
+            "title": "Fornebu Base Depot - Fullservice depotutvikling",
+            "type": "project",
+            "category": "projects",
+            "tags": [
+                "projekt",
+                "Prosjekteringsgruppen Fornebubanen",
+                "depot_development",
+                "2023"
+            ],
+            "created_at": "2025-09-13T16:49:47.458481",
+            "updated_at": "2025-09-13T16:49:47.458481",
+            "file_path": "2448442f-e8e2-468a-a280-4e7a46c0a431.json",
+            "metadata": {
+                "client": "Prosjekteringsgruppen Fornebubanen",
+                "year": 2023,
+                "project_type": "depot_development",
+                "status": "Pågående"
+            }
+        },
+        "d1ce4258-1888-49b2-bb27-20e38cab9535": {
+            "id": "d1ce4258-1888-49b2-bb27-20e38cab9535",
+            "title": "Flytoget Type 78 - RAMS og LCC optimalisering",
+            "type": "project",
+            "category": "projects",
+            "tags": [
+                "projekt",
+                "Flytoget AS",
+                "rolling_stock",
+                "2019"
+            ],
+            "created_at": "2025-09-13T16:49:47.458923",
+            "updated_at": "2025-09-13T16:49:47.458923",
+            "file_path": "d1ce4258-1888-49b2-bb27-20e38cab9535.json",
+            "metadata": {
+                "client": "Flytoget AS",
+                "year": 2019,
+                "project_type": "rolling_stock",
+                "status": "Pågående (langtidskontrakt)"
+            }
+        },
+        "a0e23a87-5571-4bea-b926-ae8ab7285a4d": {
+            "id": "a0e23a87-5571-4bea-b926-ae8ab7285a4d",
+            "title": "SJ Norge Materiellavdeling - Kontraktsansvar Trafikkpakke 2",
+            "type": "project",
+            "category": "projects",
+            "tags": [
+                "projekt",
+                "SJ Norge AS",
+                "contract_management",
+                "2020"
+            ],
+            "created_at": "2025-09-13T16:49:47.459350",
+            "updated_at": "2025-09-13T16:49:47.459350",
+            "file_path": "a0e23a87-5571-4bea-b926-ae8ab7285a4d.json",
+            "metadata": {
+                "client": "SJ Norge AS",
+                "year": 2020,
+                "project_type": "contract_management",
+                "status": "Avsluttet"
+            }
+        },
+        "776dc78d-65e8-4994-94ac-48a525f2c4d2": {
+            "id": "776dc78d-65e8-4994-94ac-48a525f2c4d2",
+            "title": "Bybanen Utvikling - Sikkerhetssjef (Rammeavtale)",
+            "type": "project",
+            "category": "projects",
+            "tags": [
+                "projekt",
+                "Bybanen Utvikling AS",
+                "safety_management",
+                "2023"
+            ],
+            "created_at": "2025-09-13T16:49:47.459787",
+            "updated_at": "2025-09-13T16:49:47.459787",
+            "file_path": "776dc78d-65e8-4994-94ac-48a525f2c4d2.json",
+            "metadata": {
+                "client": "Bybanen Utvikling AS",
+                "year": 2023,
+                "project_type": "safety_management",
+                "status": "Aktiv rammeavtale"
+            }
+        },
+        "34003698-14ad-46cf-90cc-b237f6e2b1b7": {
+            "id": "34003698-14ad-46cf-90cc-b237f6e2b1b7",
+            "title": "Bane NOR RAMS Signal - Multippel signalprosjekter",
+            "type": "project",
+            "category": "projects",
+            "tags": [
+                "projekt",
+                "Bane NOR SF",
+                "RAMS_analysis",
+                "2024"
+            ],
+            "created_at": "2025-09-13T16:49:47.460227",
+            "updated_at": "2025-09-13T16:49:47.460227",
+            "file_path": "34003698-14ad-46cf-90cc-b237f6e2b1b7.json",
+            "metadata": {
+                "client": "Bane NOR SF",
+                "year": 2024,
+                "project_type": "RAMS_analysis",
+                "status": "Pågående"
+            }
+        },
+        "cd766121-ef2b-418c-aef7-50cc7b167752": {
+            "id": "cd766121-ef2b-418c-aef7-50cc7b167752",
+            "title": "ETCS Level 2 - Implementeringskrav og kostnader",
+            "type": "technical_knowledge",
+            "category": "signaling",
+            "tags": [
+                "teknisk",
+                "signaling",
+                "ETCS-L2-IMPL"
+            ],
+            "created_at": "2025-09-13T16:49:47.460666",
+            "updated_at": "2025-09-13T16:49:47.460666",
+            "file_path": "cd766121-ef2b-418c-aef7-50cc7b167752.json",
+            "metadata": {
+                "category": "signaling",
+                "code": "ETCS-L2-IMPL"
+            }
+        },
+        "73507343-e696-455a-8139-692ad8a88f7b": {
+            "id": "73507343-e696-455a-8139-692ad8a88f7b",
+            "title": "RAMS metodikk - EN 50126 implementering",
+            "type": "technical_knowledge",
+            "category": "safety",
+            "tags": [
+                "teknisk",
+                "safety",
+                "RAMS-EN50126"
+            ],
+            "created_at": "2025-09-13T16:49:47.461423",
+            "updated_at": "2025-09-13T16:49:47.461423",
+            "file_path": "73507343-e696-455a-8139-692ad8a88f7b.json",
+            "metadata": {
+                "category": "safety",
+                "code": "RAMS-EN50126"
+            }
+        },
+        "682edaca-ee5d-4408-8c01-5c5b468e5dde": {
+            "id": "682edaca-ee5d-4408-8c01-5c5b468e5dde",
+            "title": "TSI Infrastructure - Tekniske krav infrastruktur",
+            "type": "technical_knowledge",
+            "category": "infrastructure",
+            "tags": [
+                "teknisk",
+                "infrastructure",
+                "TSI-INF-2023"
+            ],
+            "created_at": "2025-09-13T16:49:47.462244",
+            "updated_at": "2025-09-13T16:49:47.462244",
+            "file_path": "682edaca-ee5d-4408-8c01-5c5b468e5dde.json",
+            "metadata": {
+                "category": "infrastructure",
+                "code": "TSI-INF-2023"
+            }
+        },
+        "54cb61dd-dc38-4307-b17f-ddbf2f2a6efa": {
+            "id": "54cb61dd-dc38-4307-b17f-ddbf2f2a6efa",
+            "title": "Rolling Stock LCC - Life Cycle Cost analyse",
+            "type": "technical_knowledge",
+            "category": "rolling_stock",
+            "tags": [
+                "teknisk",
+                "rolling_stock",
+                "RS-LCC-METHOD"
+            ],
+            "created_at": "2025-09-13T16:49:47.462793",
+            "updated_at": "2025-09-13T16:49:47.462793",
+            "file_path": "54cb61dd-dc38-4307-b17f-ddbf2f2a6efa.json",
+            "metadata": {
+                "category": "rolling_stock",
+                "code": "RS-LCC-METHOD"
+            }
+        },
+        "7c6c49e3-50d7-4259-b668-284ba8f882b6": {
+            "id": "7c6c49e3-50d7-4259-b668-284ba8f882b6",
+            "title": "Norsk jernbanemarked - Status og trender 2024",
+            "type": "market_insight",
+            "category": "market_analysis",
+            "tags": [
+                "marked",
+                "analyse",
+                "market_analysis"
+            ],
+            "created_at": "2025-09-13T16:49:47.463323",
+            "updated_at": "2025-09-13T16:49:47.463323",
+            "file_path": "7c6c49e3-50d7-4259-b668-284ba8f882b6.json",
+            "metadata": {
+                "category": "market_analysis"
+            }
+        },
+        "f8d03dac-4486-4d11-b560-2a281eb08957": {
+            "id": "f8d03dac-4486-4d11-b560-2a281eb08957",
+            "title": "ETCS markedet i Norden - Muligheter og utfordringer",
+            "type": "market_insight",
+            "category": "technology_market",
+            "tags": [
+                "marked",
+                "analyse",
+                "technology_market"
+            ],
+            "created_at": "2025-09-13T16:49:47.463837",
+            "updated_at": "2025-09-13T16:49:47.463837",
+            "file_path": "f8d03dac-4486-4d11-b560-2a281eb08957.json",
+            "metadata": {
+                "category": "technology_market"
+            }
+        }
+    },
+    "metadata": {
+        "created": "2025-09-13T16:42:21.714464",
+        "version": "2.0",
+        "last_updated": "2025-09-13T16:49:47.463921"
+    }
+}

@@ -1,0 +1,190 @@
+{
+  "by_type": {
+    "company_profile": [
+      "ffa10b37-4b54-45d7-8dd7-c773e59758e9",
+      "3711f2bf-4054-4326-a191-fa801fc096ad",
+      "327e55b7-ab6d-454e-93ba-382740980f3b",
+      "f6890582-6209-4e47-a0bd-525a53751d63",
+      "33b53aae-27c2-4175-b7d1-57a7ae6cd153"
+    ],
+    "content_guide": [],
+    "project": [
+      "956673e1-d6ce-473a-8ff9-a018ec3d7f51",
+      "2b718c18-4aa1-4acc-a035-ef3b9d528c37",
+      "09224b63-3c9f-4a8b-96bf-f099ded0ee06",
+      "064c9c84-6011-4875-a985-3c426baee979",
+      "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3"
+    ],
+    "technical_knowledge": [
+      "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb",
+      "b18a5f64-e86a-43fc-8364-59f1e1b232ad",
+      "033f4dd4-9e4b-4ae9-855f-bae9533a5c71",
+      "6623bd33-73a0-434b-8bda-d00e99a63085"
+    ],
+    "market_insight": [
+      "5f092f7f-ef12-4912-a3da-18a3f1c3a96f",
+      "0f934966-b44c-4297-8571-92f55800c82b"
+    ]
+  },
+  "by_category": {
+    "company": [
+      "ffa10b37-4b54-45d7-8dd7-c773e59758e9",
+      "3711f2bf-4054-4326-a191-fa801fc096ad",
+      "327e55b7-ab6d-454e-93ba-382740980f3b",
+      "f6890582-6209-4e47-a0bd-525a53751d63",
+      "33b53aae-27c2-4175-b7d1-57a7ae6cd153"
+    ],
+    "railadvice_guides": [],
+    "projects": [
+      "956673e1-d6ce-473a-8ff9-a018ec3d7f51",
+      "2b718c18-4aa1-4acc-a035-ef3b9d528c37",
+      "09224b63-3c9f-4a8b-96bf-f099ded0ee06",
+      "064c9c84-6011-4875-a985-3c426baee979",
+      "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3"
+    ],
+    "signaling": [
+      "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb"
+    ],
+    "safety": [
+      "b18a5f64-e86a-43fc-8364-59f1e1b232ad"
+    ],
+    "infrastructure": [
+      "033f4dd4-9e4b-4ae9-855f-bae9533a5c71"
+    ],
+    "rolling_stock": [
+      "6623bd33-73a0-434b-8bda-d00e99a63085"
+    ],
+    "market_analysis": [
+      "5f092f7f-ef12-4912-a3da-18a3f1c3a96f"
+    ],
+    "technology_market": [
+      "0f934966-b44c-4297-8571-92f55800c82b"
+    ]
+  },
+  "by_tags": {
+    "railadvice": [
+      "ffa10b37-4b54-45d7-8dd7-c773e59758e9",
+      "3711f2bf-4054-4326-a191-fa801fc096ad",
+      "327e55b7-ab6d-454e-93ba-382740980f3b",
+      "f6890582-6209-4e47-a0bd-525a53751d63",
+      "33b53aae-27c2-4175-b7d1-57a7ae6cd153"
+    ],
+    "company": [
+      "ffa10b37-4b54-45d7-8dd7-c773e59758e9",
+      "3711f2bf-4054-4326-a191-fa801fc096ad",
+      "327e55b7-ab6d-454e-93ba-382740980f3b",
+      "f6890582-6209-4e47-a0bd-525a53751d63",
+      "33b53aae-27c2-4175-b7d1-57a7ae6cd153"
+    ],
+    "basic_info": [
+      "ffa10b37-4b54-45d7-8dd7-c773e59758e9"
+    ],
+    "core_competencies": [
+      "3711f2bf-4054-4326-a191-fa801fc096ad"
+    ],
+    "certifications": [
+      "327e55b7-ab6d-454e-93ba-382740980f3b"
+    ],
+    "key_personnel": [
+      "f6890582-6209-4e47-a0bd-525a53751d63"
+    ],
+    "service_areas": [
+      "33b53aae-27c2-4175-b7d1-57a7ae6cd153"
+    ],
+    "guide": [],
+    "content": [],
+    "projekt": [
+      "956673e1-d6ce-473a-8ff9-a018ec3d7f51",
+      "2b718c18-4aa1-4acc-a035-ef3b9d528c37",
+      "09224b63-3c9f-4a8b-96bf-f099ded0ee06",
+      "064c9c84-6011-4875-a985-3c426baee979",
+      "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3"
+    ],
+    "Prosjekteringsgruppen Fornebubanen": [
+      "956673e1-d6ce-473a-8ff9-a018ec3d7f51"
+    ],
+    "depot_development": [
+      "956673e1-d6ce-473a-8ff9-a018ec3d7f51"
+    ],
+    "2023": [
+      "956673e1-d6ce-473a-8ff9-a018ec3d7f51",
+      "064c9c84-6011-4875-a985-3c426baee979"
+    ],
+    "Flytoget AS": [
+      "2b718c18-4aa1-4acc-a035-ef3b9d528c37"
+    ],
+    "rolling_stock": [
+      "2b718c18-4aa1-4acc-a035-ef3b9d528c37",
+      "6623bd33-73a0-434b-8bda-d00e99a63085"
+    ],
+    "2019": [
+      "2b718c18-4aa1-4acc-a035-ef3b9d528c37"
+    ],
+    "SJ Norge AS": [
+      "09224b63-3c9f-4a8b-96bf-f099ded0ee06"
+    ],
+    "contract_management": [
+      "09224b63-3c9f-4a8b-96bf-f099ded0ee06"
+    ],
+    "2020": [
+      "09224b63-3c9f-4a8b-96bf-f099ded0ee06"
+    ],
+    "Bybanen Utvikling AS": [
+      "064c9c84-6011-4875-a985-3c426baee979"
+    ],
+    "safety_management": [
+      "064c9c84-6011-4875-a985-3c426baee979"
+    ],
+    "Bane NOR SF": [
+      "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3"
+    ],
+    "RAMS_analysis": [
+      "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3"
+    ],
+    "2024": [
+      "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3"
+    ],
+    "teknisk": [
+      "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb",
+      "b18a5f64-e86a-43fc-8364-59f1e1b232ad",
+      "033f4dd4-9e4b-4ae9-855f-bae9533a5c71",
+      "6623bd33-73a0-434b-8bda-d00e99a63085"
+    ],
+    "signaling": [
+      "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb"
+    ],
+    "ETCS-L2-IMPL": [
+      "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb"
+    ],
+    "safety": [
+      "b18a5f64-e86a-43fc-8364-59f1e1b232ad"
+    ],
+    "RAMS-EN50126": [
+      "b18a5f64-e86a-43fc-8364-59f1e1b232ad"
+    ],
+    "infrastructure": [
+      "033f4dd4-9e4b-4ae9-855f-bae9533a5c71"
+    ],
+    "TSI-INF-2023": [
+      "033f4dd4-9e4b-4ae9-855f-bae9533a5c71"
+    ],
+    "RS-LCC-METHOD": [
+      "6623bd33-73a0-434b-8bda-d00e99a63085"
+    ],
+    "marked": [
+      "5f092f7f-ef12-4912-a3da-18a3f1c3a96f",
+      "0f934966-b44c-4297-8571-92f55800c82b"
+    ],
+    "analyse": [
+      "5f092f7f-ef12-4912-a3da-18a3f1c3a96f",
+      "0f934966-b44c-4297-8571-92f55800c82b"
+    ],
+    "market_analysis": [
+      "5f092f7f-ef12-4912-a3da-18a3f1c3a96f"
+    ],
+    "technology_market": [
+      "0f934966-b44c-4297-8571-92f55800c82b"
+    ]
+  },
+  "words": {}
+}

@@ -1,0 +1,408 @@
+[
+  {
+    "title": "RailAdvice - Prosjektledelse fra Konsept til Ferdigstillelse",
+    "category": "project_methodology",
+    "content": "AI-veiledning for prosjektledelse i jernbaneprosjekter, basert på RailAdvice sin metodikk og erfaring fra komplekse jernbane-, T-bane og trikkprosjekter.",
+    "phases": [
+      {
+        "name": "Konseptfase",
+        "duration": "2–6 måneder",
+        "deliverables": [
+          "Behovsanalyse og problemdefinisjon",
+          "Interessentanalyse og stakeholder-mapping",
+          "Konseptuelle løsningsalternativer",
+          "Foreløpig risiko- og mulighetsanalyse",
+          "Business case og investeringsgrunnlag"
+        ],
+        "ai_guidance": [
+          "Hvilke forretningsbehov skal prosjektet dekke?",
+          "Hvem er de primære interessentene og hva er deres krav?",
+          "Hvilke begrensninger setter eksisterende infrastruktur?",
+          "Hva er kritiske suksessfaktorer?",
+          "Hvilke regulatoriske krav må innfris?"
+        ],
+        "checklist": [
+          "Forretningsbehovet klart artikulert",
+          "Stakeholder-krav kartlagt og validert",
+          "Tekniske hovedløsninger skissert",
+          "Kostnads- og tidsestimater etablert",
+          "Prosjektorganisasjon planlagt",
+          "Godkjenning for neste fase oppnådd"
+        ]
+      },
+      {
+        "name": "Utredningsfase",
+        "duration": "6–18 måneder",
+        "deliverables": [
+          "Detaljert systemdesign og arkitektur",
+          "Tekniske spesifikasjoner og krav",
+          "RAMS-analyser og sikkerhetsplan",
+          "Anskaffelsesstrategi og -plan",
+          "Detaljert prosjektplan med milepæler",
+          "Finansierings- og kontraktstrategi"
+        ],
+        "rail_specific": [
+          "TSI-compliance vurdering",
+          "Interoperabilitetsanalyse",
+          "Signalsystem-integrasjon",
+          "Environmental impact assessment",
+          "Sikkerhetsdokumentasjon"
+        ],
+        "critical_outputs": [
+          "Funksjonelle og tekniske krav (100% complete)",
+          "RAMS-program og -dokumentasjon",
+          "Anskaffelsesstrategi med leverandøranalyse",
+          "Detaljert gjennomføringsplan",
+          "Risikostyring og beredskapsplaner"
+        ]
+      },
+      {
+        "name": "Gjennomføringsfase",
+        "duration": "2–8 år",
+        "activities": [
+          "Kvalitetssikring og -kontroll",
+          "Risikostyring og issue management",
+          "Endringsstyring og scope management",
+          "Leverandørstyring og kontraktshåndtering"
+        ]
+      },
+      {
+        "name": "Oppstartsfase",
+        "duration": "6–24 måneder",
+        "activities": [
+          "Systemakseptansetesting (SAT)",
+          "Driftstesting og pilotoperasjon",
+          "Opplæring av driftspersonell",
+          "Dokumentasjon og kunnskapsoverføring",
+          "Sikkerhetsgodkjenning og sertifisering",
+          "Gradvis opptrapping til full drift"
+        ],
+        "checklist": [
+          "Alle sikkerhetsgodkjenninger på plass",
+          "Driftspersonell opplært og sertifisert",
+          "Vedlikeholdssystem etablert",
+          "Reservedeler og support sikret",
+          "Driftsmanualer komplette",
+          "Beredskapsplaner aktivert"
+        ]
+      },
+      {
+        "name": "Driftsfase og Prosjektavslutning",
+        "activities": [
+          "Erfaringshøsting og lessons learned",
+          "Prosjektdokumentasjon arkivering",
+          "Team demobilisering",
+          "Kontraktsavslutning",
+          "Post-implementation review"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "RailAdvice - Sikkerhet og Compliance i Jernbaneprosjekter",
+    "category": "safety_compliance",
+    "content": "Sikkerhet har alltid førsteprioritet i RailAdvice-prosjekter. Ingen kompromiss på sikkerhetskrav.",
+    "safety_principles": [
+      "Kontinuerlig risikovurdering",
+      "Bred involvering av sikkerhetseksperter"
+    ],
+    "ai_guidance": [
+      "Stopp og vurder alvorlighetsgrad",
+      "Involver sikkerhetsekspert umiddelbart hvis kritisk",
+      "Dokumenter alle sikkerhetsavvik",
+      "Eskaler til prosjektledelse hvis nødvendig",
+      "Følg opp med formell risikovurdering"
+    ],
+    "regulatory_framework": [
+      "EU Fourth Railway Package",
+      "Technical Specifications for Interoperability (TSI)",
+      "Common Safety Methods (CSM)",
+      "Nasjonale forskrifter og standarder"
+    ],
+    "compliance_strategy": [
+      "Tidlig involvering av regulatoriske myndigheter",
+      "Kontinuerlig overvåking av regelverksendringer",
+      "Strukturert dokumentasjon og sporbarhet",
+      "Regelmessige compliance-revisjoner"
+    ]
+  },
+  {
+    "title": "RailAdvice - Stakeholder Management og Prosjektverktøy",
+    "category": "project_tools",
+    "content": "Effektiv interessenthåndtering og verktøybruk er avgjørende for jernbaneprosjekter.",
+    "stakeholders": {
+      "interne": [
+        "Eier/oppdragsgiver",
+        "Driftsorganisasjon",
+        "Vedlikeholdsorganisasjon",
+        "Prosjektteam",
+        "Økonomi og innkjøp"
+      ],
+      "eksterne": [
+        "Passasjerer og publikum",
+        "Regulatoriske myndigheter",
+        "Leverandører og kontraktører",
+        "Naboer og lokalsamfunn",
+        "Media og politikere",
+        "Andre jernbaneoperatører"
+      ]
+    },
+    "stakeholder_analysis": [
+      "Identifikasjon - hvem er påvirket?",
+      "Klassifisering - påvirkning vs. interesse",
+      "Engasjementsstrategi - hvordan involvere?",
+      "Kommunikasjonsplan - når og hvordan?",
+      "Risikohåndtering - hva kan gå galt?"
+    ],
+    "tools": [
+      "Work Breakdown Structure (WBS)",
+      "Critical Path Method (CPM)",
+      "Earned Value Management (EVM)"
+    ],
+    "rail_specific_wbs": [
+      "Rullende materiell",
+      "Infrastruktur",
+      "Signalanlegg",
+      "Energiforsyning",
+      "Telekommunikasjon",
+      "Passasjersystemer"
+    ],
+    "key_kpis": [
+      "Cost Performance Index (CPI)",
+      "Schedule Performance Index (SPI)",
+      "Estimate at Completion (EAC)",
+      "Variance at Completion (VAC)"
+    ]
+  },
+  {
+    "title": "RailAdvice - Risikostyring i Jernbaneprosjekter",
+    "category": "risk_management",
+    "content": "Identifisering, vurdering og håndtering av risiko er kritisk for sikker og vellykket prosjektgjennomføring.",
+    "risk_types": {
+      "tekniske": [
+        "Integrasjonsproblemer mellom systemer",
+        "Teknologi immaturity og ytelsesrisiko",
+        "Kompatibilitetsproblemer",
+        "Cybersikkerhetsrisiko"
+      ],
+      "kommersielle": [
+        "Kostnadsoverskridelser",
+        "Leverandørkonkurs",
+        "Valutarisiko",
+        "Inflasjon og prisutvikling"
+      ],
+      "regulatoriske": [
+        "Endringer i sikkerhetsregelverk",
+        "Nye miljøkrav",
+        "Endret godkjenningspraksis",
+        "EU-direktiv implementering"
+      ],
+      "operasjonelle": [
+        "Driftsforstyrrelser under implementering"
+      ]
+    }
+  },
+  {
+    "title": "RailAdvice - Risikostyring og Kvalitetssikring",
+    "category": "risk_quality",
+    "content": "Risikostyring og testing er kritiske elementer i jernbaneprosjekter. RailAdvice benytter en strukturert prosess for identifikasjon, vurdering og håndtering av risiko.",
+    "risk_process": {
+      "steps": [
+        "Identifikasjon: Brainstorming, lessons learned, stakeholder-input, historiske data",
+        "Analyse og vurdering: Sannsynlighet × Konsekvens, tidshorisont",
+        "Responsstrategi: Avoid, Mitigate, Transfer, Accept",
+        "Overvåking og kontroll: Risikoreview, trigger events, beredskapsplaner"
+      ]
+    },
+    "testing_model": "V-modell for systemutvikling",
+    "test_levels": [
+      "Factory Acceptance Test (FAT)",
+      "Site Acceptance Test (SAT)",
+      "System Integration Test (SIT)",
+      "Operational Acceptance Test (OAT)"
+    ],
+    "quality_guidelines": [
+      "Kvalitetskontroll før levering",
+      "Integrasjonstesting",
+      "End-to-end funksjonalitetstesting",
+      "Operatøraksept og driftstesting"
+    ]
+  },
+  {
+    "title": "RailAdvice - Statusrapportering og Eskalering",
+    "category": "project_monitoring",
+    "content": "Effektiv statusrapportering og eskaleringsrutiner sikrer kontroll og fremdrift i komplekse prosjekter.",
+    "weekly_checklist": [
+      "Fremdrift vs. plan",
+      "Budget vs. faktisk",
+      "Ressursbruk",
+      "Risikostatus",
+      "Testing progress",
+      "Stakeholder issues",
+      "Beslutningsbehov"
+    ],
+    "escalation_matrix": {
+      "green": "Normal drift, mindre avvik",
+      "yellow": "Oppmerksomhet påkrevd, moderate avvik",
+      "red": "Kritisk path påvirket, sikkerhetsproblemer, regulatoriske stopp"
+    }
+  },
+  {
+    "title": "RailAdvice - Krisehåndtering og Recovery",
+    "category": "crisis_management",
+    "content": "Ved alvorlige prosjektkriser aktiveres en strukturert protokoll for respons, vurdering og gjenoppretting.",
+    "protocol": [
+      "Immediate Response (0–24t): Sikkerhet, kriseteam, kommunikasjon",
+      "Assessment (1–7 dager): Root cause, impact, recovery options",
+      "Recovery Plan (1–4 uker): Milestones, budsjett, risikomitigation",
+      "Execution & Monitoring: Daglige reviews, statusoppdateringer"
+    ]
+  },
+  {
+    "title": "RailAdvice - Leverandørstyring og Endringskontroll",
+    "category": "supplier_change",
+    "content": "Leverandørproblemer og scope creep håndteres gjennom klare prosesser og AI-støtte.",
+    "supplier_issues": [
+      "Forsinkelser",
+      "Kvalitetsproblemer",
+      "Spesifikasjonsavvik",
+      "Kommunikasjonsbrudd",
+      "Økonomiske utfordringer"
+    ],
+    "change_control": {
+      "steps": [
+        "Identifikasjon: Formell change request",
+        "Evaluering: Teknisk, kostnad, tid, risiko",
+        "Godkjenning: CCB review, stakeholder input",
+        "Implementering: Oppdaterte work packages, kontrakter, tracking"
+      ]
+    }
+  },
+  {
+    "title": "RailAdvice - Spesialiserte Jernbaneprosjekter",
+    "category": "project_types",
+    "content": "RailAdvice har metodikk for ulike jernbanespesifikke prosjekttyper, inkludert toganskaffelser, signalanlegg og verksteddesign.",
+    "project_types": [
+      "Rullende materiell-prosjekter",
+      "ERTMS/ETCS-implementering",
+      "Depot og verkstedprosjekter"
+    ],
+    "milestones": [
+      "Technical Requirements Baseline (TRB)",
+      "Design Review",
+      "FAT og SAT",
+      "Type Testing og sertifisering",
+      "Operatøropplæring",
+      "Revenue service authorization"
+    ]
+  },
+  {
+    "title": "RailAdvice - KPIer og Performance Metrics",
+    "category": "performance_metrics",
+    "content": "RailAdvice benytter jernbanespesifikke KPIer for å måle fremdrift, kvalitet og leveranse.",
+    "schedule_metrics": [
+      "Milestone Achievement Rate",
+      "Critical Path Float Status",
+      "Schedule Variance",
+      "On-time Delivery Rate"
+    ],
+    "quality_metrics": [
+      "Defect Detection Rate",
+      "Rework Hours vs. Planned",
+      "Test Pass Rate",
+      "Customer Acceptance Rate"
+    ]
+  },
+  {
+    "title": "RailAdvice - Økonomi, Sikkerhet og Teknisk Ytelse",
+    "category": "performance_monitoring",
+    "content": "RailAdvice benytter omfattende KPI-er og måleparametere for å sikre kontroll på kostnader, risiko, sikkerhet og teknisk ytelse i jernbaneprosjekter.",
+    "cost_metrics": [
+      "Budget vs. Actual (by work package)",
+      "Earned Value metrics (CPI, SPI)",
+      "Change Order Impact",
+      "Life Cycle Cost tracking"
+    ],
+    "risk_metrics": [
+      "Risk Burn-down Rate",
+      "Issues Resolution Time",
+      "Contingency Utilization",
+      "Risk Mitigation Effectiveness"
+    ],
+    "safety_metrics": [
+      "Lost Time Injury Frequency Rate",
+      "Near Miss Reporting Rate",
+      "Safety Audit findings",
+      "Training Completion Rate"
+    ],
+    "technical_metrics": [
+      "System Availability Achievement",
+      "RAMS targets vs. Actual",
+      "Performance Test Results",
+      "Reliability Growth tracking"
+    ]
+  },
+  {
+    "title": "RailAdvice - Benchmarking og Lessons Learned",
+    "category": "knowledge_management",
+    "content": "RailAdvice Project Database gir konsulenter tilgang til erfaringsdata og referanseprosjekter for kontinuerlig forbedring.",
+    "database_features": [
+      "Lignende prosjekttyper og resultater",
+      "Best practices og anbefalinger",
+      "Vanlige fallgruver og hvordan unngå dem",
+      "Leverandørhistorikk og ytelse",
+      "Teknologimodenhetsvurderinger"
+    ]
+  },
+  {
+    "title": "RailAdvice - Praktiske AI-responser og Eskaleringsprotokoller",
+    "category": "ai_guidance",
+    "content": "AI-assistenten gir konsulenter strukturerte svar på vanlige prosjektutfordringer, med innebygde eskaleringsrutiner og kvalitetskontroll.",
+    "ai_responses": {
+      "forsinkelse": [
+        "Hvor stor er forsinkelsen og hva er hovedårsaken?",
+        "Analyser impact på critical path",
+        "Recovery checklist: root cause, recovery options, ressursvurdering, stakeholderkommunikasjon, kontraktsevaluering",
+        "Henvisning til relevant ekspert",
+        "Oppsett av recovery planning møte"
+      ],
+      "leverandørsvikt": [
+        "Dokumenter avvik og tidslinje",
+        "Sjekk kontraktsbestemmelser",
+        "Aktiver eskalering per kontrakt",
+        "Vurder juridisk bistand",
+        "Identifiser backup-løsninger",
+        "Informer berørte stakeholders",
+        "Eskaler til relevant RailAdvice-leder"
+      ],
+      "budsjettoverskridelse": [
+        "Analyser årsaker",
+        "Kategoriser: scope change, unforeseen, estimation error",
+        "Vurder impact på business case",
+        "Identifiser kostnadsreduksjoner",
+        "Forbered stakeholderkommunikasjon",
+        "Eskaler til sponsor",
+        "Oppdater finansielle kontroller"
+      ]
+    },
+    "red_flags": [
+      "Sikkerhetskritiske beslutninger",
+      "Store budsjettavvik (>10%)",
+      "Kontraktstvister",
+      "Regulatoriske compliance-problemer",
+      "Stakeholder-eskalering",
+      "Teknologifeil eller store defekter"
+    ]
+  },
+  {
+    "title": "Eksempelobjekt",
+    "category": "test",
+    "validation_checklist": [
+      "Er dette innenfor AI-kompetanse?",
+      "Finnes relevante RailAdvice-precedents?",
+      "Krever dette menneskelig vurdering?",
+      "Er rådene sikkerhetsmessig forsvarlige?",
+      "Skal dette eskaleres til ekspert?"
+    ]
+  }
+]

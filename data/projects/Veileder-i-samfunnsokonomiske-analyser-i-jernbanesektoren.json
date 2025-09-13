@@ -1,0 +1,78 @@
+{
+    "metadata": {
+        "title": "Veileder i samfunnsøkonomiske analyser i jernbanesektoren",
+        "publisher": "Jernbanedirektoratet",
+        "year": 2024,
+        "language": "no",
+        "document_type": "veileder",
+        "sector": "jernbane",
+        "topics": [
+            "samfunnsøkonomi",
+            "nytte-kostnadsanalyse",
+            "transportplanlegging",
+            "offentlige investeringer"
+        ]
+    },
+    "sections": [
+        {
+            "section_title": "Innledning",
+            "content": "Veilederen gir innsikt i metodikken for samfunnsøkonomiske analyser av jernbanetiltak og de praktiske valg som må gjøres. Den bygger på Finansdepartementets rundskriv R-109/2021 og tværsektorielt samarbeid for nasjonal transportplan (NTP). Veilederen supplerer DFØs veileder med numeriske eksempler, nye metoder for ikke-prissatte virkninger, usikkerhetsanalyser og realopsjoner.",
+            "page": 2
+        },
+        {
+            "section_title": "Hvordan statlige tiltak skal utredes",
+            "content": "Kapittelet beskriver krav og føringer for utredning av statlige tiltak, inkludert utredningsinstruksen og Statens prosjektmodell. Det legges vekt på at alle relevante nytte- og kostnadsvirkninger skal synliggjøres for å gi et godt beslutningsgrunnlag.",
+            "page": 5
+        },
+        {
+            "section_title": "Samfunnsøkonomi og nytte-kostnadsanalyser",
+            "content": "Dette kapittelet gir en innføring i samfunnsøkonomi og effektiv ressursbruk, med fokus på nytte-kostnadsanalyser. Det dekker begreper som samfunnsøkonomisk overskudd, markedssvikt, og anvendelsesområder i jernbanesektoren.",
+            "page": 8
+        },
+        {
+            "section_title": "Arbeidsfase 1: Beskrive problemet og formulere mål",
+            "content": "Beskriver hvordan man identifiserer og formulerer problemstillinger og mål for analysen, inkludert utformingen av referansealternativet.",
+            "page": 18
+        },
+        {
+            "section_title": "Arbeidsfase 2: Identifisere og beskrive relevante tiltak",
+            "content": "Fokuserer på identifisering av relevante tiltak, bruk av firetrinnsmetodikken, og vurdering av prinsipielle spørsmål.",
+            "page": 22
+        },
+        {
+            "section_title": "Arbeidsfase 3: Identifisere virkninger",
+            "content": "Dekker metoder for å identifisere og beskrive virkninger av tiltak, inkludert bruk av årsaks- og virkningsdiagram.",
+            "page": 25
+        },
+        {
+            "section_title": "Arbeidsfase 4: Tallfeste og verdsette virkninger",
+            "content": "Beskriver prinsipper for verdsetting av prissatte og ikke-prissatte virkninger, inkludert bruk av kalkulasjonspriser, markedspriser, og metoder for ikke-prissatte virkninger.",
+            "page": 30
+        },
+        {
+            "section_title": "Trafikanter",
+            "content": "Dekker trafikantenes nytte av transporttilbudet, inkludert beregning av trafikantnytte, tidskostnader, og helseeffekter.",
+            "page": 34
+        },
+        {
+            "section_title": "Operatører",
+            "content": "Beskriver virkninger for operatører, inkludert driftskostnader og endringer i billettinntekter.",
+            "page": 44
+        },
+        {
+            "section_title": "Det offentlige",
+            "content": "Dekker offentlige kostnader og inntekter knyttet til investeringer, vedlikehold, avgifter, og offentlig kjøp.",
+            "page": 46
+        },
+        {
+            "section_title": "Samfunnet for øvrig",
+            "content": "Beskriver eksterne virkninger som ulykkeskostnader, støy, lokale og globale utslipp, og restverdi.",
+            "page": 48
+        },
+        {
+            "section_title": "Metode for vurdering av ikke-prissatte virkninger",
+            "content": "Dekker metoder for å vurdere virkninger som ikke lar seg verdsette i kroner, inkludert kategorisering og bruk av verdimatrisemetoden.",
+            "page": 54
+        }
+    ]
+}

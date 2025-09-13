@@ -1,0 +1,41 @@
+[
+    {
+        "title": "TSI Infrastructure",
+        "code": "TSI-INF",
+        "description": "Technical Specifications for Interoperability - Infrastructure subsystem",
+        "content": "TSI-INF defines requirements for track gauge, loading gauge, minimum curve radius, maximum gradient, and structural requirements for railway infrastructure in Europe.",
+        "keywords": [
+            "infrastructure",
+            "track",
+            "gauge",
+            "radius",
+            "gradient"
+        ]
+    },
+    {
+        "title": "ETCS Level 2",
+        "code": "ETCS-L2",
+        "description": "European Train Control System Level 2 implementation requirements",
+        "content": "ETCS Level 2 requires Radio Block Centre (RBC), GSM-R communication, onboard units with SIL-4 certification, and balises every 1000m minimum. Implementation cost typically 15-25 million NOK per 100km.",
+        "keywords": [
+            "ETCS",
+            "RBC",
+            "GSM-R",
+            "SIL-4",
+            "balises"
+        ]
+    },
+    {
+        "title": "CENELEC EN 50126",
+        "code": "EN-50126",
+        "description": "Railway applications - The specification and demonstration of RAMS",
+        "content": "EN 50126 specifies RAMS (Reliability, Availability, Maintainability, Safety) requirements for railway systems. Requires HAZOP analysis, FMEA studies, and independent safety assessor validation.",
+        "keywords": [
+            "RAMS",
+            "HAZOP",
+            "FMEA",
+            "safety",
+            "reliability"
+        ]
+    }
+]

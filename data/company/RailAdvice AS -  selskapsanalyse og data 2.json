@@ -1,0 +1,88 @@
+[
+    {
+        "title": "RailAdvice AS - Selskapsprofil og nøkkelinformasjon",
+        "category": "company_profile",
+        "content": "Etablert: Mars 2020\nOrganisasjonsnummer: 924 774 339\nAdresse: Stortorvet, Oslo Sentrum\nEierskap: Privateid av fire aktive ansatte\nBransje: Teknisk konsulentvirksomhet - Jernbane\nVisjon: Å bli Norges ledende konsulentselskap innenfor jernbane, t-bane og trikk\nMisjon: Rådgivere for en bedre jernbane\nAmbisjon: Skape et sterkt faglig miljø med unik kompetanse for fornøyde kunder og kollegaer",
+        "core_expertise": [
+            "Skinnegående rullende materiell",
+            "Signalanlegg (CBTC og ERTMS)",
+            "RAMS (Reliability, Availability, Maintainability, Safety)",
+            "Prosjektledelse og kontrakter",
+            "Tekniske spesifikasjoner",
+            "Trafikk og drift",
+            "Strategi og ledelse"
+        ],
+        "culture": [
+            "Korte beslutningsveier",
+            "Overskuddsdeling for alle ansatte",
+            "Sterkt sosialt miljø",
+            "Årlige studieturer",
+            "Kompetanseutvikling og erfaringsutveksling"
+        ]
+    },
+    {
+        "title": "RailAdvice AS - Prosjekter og referanser",
+        "category": "project_portfolio",
+        "content": "RailAdvice har bistått med teknisk rådgivning og prosjektledelse i flere store jernbaneprosjekter nasjonalt.",
+        "projects": [
+            "Neste generasjons T-banevogner (Sporveien)",
+            "Maskinanskaffelsesprogram for trikken",
+            "Lokaltog-anskaffelse (Norske tog AS)",
+            "Arbeidsmaskiner T-bane (Sporveien)",
+            "Go-Ahead vedlikehold (Trafikkpakke 1 Sør)"
+        ],
+        "clients": [
+            "Sporveien",
+            "Go-Ahead Norge",
+            "CargoNet",
+            "Norske tog AS",
+            "Bane NOR",
+            "Alstom",
+            "Bybanen Bergen",
+            "Internasjonale togleverandører"
+        ]
+    },
+    {
+        "title": "RailAdvice AS - Markedsposisjon og konkurransefortrinn",
+        "category": "market_position",
+        "content": "RailAdvice har etablert seg som en spesialisert aktør med sterk lokal forankring og høy fagkompetanse.",
+        "strengths": [
+            "400+ års samlet erfaring",
+            "Bred portefølje innen jernbane, t-bane og trikk",
+            "Norsk eierskap",
+            "Fleksibilitet i prosjektstørrelse",
+            "Internasjonal erfaring",
+            "Kvalifisert i Trans Q"
+        ],
+        "segments": [
+            "Rullende materiell",
+            "Signalanlegg og sikringssystemer",
+            "Drift og vedlikehold",
+            "Prosjektledelse",
+            "Anskaffelser"
+        ]
+    },
+    {
+        "title": "RailAdvice AS - Fremtidsperspektiver og strategiske satsninger",
+        "category": "strategic_outlook",
+        "content": "RailAdvice satser på vekst gjennom kompetanseutvikling, internasjonalisering og teknologiinvesteringer.",
+        "growth_areas": [
+            "Elektrifisering",
+            "Digitalisering (CBTC og automatisering)",
+            "Kapasitetsøkning",
+            "Vedlikehold 4.0",
+            "Bærekraftige løsninger"
+        ],
+        "strategic_focus": [
+            "Fornebubanen",
+            "Sentrumstunnel",
+            "Intercity-høyhastighetsbane",
+            "Nordiske og europeiske markeder"
+        ],
+        "recruitment": [
+            "CBTC, ERTMS og RAMS-kompetanse",
+            "Senior- og juniorprofiler",
+            "Kulturell tilpasning og teamutvikling"
+        ]
+    }
+]

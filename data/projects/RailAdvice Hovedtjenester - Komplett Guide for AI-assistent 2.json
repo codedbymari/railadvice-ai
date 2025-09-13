@@ -1,0 +1,384 @@
+{
+    "title": "RailAdvice Hovedtjenester - Komplett Guide for AI-assistent",
+    "category": "service_overview",
+    "content": "Denne guiden gir AI-assistenten oversikt over RailAdvice sine hovedtjenester innen rådgivning, prosjektledelse, anskaffelser og RAMS-analyser.",
+    "services": {
+        "rådgivning": {
+            "teknisk": {
+                "ekspertiseområder": [
+                    "Rullende materiell (tog, T-bane, trikk)",
+                    "Signalanlegg (CBTC, ERTMS, konvensjonelle)",
+                    "Infrastruktur (spor, kjøreledning, stasjoner)",
+                    "Depot- og verkstedsanlegg",
+                    "Passasjersystemer og IT"
+                ],
+                "typiske_leveranser": [
+                    "Tekniske utredninger",
+                    "Konseptutvikling",
+                    "Teknologivurderinger",
+                    "Kompatibilitetsanalyser",
+                    "Standardtolkninger",
+                    "Due diligence"
+                ]
+            },
+            "strategisk": {
+                "tjenester": [
+                    "Markedsanalyser",
+                    "Forretningsmodell-utvikling",
+                    "Strategisk planlegging",
+                    "Organisasjonsutvikling",
+                    "Digital transformasjon",
+                    "Regulatorisk rådgivning"
+                ],
+                "kompetanseområder": [
+                    "EU-direktiver og norsk lovgivning",
+                    "Sikkerhetsregelverk",
+                    "Miljøkrav",
+                    "Offentlige innkjøpsregler",
+                    "Interoperabilitet"
+                ],
+                "praktiske_råd": [
+                    "Hold deg oppdatert på regelverksendringer",
+                    "Vurder regulatoriske konsekvenser",
+                    "Involuer juridisk ekspertise",
+                    "Dokumenter compliance grundig"
+                ]
+            },
+            "leveransemodeller": [
+                "Ad-hoc rådgivning",
+                "Retainer-avtaler",
+                "Prosjektbasert rådgivning",
+                "Interim-tjenester"
+            ]
+        },
+        "prosjektledelse": {
+            "metodikk": {
+                "faser": [
+                    "Konseptfase",
+                    "Utredningsfase",
+                    "Gjennomføringsfase",
+                    "Oppstartfase",
+                    "Driftsfase"
+                ],
+                "verktøy": [
+                    "PRINCE2",
+                    "Agile/Scrum",
+                    "Lean",
+                    "Stage-Gate"
+                ]
+            },
+            "utfordringer": {
+                "kritiske_faktorer": [
+                    "Sikkerhet først",
+                    "Regulatorisk compliance",
+                    "Stakeholder-management",
+                    "Teknisk kompleksitet",
+                    "Døgnkontinuerlig drift"
+                ],
+                "risikoer": [
+                    "Integrasjonsutfordringer",
+                    "Regulatoriske endringer",
+                    "Leverandørforsinkelser",
+                    "Driftsavbrudd",
+                    "Budsjettoverskridelser"
+                ],
+                "håndtering": [
+                    "Tidlig identifisering",
+                    "Kontingensplaner",
+                    "Oppfølging av kritisk path",
+                    "Stakeholder-kommunikasjon"
+                ]
+            },
+            "prosjekttyper": [
+                "Infrastrukturprosjekter",
+                "Rullende materiell-prosjekter",
+                "Teknologiprosjekter"
+            ]
+        },
+        "anskaffelser": {
+            "regelverk": [
+                "LOA",
+                "FOA",
+                "EU-direktiver",
+                "Sektorspesifikke regelverk"
+            ],
+            "prosedyrer": [
+                "Åpen konkurranse",
+                "Begrenset konkurranse",
+                "Konkurransepreget dialog",
+                "Forhandling",
+                "Rammeavtaler"
+            ],
+            "jernbanespesifikke_utfordringer": [
+                "Langvarige kontrakter",
+                "Kompleks teknologi",
+                "Sikkerhetskritiske systemer",
+                "Interoperabilitet",
+                "Livsykluskontrakter"
+            ],
+            "kontraktstyper": [
+                "Design-Build-Maintain",
+                "PPP",
+                "Tradisjonell",
+                "Framework agreements",
+                "Performance-based"
+            ],
+            "prosess": {
+                "fase_1": "Behovsanalyse",
+                "fase_2": "Konkurransestrategi",
+                "fase_3": "Kunngjøring og prekvalifisering",
+                "fase_4": "Tilbudsevaluering",
+                "fase_5": "Kontraktsinngåelse"
+            },
+            "praktiske_tips": {
+                "suksessfaktorer": [
+                    "Tidlig planlegging",
+                    "Juridisk ekspertise",
+                    "Tydelige krav",
+                    "Åpen markedskommunikasjon",
+                    "God dokumentasjon"
+                ],
+                "fallgruver": [
+                    "Uklar kravstilling",
+                    "Urealistiske tidsfrister",
+                    "Mangelfull markedsforståelse",
+                    "Svak kontraktsstyring",
+                    "Dårlig risikohåndtering"
+                ]
+            }
+        },
+        "rams_analyser": {
+            "definisjon": "RAMS står for Reliability, Availability, Maintainability, Safety",
+            "elementer": [
+                "Reliability – Sannsynlighet for feilfri drift",
+                "Availability – Operativ tilgjengelighet",
+                "Maintainability – Hvor enkelt systemet kan vedlikeholdes",
+                "Safety – Systemets evne til å unngå farlige situasjoner"
+            ],
+            "standarder": [
+                "EN 50126",
+                "EN 50128",
+                "EN 50129",
+                "IEC 61508",
+                "Common Safety Method (CSM)"
+            ],
+            "prosess": {
+                "livssyklusfaser": [
+                    "Konseptfase",
+                    "Systemdefinisjon",
+                    "Risikoanalyse",
+                    "Systemdesign",
+                    "Produksjon",
+                    "Installasjon",
+                    "Drift",
+                    "Avvikling"
+                ],
+                "aktiviteter": {
+                    "planlegging": [
+                        "RAMS-plan",
+                        "Kravdefinisjon",
+                        "Organisering"
+                    ],
+                    "analyse": [
+                        "FMEA",
+                        "FTA",
+                        "HARA",
+                        "Human Factors"
+                    ],
+                    "design": [
+                        "Fail-safe arkitektur",
+                        "Redundans",
+                        "Vedlikeholdsstrategi",
+                        "Sikkerhetssystemer"
+                    ]
+                }
+            },
+            "sikkerhetshåndtering": {
+                "system": [
+                    "Sikkerhetspolitikk og -mål",
+                    "Risikovurdering og -styring",
+                    "Sikkerhetsledelse",
+                    "Kontinuerlig forbedring",
+                    "Overvåking og rapportering"
+                ],
+                "csm_prosess": [
+                    "Systemdefinisjon",
+                    "Fareidentifisering",
+                    "Risikovurdering",
+                    "Risikoevaluering",
+                    "Overvåking"
+                ]
+            },
+            "dokumentasjon": [
+                "RAMS-plan og -program",
+                "Farelogg og risikoregister",
+                "RAMS-case og -rapport",
+                "Verifikasjonsresultater",
+                "Driftsmanualer"
+            ],
+            "verktøy": [
+                "FMEA/FMECA software",
+                "FTA-verktøy",
+                "Monte Carlo simulering",
+                "Reliability Block Diagrams",
+                "Markov-modeller"
+            ],
+            "kpi": {
+                "pålitelighet": [
+                    "MTBF",
+                    "Failure rate (λ)",
+                    "MTTR"
+                ],
+                "tilgjengelighet": [
+                    "Operational",
+                    "Inherent",
+                    "Achieved"
+                ],
+                "sikkerhet": [
+                    "THR",
+                    "SIL",
+                    "GAMAB/ALARP"
+                ]
+            }
+        }
+    },
+    "spesifikasjoner": {
+        "hierarki": {
+            "nivå_1": [
+                "Systemkrav",
+                "Ytelseskrav",
+                "Grensesnitt",
+                "Regulatoriske krav"
+            ],
+            "nivå_2": [
+                "Funksjonsbeskrivelser",
+                "Tekniske parametre",
+                "Kvalitetskrav",
+                "Testkrav"
+            ],
+            "nivå_3": [
+                "Produktspesifikasjon",
+                "Materialegenskaper",
+                "Toleranser",
+                "Miljøkrav"
+            ]
+        },
+        "jernbanekrav": {
+            "rullende_materiell": [
+                "Bremsesystemer",
+                "Passasjersystemer",
+                "Vedlikeholdskrav",
+                "TSI, UIC, EN-standarder",
+                "Nasjonale forskrifter"
+            ],
+            "infrastruktur": [
+                "Geometri og struktur",
+                "Elektriske anlegg",
+                "Signal og telekom",
+                "Miljø og bærekraft"
+            ]
+        },
+        "kravhåndtering": {
+            "prosess": [
+                "Kravfangst",
+                "Kravanalyse",
+                "Kravspesifikasjon",
+                "Kravvalidering",
+                "Endringsstyring"
+            ],
+            "smart": [
+                "Specific",
+                "Measurable",
+                "Achievable",
+                "Relevant",
+                "Time-bound"
+            ],
+            "sporbarhet": [
+                "Behov → Krav",
+                "Krav → Design",
+                "Design → Implementering",
+                "Implementering → Test",
+                "Test → Verifikasjon"
+            ]
+        },
+        "dokumenttyper": {
+            "tekniske": [
+                "Funksjonelle spesifikasjoner",
+                "Tekniske krav dokument (TRD)",
+                "Interface Control Documents (ICD)",
+                "Design- og testspesifikasjoner"
+            ],
+            "støtte": [
+                "Brukermanualer",
+                "Installasjonsinstruksjoner",
+                "Vedlikeholdsmanualer",
+                "Kvalitetsplaner",
+                "Verifikasjonsmatrise"
+            ]
+        }
+    },
+    "kompetanse": {
+        "opplæring": {
+            "fagområder": [
+                "Jernbaneteknologi",
+                "RAMS og sikkerhet",
+                "Prosjektledelse",
+                "Regulatorisk compliance",
+                "Digitalisering"
+            ],
+            "metodikk": [
+                "Requirements engineering",
+                "Risikostyring",
+                "Kvalitetssikring",
+                "Endringsledelse",
+                "Stakeholder management"
+            ]
+        },
+        "formater": [
+            "Innføringskurs",
+            "Fordypningskurs",
+            "Bransjeseminarer",
+            "Teknologiseminarer",
+            "Studieturer"
+        ],
+        "sertifiseringer": [
+            "PMP, PRINCE2",
+            "RAMS og sikkerhet",
+            "Offentlige anskaffelser",
+            "Regelverkskompetanse",
+            "Teknologispesifikke sertifiseringer"
+        ],
+        "kunnskapsdeling": {
+            "internt": [
+                "Faglunsjer",
+                "Erfaringsdeling",
+                "Mentoring",
+                "Dokumentasjon",
+                "Best practice-utveksling"
+            ],
+            "eksternt": [
+                "Jernbaneforum",
+                "UIC",
+                "UNIFE",
+                "Tekniske komiteer",
+                "Akademiske samarbeid"
+            ]
+        }
+    },
+    "ai_assistent_tips": {
+        "veiledning": [
+            "Identifiser riktig tjenestekategori",
+            "Gi eksempler fra referanseprosjekter",
+            "Foreslå relevante eksperter",
+            "Pek på standarder og regelverk",
+            "Anbefal metodikk og verktøy"
+        ],
+        "kvalitetssikring": [
+            "Vurder sikkerhetsimplikasjoner",
+            "Sjekk compliance",
+            "Vurder kompleksitet og risiko",
+            "Anbefal tverrfaglig tilnærming",
+            "Foreslå trinnvis implementering"
+        ]
+    }
+}

@@ -1,0 +1,77 @@
+[
+  {
+    "title": "ETCS Level 2 - Implementeringskrav og kostnader",
+    "category": "signaling",
+    "code": "ETCS-L2-IMPL",
+    "content": "ETCS Level 2 krever Radio Block Centre (RBC), GSM-R kommunikasjon, \n                onboard-enheter med SIL-4 sertifisering, og baliser minimum hver 1000m. \n                \n                Typiske implementeringskostnader:\n                - RBC: 25-40 millioner NOK per senter\n                - Onboard-enheter: 2-4 millioner NOK per tog\n                - Baliser: 50,000-100,000 NOK per balise\n                - GSM-R infrastruktur: 10-20 millioner NOK per 100km\n                \n                Total kostnad: 15-25 millioner NOK per 100km strekning.\n                \n                Implementeringstid: 24-36 måneder for kompleks strekning.",
+    "applications": [
+      "Hovedbaner",
+      "Høyhastighet",
+      "Tung godstrafikk"
+    ],
+    "benefits": [
+      "Økt kapasitet",
+      "Forbedret sikkerhet",
+      "Reduserte driftskostnader"
+    ],
+    "challenges": [
+      "Høye investeringskostnader",
+      "Kompleks integrasjon",
+      "GSM-R avhengighet"
+    ]
+  },
+  {
+    "title": "RAMS metodikk - EN 50126 implementering",
+    "category": "safety",
+    "code": "RAMS-EN50126",
+    "content": "EN 50126 definerer RAMS-krav for jernbanesystemer:\n                \n                Reliability: MTBF > 50,000 timer for kritiske systemer\n                Availability: 99.9% for persontransport, 99.5% for godstransport  \n                Maintainability: MTTR < 4 timer for kritiske feil\n                Safety: SIL-4 for kritiske sikkerhetsfunksjoner\n                \n                RAMS-prosess:\n                1. RAMS-krav definisjon (3-6 måneder)\n                2. HAZOP/HAZID analyse (2-4 måneder) \n                3. FMEA gjennomføring (4-6 måneder)\n                4. Safety case utarbeidelse (6-12 måneder)\n                5. Verifikasjon og validering (6-18 måneder)\n                \n                Typisk kostnad: 500,000 - 2,000,000 NOK per prosjekt.",
+    "methodologies": [
+      "HAZOP",
+      "HAZID",
+      "FMEA",
+      "FTA",
+      "SSHA"
+    ],
+    "deliverables": [
+      "RAMS plan",
+      "Safety case",
+      "Hazard log",
+      "FMEA rapport"
+    ],
+    "certification": "Uavhengig Safety Assessor (ISA) påkrevd"
+  },
+  {
+    "title": "TSI Infrastructure - Tekniske krav infrastruktur",
+    "category": "infrastructure",
+    "code": "TSI-INF-2023",
+    "content": "TSI Infrastructure definerer tekniske krav for jernbaneinfrastruktur:\n                \n                Sporvidde: 1435mm (normalspor) ±2mm toleranse\n                Lastefri profil: Minimum GA struktur, GC for høyhastighetsbaner\n                Minimum kurveradius: 150m for nye baner (300m anbefalt)\n                Maksimal gradient: 35‰ (3.5%) for persontog, 25‰ for godstog\n                \n                Konstruksjonskrav:\n                - Ballast: Minimum 30cm under sviller\n                - Fundamentering: Frostfritt under -20°C\n                - Drenering: Kapasitet for 100-års regn\n                - Bæreevne: 250 kN aksellast (godstog)\n                \n                Byggetoleranse: ±10mm horisontal, ±5mm vertikal\n                Vedlikeholdsintervall: 5-8 år sporstabilisering\n                \n                Kostnad ny bane: 150-300 millioner NOK per km (avhenger av terreng)",
+    "standards": [
+      "EN 13848",
+      "prEN 16432",
+      "UIC 719"
+    ],
+    "testing": [
+      "Geometrimåling",
+      "Ballast-tetthet",
+      "Dreneringskapasitet"
+    ],
+    "compliance": "EU-kommisjon godkjenning påkrevd"
+  },
+  {
+    "title": "Rolling Stock LCC - Life Cycle Cost analyse",
+    "category": "rolling_stock",
+    "code": "RS-LCC-METHOD",
+    "content": "Life Cycle Cost analyse for rullende materiell:\n                \n                CAPEX (Anskaffelse): 40-60% av total LCC\n                - Nye tog: 25-45 millioner NOK per enhet\n                - Elektrisk motorvogn: 30-50 millioner NOK\n                - Diesellokomotiv: 35-55 millioner NOK\n                \n                OPEX (Drift): 40-60% av total LCC over 30 år\n                - Energi: 1,5-3,0 NOK per km\n                - Vedlikehold: 2-4 NOK per km  \n                - Personalkostnader: 150-250 NOK per driftstime\n                - Forsikring: 0.5-1% av CAPEX årlig\n                \n                Optimalisering:\n                - Energieffektivitet: 20-30% besparelse mulig\n                - Prediktivt vedlikehold: 15-25% kostnadreduksjon\n                - Komponentstandardisering: 10-20% lavere reservedelskostnad\n                \n                ROI-periode: 8-15 år for effektivitetstiltak",
+    "analysis_tools": [
+      "LCC-kalkulatorer",
+      "Risikosimulering",
+      "Sensitivitetsanalyse"
+    ],
+    "key_factors": [
+      "Tilgjengelighet",
+      "Pålitelighet",
+      "Energiforbruk",
+      "Vedlikeholdskostnad"
+    ]
+  }
+]

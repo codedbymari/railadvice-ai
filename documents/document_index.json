@@ -1,0 +1,310 @@
+{
+  "documents": {
+    "ffa10b37-4b54-45d7-8dd7-c773e59758e9": {
+      "id": "ffa10b37-4b54-45d7-8dd7-c773e59758e9",
+      "title": "RailAdvice - basic_info",
+      "type": "company_profile",
+      "category": "company",
+      "tags": [
+        "railadvice",
+        "company",
+        "basic_info"
+      ],
+      "created_at": "2025-09-13T20:41:45.442129",
+      "updated_at": "2025-09-13T20:41:45.442129",
+      "file_path": "ffa10b37-4b54-45d7-8dd7-c773e59758e9.json",
+      "metadata": {
+        "section": "basic_info",
+        "source": "company_profile"
+      }
+    },
+    "3711f2bf-4054-4326-a191-fa801fc096ad": {
+      "id": "3711f2bf-4054-4326-a191-fa801fc096ad",
+      "title": "RailAdvice - core_competencies",
+      "type": "company_profile",
+      "category": "company",
+      "tags": [
+        "railadvice",
+        "company",
+        "core_competencies"
+      ],
+      "created_at": "2025-09-13T20:41:45.442683",
+      "updated_at": "2025-09-13T20:41:45.442683",
+      "file_path": "3711f2bf-4054-4326-a191-fa801fc096ad.json",
+      "metadata": {
+        "section": "core_competencies",
+        "source": "company_profile"
+      }
+    },
+    "327e55b7-ab6d-454e-93ba-382740980f3b": {
+      "id": "327e55b7-ab6d-454e-93ba-382740980f3b",
+      "title": "RailAdvice - certifications",
+      "type": "company_profile",
+      "category": "company",
+      "tags": [
+        "railadvice",
+        "company",
+        "certifications"
+      ],
+      "created_at": "2025-09-13T20:41:45.443235",
+      "updated_at": "2025-09-13T20:41:45.443235",
+      "file_path": "327e55b7-ab6d-454e-93ba-382740980f3b.json",
+      "metadata": {
+        "section": "certifications",
+        "source": "company_profile"
+      }
+    },
+    "f6890582-6209-4e47-a0bd-525a53751d63": {
+      "id": "f6890582-6209-4e47-a0bd-525a53751d63",
+      "title": "RailAdvice - key_personnel",
+      "type": "company_profile",
+      "category": "company",
+      "tags": [
+        "railadvice",
+        "company",
+        "key_personnel"
+      ],
+      "created_at": "2025-09-13T20:41:45.443909",
+      "updated_at": "2025-09-13T20:41:45.443909",
+      "file_path": "f6890582-6209-4e47-a0bd-525a53751d63.json",
+      "metadata": {
+        "section": "key_personnel",
+        "source": "company_profile"
+      }
+    },
+    "33b53aae-27c2-4175-b7d1-57a7ae6cd153": {
+      "id": "33b53aae-27c2-4175-b7d1-57a7ae6cd153",
+      "title": "RailAdvice - service_areas",
+      "type": "company_profile",
+      "category": "company",
+      "tags": [
+        "railadvice",
+        "company",
+        "service_areas"
+      ],
+      "created_at": "2025-09-13T20:41:45.444984",
+      "updated_at": "2025-09-13T20:41:45.444984",
+      "file_path": "33b53aae-27c2-4175-b7d1-57a7ae6cd153.json",
+      "metadata": {
+        "section": "service_areas",
+        "source": "company_profile"
+      }
+    },
+    "956673e1-d6ce-473a-8ff9-a018ec3d7f51": {
+      "id": "956673e1-d6ce-473a-8ff9-a018ec3d7f51",
+      "title": "Fornebu Base Depot - Fullservice depotutvikling",
+      "type": "project",
+      "category": "projects",
+      "tags": [
+        "projekt",
+        "Prosjekteringsgruppen Fornebubanen",
+        "depot_development",
+        "2023"
+      ],
+      "created_at": "2025-09-13T20:41:45.445716",
+      "updated_at": "2025-09-13T20:41:45.445716",
+      "file_path": "956673e1-d6ce-473a-8ff9-a018ec3d7f51.json",
+      "metadata": {
+        "client": "Prosjekteringsgruppen Fornebubanen",
+        "year": 2023,
+        "project_type": "depot_development",
+        "status": "Pågående"
+      }
+    },
+    "2b718c18-4aa1-4acc-a035-ef3b9d528c37": {
+      "id": "2b718c18-4aa1-4acc-a035-ef3b9d528c37",
+      "title": "Flytoget Type 78 - RAMS og LCC optimalisering",
+      "type": "project",
+      "category": "projects",
+      "tags": [
+        "projekt",
+        "Flytoget AS",
+        "rolling_stock",
+        "2019"
+      ],
+      "created_at": "2025-09-13T20:41:45.446291",
+      "updated_at": "2025-09-13T20:41:45.446291",
+      "file_path": "2b718c18-4aa1-4acc-a035-ef3b9d528c37.json",
+      "metadata": {
+        "client": "Flytoget AS",
+        "year": 2019,
+        "project_type": "rolling_stock",
+        "status": "Pågående (langtidskontrakt)"
+      }
+    },
+    "09224b63-3c9f-4a8b-96bf-f099ded0ee06": {
+      "id": "09224b63-3c9f-4a8b-96bf-f099ded0ee06",
+      "title": "SJ Norge Materiellavdeling - Kontraktsansvar Trafikkpakke 2",
+      "type": "project",
+      "category": "projects",
+      "tags": [
+        "projekt",
+        "SJ Norge AS",
+        "contract_management",
+        "2020"
+      ],
+      "created_at": "2025-09-13T20:41:45.446881",
+      "updated_at": "2025-09-13T20:41:45.446881",
+      "file_path": "09224b63-3c9f-4a8b-96bf-f099ded0ee06.json",
+      "metadata": {
+        "client": "SJ Norge AS",
+        "year": 2020,
+        "project_type": "contract_management",
+        "status": "Avsluttet"
+      }
+    },
+    "064c9c84-6011-4875-a985-3c426baee979": {
+      "id": "064c9c84-6011-4875-a985-3c426baee979",
+      "title": "Bybanen Utvikling - Sikkerhetssjef (Rammeavtale)",
+      "type": "project",
+      "category": "projects",
+      "tags": [
+        "projekt",
+        "Bybanen Utvikling AS",
+        "safety_management",
+        "2023"
+      ],
+      "created_at": "2025-09-13T20:41:45.447375",
+      "updated_at": "2025-09-13T20:41:45.447375",
+      "file_path": "064c9c84-6011-4875-a985-3c426baee979.json",
+      "metadata": {
+        "client": "Bybanen Utvikling AS",
+        "year": 2023,
+        "project_type": "safety_management",
+        "status": "Aktiv rammeavtale"
+      }
+    },
+    "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3": {
+      "id": "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3",
+      "title": "Bane NOR RAMS Signal - Multippel signalprosjekter",
+      "type": "project",
+      "category": "projects",
+      "tags": [
+        "projekt",
+        "Bane NOR SF",
+        "RAMS_analysis",
+        "2024"
+      ],
+      "created_at": "2025-09-13T20:41:45.448681",
+      "updated_at": "2025-09-13T20:41:45.448681",
+      "file_path": "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3.json",
+      "metadata": {
+        "client": "Bane NOR SF",
+        "year": 2024,
+        "project_type": "RAMS_analysis",
+        "status": "Pågående"
+      }
+    },
+    "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb": {
+      "id": "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb",
+      "title": "ETCS Level 2 - Implementeringskrav og kostnader",
+      "type": "technical_knowledge",
+      "category": "signaling",
+      "tags": [
+        "teknisk",
+        "signaling",
+        "ETCS-L2-IMPL"
+      ],
+      "created_at": "2025-09-13T20:41:45.450135",
+      "updated_at": "2025-09-13T20:41:45.450135",
+      "file_path": "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb.json",
+      "metadata": {
+        "category": "signaling",
+        "code": "ETCS-L2-IMPL"
+      }
+    },
+    "b18a5f64-e86a-43fc-8364-59f1e1b232ad": {
+      "id": "b18a5f64-e86a-43fc-8364-59f1e1b232ad",
+      "title": "RAMS metodikk - EN 50126 implementering",
+      "type": "technical_knowledge",
+      "category": "safety",
+      "tags": [
+        "teknisk",
+        "safety",
+        "RAMS-EN50126"
+      ],
+      "created_at": "2025-09-13T20:41:45.450838",
+      "updated_at": "2025-09-13T20:41:45.450838",
+      "file_path": "b18a5f64-e86a-43fc-8364-59f1e1b232ad.json",
+      "metadata": {
+        "category": "safety",
+        "code": "RAMS-EN50126"
+      }
+    },
+    "033f4dd4-9e4b-4ae9-855f-bae9533a5c71": {
+      "id": "033f4dd4-9e4b-4ae9-855f-bae9533a5c71",
+      "title": "TSI Infrastructure - Tekniske krav infrastruktur",
+      "type": "technical_knowledge",
+      "category": "infrastructure",
+      "tags": [
+        "teknisk",
+        "infrastructure",
+        "TSI-INF-2023"
+      ],
+      "created_at": "2025-09-13T20:41:45.451431",
+      "updated_at": "2025-09-13T20:41:45.451431",
+      "file_path": "033f4dd4-9e4b-4ae9-855f-bae9533a5c71.json",
+      "metadata": {
+        "category": "infrastructure",
+        "code": "TSI-INF-2023"
+      }
+    },
+    "6623bd33-73a0-434b-8bda-d00e99a63085": {
+      "id": "6623bd33-73a0-434b-8bda-d00e99a63085",
+      "title": "Rolling Stock LCC - Life Cycle Cost analyse",
+      "type": "technical_knowledge",
+      "category": "rolling_stock",
+      "tags": [
+        "teknisk",
+        "rolling_stock",
+        "RS-LCC-METHOD"
+      ],
+      "created_at": "2025-09-13T20:41:45.452142",
+      "updated_at": "2025-09-13T20:41:45.452142",
+      "file_path": "6623bd33-73a0-434b-8bda-d00e99a63085.json",
+      "metadata": {
+        "category": "rolling_stock",
+        "code": "RS-LCC-METHOD"
+      }
+    },
+    "5f092f7f-ef12-4912-a3da-18a3f1c3a96f": {
+      "id": "5f092f7f-ef12-4912-a3da-18a3f1c3a96f",
+      "title": "Norsk jernbanemarked - Status og trender 2024",
+      "type": "market_insight",
+      "category": "market_analysis",
+      "tags": [
+        "marked",
+        "analyse",
+        "market_analysis"
+      ],
+      "created_at": "2025-09-13T20:41:45.452693",
+      "updated_at": "2025-09-13T20:41:45.452693",
+      "file_path": "5f092f7f-ef12-4912-a3da-18a3f1c3a96f.json",
+      "metadata": {
+        "category": "market_analysis"
+      }
+    },
+    "0f934966-b44c-4297-8571-92f55800c82b": {
+      "id": "0f934966-b44c-4297-8571-92f55800c82b",
+      "title": "ETCS markedet i Norden - Muligheter og utfordringer",
+      "type": "market_insight",
+      "category": "technology_market",
+      "tags": [
+        "marked",
+        "analyse",
+        "technology_market"
+      ],
+      "created_at": "2025-09-13T20:41:45.453200",
+      "updated_at": "2025-09-13T20:41:45.453200",
+      "file_path": "0f934966-b44c-4297-8571-92f55800c82b.json",
+      "metadata": {
+        "category": "technology_market"
+      }
+    }
+  },
+  "metadata": {
+    "created": "2025-09-13T17:03:53.440791",
+    "version": "2.0",
+    "last_updated": "2025-09-13T20:41:45.453280"
+  }
+}

@@ -1,0 +1,353 @@
+{
+    "document": {
+        "id": "railway-cost-estimation-guide-2019",
+        "title": "Veileder – kostnadsestimering i tidligfase",
+        "title_en": "Guide - Cost Estimation in Early Phase",
+        "organization": "Jernbanedirektoratet",
+        "organization_en": "Norwegian Railway Directorate",
+        "date": "2019-06-28",
+        "version": "1.3",
+        "project_number": "21007604",
+        "language": "no",
+        "document_type": "guideline",
+        "category": "cost_estimation",
+        "subcategory": "early_phase_planning"
+    },
+    "metadata": {
+        "pages": 31,
+        "revision_history": [
+            {
+                "version": "1.2",
+                "date": "2019-06-28",
+                "description": "Første versjon av dokument",
+                "authors": [
+                    "WH",
+                    "RW"
+                ],
+                "approved_by": "BB"
+            },
+            {
+                "version": "1.3",
+                "date": "2019-09-26",
+                "description": "Korrigering av enkelte modeller",
+                "authors": [
+                    "BB"
+                ],
+                "approved_by": "DK"
+            }
+        ]
+    },
+    "purpose": {
+        "main_objective": "Sikre at kostnadsoverslagene utarbeidet for Jernbanedirektoratet har den påkrevde kvalitet for å bidra til å sikre et mest mulig transparent og sikkert beslutningsgrunnlag",
+        "key_goals": [
+            "Sikre en konsistent og transparent gjennomføring av en etablert estimeringsprosess",
+            "Sikre at kostnadsestimatene blir etablert på en enhetlig og systematisk måte med definerte krav",
+            "Etablere mest mulig realistiske kostnadsestimater",
+            "Innhente erfaringstall fra gjennomførte prosjekter",
+            "Oppdatere data som benyttes i kostnadsestimeringen",
+            "Samarbeide med kostnadsestimeringsmiljøet i Bane NOR om både metodikk og data"
+        ],
+        "target_audience": [
+            "Interne og eksterne estimeringsressurser",
+            "Prosjektledere",
+            "Prosjekteiere i Jernbanedirektoratet"
+        ]
+    },
+    "theoretical_foundation": {
+        "standards_based_on": [
+            "AACE International - 'standardsettende' for estimeringsfaget",
+            "Finansdepartementets veiledere",
+            "Jernbanedirektoratets 'Slik jobber vi' - dokumentene"
+        ],
+        "project_phases": {
+            "early_phase_definition": [
+                "Analyser og utredninger forut for KVU",
+                "NTP og idéomtale av prosjektet",
+                "Strategier (inkl. prosjektporteføljer)",
+                "Rutemodeller/tilbudskonsept",
+                "KVUer, regionale planer og andre utredninger før teknisk hovedplan og kommunedelplan"
+            ]
+        }
+    },
+    "estimate_classification": {
+        "class_5": {
+            "project_maturity": "Veldig lav",
+            "usage": [
+                "NTP",
+                "Strategiske utredninger"
+            ],
+            "method": "Analog estimering (Parametrisk estimering)",
+            "accuracy_range": {
+                "low": "-30%",
+                "high": "+60%"
+            },
+            "expected_addition": "12%",
+            "characteristics": [
+                "Svært begrenset grunnlag",
+                "Brede usikkerhetsspenn",
+                "Kort tid og liten ressursinnsats",
+                "Omtrentlige kapasiteter og konsepter"
+            ]
+        },
+        "class_4": {
+            "project_maturity": "Lav",
+            "usage": [
+                "KVU",
+                "Regional Plan",
+                "Utredning"
+            ],
+            "method": "Parametrisk estimering (Analog på elementer av tiltaket)",
+            "accuracy_range": {
+                "low": "-20%",
+                "high": "+40%"
+            },
+            "expected_addition": "8%",
+            "characteristics": [
+                "Noe mer informasjon tilgjengelig",
+                "Brukes til konseptvalg og foreløpig budsjett",
+                "Foreløpig design og geometri definert"
+            ]
+        }
+    },
+    "estimation_methods": {
+        "analog_estimation": {
+            "description": "Benytte virkelige kostnader fra tidligere utførte, lignede prosjekter som basis",
+            "process_steps": [
+                "Identifiser relevant referanse",
+                "Fjern irrelevant omfang/kostnader fra referansen",
+                "Legg til relevant omfang/kostnader til referansen",
+                "Bruk tilpasset referanse for å estimere aktuelt prosjekt"
+            ],
+            "advantages": [
+                "Mindre tid og ressurser enn parametrisk estimering"
+            ],
+            "example": {
+                "case": "Godsterminal",
+                "reference": "Ganddal godsterminal: 715 MNOK (80,000 TEU)",
+                "new_project": "Trondheim terminal: 200,000 TEU",
+                "calculation": "200,000/80,000 × 715 MNOK = 1,790 MNOK"
+            }
+        },
+        "parametric_estimation": {
+            "description": "Benytter statistisk relasjon mellom historiske data og andre variable",
+            "key_difference": "Benytter data fra mange prosjekter vs. analogestimering som bruker én kilde",
+            "example": {
+                "case": "Jernbanestrekning Andeby-Gjesshavn",
+                "parameter": "km dagsone i åpent landskap",
+                "length": "10 km",
+                "estimated_cost": "ca. 3 mrd NOK"
+            }
+        }
+    },
+    "estimation_process": {
+        "main_phases": [
+            {
+                "phase": "1. Oppstart",
+                "description": "Opprette klarhet rundt formålet med og omfanget av kostnadsestimatet",
+                "key_activities": [
+                    "Identifisering av formålet med kostnadsestimatet",
+                    "Kartlegge estimeringsgrunnlaget",
+                    "Plan for estimeringsprosessen"
+                ]
+            },
+            {
+                "phase": "2. Etablering",
+                "description": "Etablere kostnadsestimatet basert gjeldende krav, tilgjengelig informasjon og korreksjonsfaktorer",
+                "key_activities": [
+                    "Byggeklosser som brukes og strukturering",
+                    "Innhente teknisk grunnlag",
+                    "Innhente priser/byggeklossene",
+                    "Etablere korreksjonsfaktorer",
+                    "Fortløpende dokumentere",
+                    "Etablere kostnadsestimatet"
+                ]
+            },
+            {
+                "phase": "3. Analyse",
+                "description": "Gjennomføre rimelighetsvurdering av prosjektets kostnadsestimat som helhet",
+                "key_activities": [
+                    "Rimelighetsvurdering/Benchmarking",
+                    "Sensitivitetsanalyse",
+                    "Kostnadsspenn",
+                    "Forventet kostnad"
+                ]
+            },
+            {
+                "phase": "4. Kvalitet og kommunikasjon",
+                "description": "Kvalitetssjekk, sidemannskontroll og utarbeidelse beslutningsunderlag",
+                "key_activities": [
+                    "Kvalitetssjekk og sidemannskontroll",
+                    "Kommunikasjon"
+                ]
+            }
+        ]
+    },
+    "building_blocks": {
+        "based_on": "Bane NOR sine byggeklosser fra InterCity utbyggingen",
+        "components_included": [
+            "Konstruksjoner (bruer og tunneler)",
+            "Underbygning",
+            "Jernbaneteknikk",
+            "Signalkostnader",
+            "Felles entreprenørkostnader",
+            "Felles byggherrekostnader",
+            "Planlegging og prosjektering",
+            "Grunnerverv"
+        ],
+        "description": "Jernbanedirektoratet sine byggeklosser er mer overordnet enn Bane NOR sine (Duplo vs. Lego)",
+        "grunnerverv_categories": [
+            "Bynære omgivelser",
+            "Landlige omgivelser"
+        ]
+    },
+    "correction_factors": {
+        "purpose": "Justere for særegne forhold som vil ha relativt stor innvirkning på prosjektets kostnad",
+        "evaluation_scale": [
+            "lav",
+            "middels",
+            "høy"
+        ],
+        "factors": [
+            {
+                "name": "Umodent omfang",
+                "description": "Hvor uavklart prosjektet er sammenlignet med andre"
+            },
+            {
+                "name": "Interessenter",
+                "description": "Involvering og press fra naboer, lokale myndigheter, planprosesser"
+            },
+            {
+                "name": "Naturgitte forhold",
+                "description": "Topografi, grunnforhold og fjellkvalitet"
+            },
+            {
+                "name": "Nærføring",
+                "description": "Nærhet til andre togspor og/eller veier i drift"
+            },
+            {
+                "name": "Eksisterende bebyggelse og infrastruktur",
+                "description": "Kompleksitet ved eksisterende strukturer"
+            },
+            {
+                "name": "Tilkomst",
+                "description": "Adkomst og tilgjengelighet for rigg og drift"
+            }
+        ]
+    },
+    "technical_requirements": {
+        "class_5_requirements": {
+            "prosjektbeskrivelse": "Svært overordnet",
+            "ntp_alignment": "Overordnet",
+            "lokasjon_landskapsforhold": "Overordnet",
+            "geologiske_data": "Ikke behov",
+            "klimaeffekter": "Ikke behov",
+            "kvu": "Ikke behov",
+            "kommunedelplan": "Ikke behov",
+            "teknisk_hovedplan": "Ikke behov",
+            "fremdriftsplan": "Ikke behov",
+            "nedbrytningsstruktur": "Ikke behov",
+            "kvantiteter": "Overordnet",
+            "byggeklosspriser": "Definert",
+            "tilbudskonsept": "Definert",
+            "rutemodell": "Ikke aktuelt"
+        },
+        "class_4_requirements": {
+            "prosjektbeskrivelse": "Overordnet",
+            "ntp_alignment": "Identifisert",
+            "lokasjon_landskapsforhold": "Avklart",
+            "geologiske_data": "Innhentes via GIS",
+            "klimaeffekter": "Innhentes via GIS",
+            "kvu": "Ikke behov",
+            "kommunedelplan": "Ikke behov",
+            "teknisk_hovedplan": "Ikke behov",
+            "fremdriftsplan": "Ikke behov",
+            "nedbrytningsstruktur": "Overordnet",
+            "kvantiteter": "Definert med hovedelementer",
+            "byggeklosspriser": "Definert",
+            "tilbudskonsept": "Ikke aktuelt",
+            "rutemodell": "Definert"
+        }
+    },
+    "cost_span_calculation": {
+        "formula_description": "Basiskostnad multipliseres med lav og høy prosentsats for å få kostnadsspenn",
+        "example": {
+            "base_cost": 140,
+            "class_5": {
+                "low_value": "140 × (100 - 30%) = 98",
+                "high_value": "140 × (100 + 60%) = 210",
+                "cost_span": "98 - 210"
+            },
+            "class_4": {
+                "low_value": "140 × (100 - 20%) = 112",
+                "high_value": "140 × (100 + 40%) = 196",
+                "cost_span": "112 - 196"
+            }
+        }
+    },
+    "expected_cost_calculation": {
+        "class_5_addition": "12%",
+        "class_4_addition": "8%",
+        "formula": "Basiskostnad + (Basiskostnad × Forventet tillegg %)",
+        "note": "Ved analogestimering må det vurderes om forventet tillegg skal legges til"
+    },
+    "quality_control": {
+        "requirements": [
+            "Kostnadsestimater skal alltid kontrolleres av en sidemann",
+            "Kvalitetssjekk av uavhengig person med estimeringserfaring",
+            "Dokumentert gjennomgang"
+        ],
+        "checklist_categories": [
+            "Komplette investeringskostnader",
+            "Dokumenterte forutsetninger og avgrensninger",
+            "Følger Jernbanedirektoratets estimeringsprosess",
+            "Erfarne estimatorer",
+            "Klare nøyaktighetskrav",
+            "Relevant erfaringsdata",
+            "Sporbarhet i vurderinger",
+            "Prosjektuavhengig kontroll"
+        ]
+    },
+    "communication_guidelines": {
+        "presentation_focus": "Sette søkelys på spennet i kostnadsestimatet for å tydeliggjøre usikkerheten",
+        "required_values_to_present": [
+            "Lav verdi",
+            "Høy verdi",
+            "Basiskostnad",
+            "Forventet verdi"
+        ],
+        "additional_info": [
+            "Største usikkerhetene",
+            "Sentrale forutsetninger"
+        ]
+    },
+    "experience_feedback": {
+        "purpose": "Vedlikeholde prisdatabasen på byggeklossene",
+        "activities": [
+            "Jevnlig utgivelse av oppdaterte prislister",
+            "Indekserte verdier",
+            "Nye byggeklosser ved tilgjengelighet",
+            "Avtale møter med Bane NOR estimeringskollegaer"
+        ],
+        "importance": "Kostnadsdatabasen skal til enhver tid være oppdatert med virkelige kostnader"
+    },
+    "abbreviations": {
+        "AACEI": "The Association for the Advancement of Cost Engineering- International",
+        "KS1": "Kvalitetssikring 1 - kvalitetssikring av KVU",
+        "KS2": "Kvalitetssikring 2 - kvalitetssikring av forprosjekt",
+        "KVU": "Konseptutvalgsutredning - statlig faglig utredning (> 750 mill kr)",
+        "NTP": "Nasjonal Transportplan",
+        "UKM": "Utredningsledelse, klima og miljø",
+        "TEU": "Twenty-foot Equivalent Unit (20 fots container)"
+    },
+    "references": [
+        "Total Cost Management Framework - John K. Hollmann",
+        "Statens prosjektmodell - FIN mars 2019",
+        "AACEI RP No. 98R-18 Cost estimate classification system",
+        "Verdistyrt prosjektutvikling - Metier OEC 2019",
+        "US GAO Cost Estimating and Assessment Guide",
+        "Finansdepartementets veileder nr. 2 'Felles begrepsapparat KS2'",
+        "AACEI RP No. 34R-05 basis of estimate",
+        "Concept Rapport 11. Usikkerhetsanalyse",
+        "Prinsipper og krav ved samfunnsøkonomiske analyser - FIN april 2019"
+    ]
+}

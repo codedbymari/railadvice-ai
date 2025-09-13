@@ -1,0 +1,239 @@
+[
+    {
+        "title": "RailAdvice introduksjon og formål",
+        "category": "generelt",
+        "content": "RailAdvice spesialiserer seg på offentlige anskaffelser og innkjøp for jernbanesektoren. Dette er en detaljert veiledning for AI-assistenten om RailAdvice sin anskaffelsesekspertise, slik at konsulenter kan få umiddelbar støtte i innkjøpsprosesser.",
+        "metadata": {
+            "section": "introduksjon",
+            "keywords": [
+                "RailAdvice",
+                "offentlige anskaffelser",
+                "jernbane",
+                "konsulenter"
+            ]
+        }
+    },
+    {
+        "title": "Juridisk rammeverk - Hovedlovverk",
+        "category": "regelverk",
+        "content": "Hovedlovverk for offentlige anskaffelser:\n\nLov om offentlige anskaffelser (LOA):\n- Gjelder for alle offentlige innkjøp over terskelverdier\n- Krav til konkurranse, likebehandling og transparens\n- Spesielle regler gjelder for sektorvirksomheter som jernbane\n\nForskrift om offentlige anskaffelser (FOA):\n- Detaljerte prosedyreregler\n- Terskelverdier og frister\n- Dokumentasjonskrav",
+        "metadata": {
+            "section": "juridisk_rammeverk",
+            "keywords": [
+                "LOA",
+                "FOA",
+                "terskelverdier",
+                "konkurranse",
+                "transparens"
+            ]
+        }
+    },
+    {
+        "title": "EU-direktiver for jernbane",
+        "category": "eu_direktiver",
+        "content": "Relevante EU-direktiver:\n\nDirektiv 2014/24/EU (klassisk sektor)\nDirektiv 2014/25/EU (forsyningssektor - jernbane)\nDirektiv 2014/23/EU (konsesjonsdirektivet)\n\nJernbanespesifikke regler:\n- Følger forsyningssektordirektivet\n- Høyere terskelverdier enn klassisk sektor\n- Mer fleksible prosedyreregler\n- Særlige hensyn til sikkerhet og interoperabilitet",
+        "metadata": {
+            "section": "juridisk_rammeverk",
+            "keywords": [
+                "EU-direktiver",
+                "forsyningssektor",
+                "jernbane",
+                "sikkerhet",
+                "interoperabilitet"
+            ]
+        }
+    },
+    {
+        "title": "Åpen konkurranse - Prosedyre og anvendelse",
+        "category": "anskaffelsesprosedyrer",
+        "content": "Åpen konkurranse brukes for:\n- Enkle, veldefinerte anskaffelser\n- Standardiserte produkter/tjenester\n- Når markedet er godt kjent\n\nProsess:\n- Direkte kunngjøring i DOFFIN/TED\n- Alle kvalifiserte kan levere tilbud\n- Enkelt-trinns evaluering\n- Typisk tidsramme: 2-4 måneder\n\nRailAdvice anvendelse:\n- Standardiserte reservedeler\n- Enkle vedlikeholdstjenester\n- Konsulentbistand på definerte oppgaver",
+        "metadata": {
+            "section": "anskaffelsesprosedyrer",
+            "keywords": [
+                "åpen konkurranse",
+                "DOFFIN",
+                "TED",
+                "standardiserte produkter",
+                "2-4 måneder"
+            ]
+        }
+    },
+    {
+        "title": "Begrenset konkurranse - Komplekse tekniske løsninger",
+        "category": "anskaffelsesprosedyrer",
+        "content": "Begrenset konkurranse brukes for:\n- Komplekse tekniske løsninger\n- Begrenset antall kvalifiserte leverandører\n- Behov for forhåndskvalifisering\n\nTo-trinns prosess:\n1. Prekvalifisering\n2. Tilbudsinnhenting med begrenset antall inviterte (minimum 5)\n\nFordeler:\n- Mulighet for teknisk dialog før tilbud\n- Typisk tidsramme: 4-8 måneder\n\nRailAdvice prosjekter:\n- Signalanlegg og ERTMS-system\n- Spesialiserte jernbanekonsulent tjenester\n- Komplekse vedlikeholdskontrakter",
+        "metadata": {
+            "section": "anskaffelsesprosedyrer",
+            "keywords": [
+                "begrenset konkurranse",
+                "prekvalifisering",
+                "ERTMS",
+                "signalanlegg",
+                "4-8 måneder"
+            ]
+        }
+    },
+    {
+        "title": "Konkurransepreget dialog - Svært komplekse anskaffelser",
+        "category": "anskaffelsesprosedyrer",
+        "content": "Konkurransepreget dialog brukes for:\n- Svært komplekse anskaffelser\n- Behov for utvikling av løsninger\n- Usikkerhet om beste tekniske tilnærming\n\nTredelt prosess:\n1. Prekvalifisering\n2. Dialog med utvalgte kandidater\n3. Endelige tilbud\n\nKarakteristikk:\n- Intensiv dialog med utvalgte kandidater\n- Iterativ utvikling av løsninger\n- Typisk tidsramme: 12-24 måneder\n\nRailAdvice ekspertise:\n- Store rullende materiell-anskaffelser\n- Integrated transport solutions\n- PPP/PFI-prosjekter",
+        "metadata": {
+            "section": "anskaffelsesprosedyrer",
+            "keywords": [
+                "konkurransepreget dialog",
+                "komplekse anskaffelser",
+                "rullende materiell",
+                "PPP",
+                "12-24 måneder"
+            ]
+        }
+    },
+    {
+        "title": "Spesielle prosedyrer - Rammeavtaler og DPS",
+        "category": "spesielle_prosedyrer",
+        "content": "Rammeavtaler fordeler:\n- Effektiv gjentatte innkjøp\n- Forutsigbare priser og vilkår\n- Reduserte transaksjonskostnader\n- Fleksibilitet i leveringsvolum\n\nRailAdvice anvendelse:\n- Konsulentavtaler for ulike fagområder\n- Tekniske tjenester og support\n- Reservedeler og forbruksmateriell\n\nDynamiske innkjøpsordninger (DPS):\n- Åpne systemer hvor nye leverandører kan kvalifisere seg\n- Elektronisk plattform\n- Kontinuerlige mini-konkurranser",
+        "metadata": {
+            "section": "spesielle_prosedyrer",
+            "keywords": [
+                "rammeavtaler",
+                "DPS",
+                "gjentatte innkjøp",
+                "elektronisk plattform"
+            ]
+        }
+    },
+    {
+        "title": "Jernbanespesifikke utfordringer",
+        "category": "jernbaneutfordringer",
+        "content": "Tekniske utfordringer:\n- Høye sikkerhetskrav og sertifiseringsbehov\n- Interoperabilitetskrav mellom systemer\n- Lang teknisk levetid (20-40 år)\n- Komplekse grensesnitt og integrasjon\n\nKommersielle utfordringer:\n- Høye verdier og lange kontraktsperioder\n- Begrenset antall kvalifiserte leverandører\n- Komplekse risikofordelinger\n- Livssykluskostnader vs. investeringskostnader\n\nRegulatoriske utfordringer:\n- Endringer i regelverk underveis\n- Nasjonal vs. EU-regulering\n- Sikkerhetsdemonstrasjon og -godkjenning\n- Miljøkrav og bærekraftshensyn",
+        "metadata": {
+            "section": "jernbanespesifikke_anskaffelser",
+            "keywords": [
+                "sikkerhetskrav",
+                "interoperabilitet",
+                "livssykluskostnader",
+                "20-40 år",
+                "regulering"
+            ]
+        }
+    },
+    {
+        "title": "Kontraktstyper - Traditional til PPP",
+        "category": "kontraktstyper",
+        "content": "Traditional Procurement:\n- Separat design og bygge/levere\n- Oppdragsgiver beholder designrisiko\n- Detaljert spesifikasjon fra start\n- Egnet for: veldefinerte løsninger, erfaren oppdragsgiver\n\nDesign-Build (DB):\n- Integrert design og utførelse\n- Leverandør overtar designrisiko\n- Funksjonelle krav fra oppdragsgiver\n- RailAdvice erfaring: signalanlegg, infrastruktur\n\nDesign-Build-Maintain (DBM):\n- Inkluderer langsiktig vedlikehold (15-30 år)\n- Livssyklusperspektiv på kostnader\n- Insentiv for kvalitet og holdbarhet\n\nPublic-Private Partnership (PPP):\n- Privat finansiering og utførelse\n- Overføring av betydelig risiko\n- Langsiktige servicekontrakter\n- RailAdvice kompetanse: PPP-strukturering, risikoallokering",
+        "metadata": {
+            "section": "kontraktstyper",
+            "keywords": [
+                "traditional procurement",
+                "design-build",
+                "DBM",
+                "PPP",
+                "designrisiko",
+                "livssyklus"
+            ]
+        }
+    },
+    {
+        "title": "Behovsanalyse og anskaffelsesstrategi",
+        "category": "anskaffelsesprosess",
+        "content": "Nøkkelspørsmål for behovsidentifikasjon:\n1. Hva er det overordnede forretningsbehovet?\n2. Hvem er de primære brukerne av løsningen?\n3. Hvilke eksisterende systemer må det integreres med?\n4. Hva er kritiske suksessfaktorer?\n5. Hvilke budsjett- og tidsrammer gjelder?\n\nMarkedsanalyse inkluderer:\n- Kartlegging av potensielle leverandører\n- Vurdering av markedsmodenhet\n- Identifikasjon av teknologiske alternativer\n- Analyse av tidligere lignende anskaffelser\n\nRailAdvice verktøy:\n- Leverandørdatabaser for jernbanesektoren\n- Erfaringsbank fra tidligere prosjekter\n- Nettverk av tekniske eksperter\n- Markedsintell og benchmarking",
+        "metadata": {
+            "section": "anskaffelsesprosess",
+            "keywords": [
+                "behovsanalyse",
+                "markedsanalyse",
+                "leverandører",
+                "benchmarking"
+            ]
+        }
+    },
+    {
+        "title": "Konkurransedokumenter - Kunngjøring og spesifikasjoner",
+        "category": "konkurransedokumenter",
+        "content": "Kunngjøring må inneholde:\n- Korrekt CPV-koder for jernbanetjenester\n- Riktige terskelverdier og frister\n- Klar beskrivelse av leveransen\n- Evaluationskriterier og vekting\n\nJernbanespesifikke CPV-koder:\n- 34600000: Rullende materiell for jernbane\n- 34610000: Lokomotiver\n- 34620000: Passasjervogner\n- 45230000: Anleggsarbeid for jernbaneinfrastruktur\n- 50220000: Vedlikehold av jernbanemateriell\n\nTekniske spesifikasjoner:\n- TSI-compliance sjekker\n- Interoperabilitetskrav\n- RAMS-krav og -demonstrasjon\n- Cybersikkerhetskrav\n\nKontraktsklausuler:\n- Sikkerhetsdokumentasjon og -godkjenning\n- Garanti og livssyklussupport\n- Reservedeler og teknologioppdateringer",
+        "metadata": {
+            "section": "konkurransedokumenter",
+            "keywords": [
+                "CPV-koder",
+                "TSI-compliance",
+                "RAMS",
+                "cybersikkerhet",
+                "garanti"
+            ]
+        }
+    },
+    {
+        "title": "Tilbudsevaluering - Kvalifikasjon og teknisk vurdering",
+        "category": "tilbudsevaluering",
+        "content": "Kvalifikasjonskrav jernbane:\n- Relevant faglig kompetanse og erfaring\n- Økonomisk og finansiell soliditet\n- Teknisk kapasitet og utstyr\n- Kvalitetsstyringssystemer\n- HMS og sikkerhetsledelse\n\nTeknisk evaluering vekting:\n- Compliance med tekniske krav (60-70%)\n- Teknisk kvalitet og innovation (15-20%)\n- Vedlikeholds- og supportløsning (10-15%)\n- Risikohåndtering og -reduksjon (5-10%)\n\nRailAdvice verktøy:\n- Tekniske evalueringsmatriser\n- Benchmarking mot beste praksis\n- Ekspertpaneler for teknisk vurdering\n- Due diligence på leverandørers teknologi\n\nLife Cycle Cost (LCC) modellering:\n- Innkjøpskostnad (CAPEX)\n- Driftskostnader (OPEX)\n- Vedlikeholdskostnader\n- Oppgraderingskostnader\n- Slutt-av-liv kostnader",
+        "metadata": {
+            "section": "tilbudsevaluering",
+            "keywords": [
+                "kvalifikasjon",
+                "teknisk evaluering",
+                "LCC",
+                "CAPEX",
+                "OPEX",
+                "due diligence"
+            ]
+        }
+    },
+    {
+        "title": "Kontraktsforhandlinger - Jernbanespesifikke tema",
+        "category": "kontraktsinngåelse",
+        "content": "Jernbanespesifikke forhandlingstema:\n- Teknisk risiko og ansvarsfordeling\n- Endringsprosedyrer og prisjusteringer\n- Milestone-plan og leveranseskjema\n- Garanti og ytelseskrav\n- Support og reservedeler\n\nViktige prinsipper:\n- Dokumenter alle endringsforslag\n- Involver juridisk ekspertise ved behov\n- Sikre balansert risikofordeling\n- Etabler klare kommunikasjonslinjer",
+        "metadata": {
+            "section": "kontraktsinngåelse",
+            "keywords": [
+                "teknisk risiko",
+                "endringsprosedyrer",
+                "milestone",
+                "juridisk ekspertise"
+            ]
+        }
+    },
+    {
+        "title": "AI-assistenten retningslinjer - Umiddelbar støtte",
+        "category": "ai_retningslinjer",
+        "content": "AI-assistenten skal umiddelbart:\n\n1. KLASSIFISER anskaffelsen:\n- Verdi (over/under terskelverdier)\n- Kompleksitet (enkel/middels/kompleks)\n- Tidskritikalitet (høy/middels/lav)\n\n2. ANBEFAL prosedyre:\n- Åpen konkurranse for enkle anskaffelser\n- Begrenset konkurranse for komplekse\n- Konkurransepreget dialog for svært komplekse\n\n3. IDENTIFISER risikofaktorer:\n- Tekniske integrasjonsutfordringer\n- Leverandørmarked-begrensninger\n- Regulatoriske endringer\n- Tidspress og ressursbegrensninger",
+        "metadata": {
+            "section": "ai_retningslinjer",
+            "keywords": [
+                "klassifisering",
+                "kompleksitet",
+                "risikofaktorer",
+                "prosedyre"
+            ]
+        }
+    },
+    {
+        "title": "Eskaleringsmatrise - Når involvere eksperter",
+        "category": "ai_retningslinjer",
+        "content": "Grønt nivå (AI kan håndtere):\n- Generelle spørsmål om prosedyrer\n- Referanser til tidligere prosjekter\n- Tidsfrister og formalkrav\n- Standarddokumentmaler\n\nGult nivå (involver ekspert):\n- Komplekse tekniske spesifikasjoner\n- Tverrfaglige evalueringer\n- Kontraktsforhandlinger\n- Leverandørkonflikt\n\nRødt nivå (umiddelbar ekspert-støtte):\n- Juridiske tvister eller protester\n- Sikkerhetskritiske avvik\n- Store budsjettavvik\n- Leverandørkonkurs eller force majeure",
+        "metadata": {
+            "section": "ai_retningslinjer",
+            "keywords": [
+                "eskalering",
+                "ekspert",
+                "juridiske tvister",
+                "sikkerhetskritisk",
+                "force majeure"
+            ]
+        }
+    },
+    {
+        "title": "Kvalitetssikring og compliance sjekklister",
+        "category": "kvalitetssikring",
+        "content": "Prosedyre-compliance:\n- Riktig prosedyre valgt for anskaffelsen\n- Korrekte terskelverdier og frister anvendt\n- Kunngjøring publisert i riktige kanaler\n- Evaluationskriterier er objektive og relevante\n\nDokumentasjon:\n- Alle beslutninger dokumentert og begrunnet\n- Møtereferat fra leverandørdialog ført\n- Evaluering sporbar og etterprøvbar\n- Kontraktsendringer korrekt håndtert\n\nRisikohåndtering:\n- Tekniske risikoer identifisert og adressert\n- Kommersiell risiko vurdert og fordelt\n- Regulatorisk risiko analysert\n- Beredskapsplaner for kritiske leveranser",
+        "metadata": {
+            "section": "kvalitetssikring",
+            "keywords": [
+                "compliance",
+                "dokumentasjon",
+                "sporbarhet",
+                "beredskapsplaner",
+                "risiko"
+            ]
+        }
+    }
+]

@@ -1,0 +1,6 @@
+{
+  "id": "2b718c18-4aa1-4acc-a035-ef3b9d528c37",
+  "title": "Flytoget Type 78 - RAMS og LCC optimalisering",
+  "content": "PROSJEKT: Flytoget Type 78 - RAMS og LCC optimalisering\nKunde: Flytoget AS\nType: rolling_stock\nStatus: Pågående (langtidskontrakt)\nÅr: 2019\n\nBeskrivelse: Teknisk bistand for nye flytogsett Type 78. Lars Mortvedt har RAMS/LCC ansvar og deltar i designoptimalisering.\n\nOmfang: RAMS analyse for Type 78 | Life Cycle Cost (LCC) beregninger | Vedlikeholdsstrategi utvikling | Pålitelighetsvurderinger | Teknisk support til leverandør\nTeknologier: RAM | LCC | rolling_stock | reliability_analysis\n\nBudsjett/Verdi: 450 millioner NOK (totalt Type 78 program)\n\nResultater: Suksess - forbedret pålitelighet og reduserte LCC-kostnader\n\nNøkkeldata: {\"target_availability\": \"98.5%\", \"mtbf_target\": \"50,000 km\", \"lifecycle_years\": \"30 år\"}",
+  "created_at": "2025-09-13T20:41:45.446291"
+}

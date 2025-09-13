@@ -1,0 +1,283 @@
+{
+    "title": "RailAdvice - RAMS Analyser og Sikkerhetshåndtering",
+    "category": "rams_safety",
+    "content": "Detaljert AI-veiledning for RAMS (Reliability, Availability, Maintainability, Safety) arbeid i jernbaneprosjekter, basert på RailAdvice sin ekspertise og bransjens beste praksis.",
+    "rams_fundamentals": {
+        "reliability": {
+            "definition": "Sannsynlighet for at et system/komponent utfører sin funksjon uten feil under spesifiserte betingelser i en gitt tidsperiode.",
+            "metrics": [
+                "MTBF (Mean Time Between Failures)"
+            ],
+            "typical_requirements": {
+                "Critical safety systems": ">10,000 timer",
+                "Traction systems": "8,000–12,000 timer",
+                "Auxiliary systems": "3,000–8,000 timer",
+                "Comfort systems": "1,000–3,000 timer"
+            },
+            "ai_guidance": [
+                "Hva er acceptable failure rate for deres operasjon?",
+                "Hvilke komponenter er most critical for system operation?",
+                "Hva er consequence av failure for different subsystems?",
+                "Har dere historical data på current system performance?"
+            ]
+        },
+        "availability": {
+            "definition": "Andel av tiden et system er operativt og klar for bruk.",
+            "formula": "A = MTBF / (MTBF + MTTR)",
+            "factors": [
+                "Scheduled vs. unscheduled downtime",
+                "Spare parts availability",
+                "Maintenance accessibility",
+                "Repair crew competence"
+            ]
+        },
+        "maintainability": {
+            "definition": "Hvor enkelt og effektivt et system kan vedlikeholdes, repareres og modifiseres.",
+            "key_parameters": [
+                "MTTR",
+                "Task complexity",
+                "Accessibility",
+                "Skill requirements",
+                "Special tools"
+            ]
+        },
+        "safety": {
+            "principles": [
+                "Fail-safe design",
+                "Defense in depth",
+                "Independent safety systems",
+                "Human factors"
+            ]
+        }
+    },
+    "standards": {
+        "EN 50126": "RAMS Lifecycle – 14 faser fra konsept til avvikling",
+        "EN 50128": "Software for Railway Safety – SIL-nivåer for programvare",
+        "EN 50129": "Electronic Safety-Related Systems – Hardware og fail-safe design",
+        "CSM": "Common Safety Method – systemdefinisjon, hazard identification, risk evaluation og acceptance"
+    },
+    "analysis_methods": {
+        "FMEA": {
+            "steps": [
+                "Identifisere failure modes",
+                "Analysere effects of failure",
+                "Vurdere severity, occurrence, detection",
+                "Kalkulere RPN = Severity × Occurrence × Detection",
+                "Implementere corrective actions"
+            ],
+            "ai_checks": [
+                "Er alle kritiske komponenter inkludert?",
+                "Er failure modes realistiske?",
+                "Er severity vurderinger konsistente?",
+                "Er detection methods tilstrekkelige?",
+                "Er corrective actions spesifikke og gjennomførbare?"
+            ]
+        },
+        "FTA": {
+            "steps": [
+                "Definere top event",
+                "Identifisere immediate causes",
+                "Dekomponere til root causes",
+                "Bruke logic gates (AND, OR)",
+                "Kvantifisere sannsynligheter"
+            ],
+            "top_events": [
+                "Train collision",
+                "Derailment",
+                "Fire in passenger compartment",
+                "Signal passed at danger (SPAD)",
+                "Wrong side door opening"
+            ]
+        },
+        "Hazard Identification": {
+            "techniques": [
+                "HAZOP",
+                "What-if",
+                "Checklist",
+                "Historical analysis",
+                "Expert workshops"
+            ],
+            "ai_guidance": [
+                "Normal operation: Hva kan gå galt?",
+                "Degraded operation: Hvordan påvirkes sikkerhet?",
+                "Maintenance: Hvilke farer oppstår?",
+                "Emergency: Hvordan håndteres?",
+                "Environmental: Eksterne påvirkninger?"
+            ]
+        }
+    },
+    "safety_management": {
+        "SMS_components": {
+            "Policy": [
+                "Safety objectives",
+                "Leadership commitment",
+                "Resource allocation"
+            ],
+            "Risk Management": [
+                "Identification",
+                "Assessment",
+                "Control",
+                "Monitoring"
+            ],
+            "Assurance": [
+                "Performance monitoring",
+                "Audits",
+                "Incident investigation"
+            ],
+            "Promotion": [
+                "Training",
+                "Communication",
+                "Culture development"
+            ]
+        },
+        "safety_case_structure": "Beskriver systemets sikkerhetsargumentasjon og dokumentasjon gjennom hele livssyklusen"
+    },
+    "safety_case_structure": [
+        "Executive Summary: Project overview, safety objectives, key arguments, outstanding issues",
+        "System Description: Technical specs, operational concepts, interfaces",
+        "Safety Management: Organization, processes, competence",
+        "Hazard Analysis: Methods, evaluation, acceptance criteria",
+        "Risk Control Measures: Technical systems, procedures, human factors",
+        "Safety Assurance: Verification, validation, monitoring plans"
+    ],
+    "isa_process": {
+        "description": "Uavhengig vurdering av safety case og RAMS-prosesser",
+        "checklist": [
+            "Er safety case complete og coherent?",
+            "Er hazard analysis systematic og comprehensive?",
+            "Er risk evaluation methodology sound?",
+            "Er safety requirements traceable?",
+            "Er verification activities adequate?",
+            "Er competence requirements defined?",
+            "Er safety assurance processes established?"
+        ]
+    },
+    "rams_program": {
+        "plan_content": {
+            "objectives": [
+                "Quantitative targets",
+                "Qualitative requirements",
+                "Success criteria"
+            ],
+            "organization": [
+                "Roles",
+                "Competence",
+                "Reporting"
+            ],
+            "activities": [
+                "FMEA, FTA",
+                "Testing",
+                "Documentation"
+            ],
+            "integration": [
+                "Project processes",
+                "Quality management",
+                "Supplier coordination"
+            ],
+            "monitoring": [
+                "KPIs",
+                "Reporting",
+                "Audits"
+            ]
+        }
+    },
+    "verification_validation": {
+        "verification": {
+            "analytical": [
+                "Modeling",
+                "Simulation",
+                "Expert review"
+            ],
+            "testing": [
+                "Component",
+                "Subsystem",
+                "System"
+            ],
+            "demonstration": [
+                "Operational scenarios",
+                "Performance",
+                "Stress testing"
+            ]
+        },
+        "validation": {
+            "field_testing": [
+                "Real-world trials",
+                "Performance monitoring"
+            ],
+            "acceptance_criteria": [
+                "Quantitative targets",
+                "Qualitative fulfillment",
+                "Stakeholder acceptance"
+            ]
+        }
+    },
+    "ai_guidance": {
+        "questions": {
+            "RAMS-krav": [
+                "Hva er operational requirements?",
+                "Hvilke benchmarks finnes?",
+                "Hva er acceptable risk levels?"
+            ],
+            "RAMS-analyse": [
+                "Planlegging: Define boundaries, methods, data, team",
+                "Gjennomføring: Execute, document, validate, improve",
+                "Rapportering: Compile, recommend, present, implement"
+            ]
+        },
+        "crisis_protocol": [
+            "STOPP - safety-critical situasjon",
+            "Eskaler til safety expert",
+            "Stopp aktivitet hvis unsafe",
+            "Dokumenter alt",
+            "Expert kontakter innen [tid]"
+        ]
+    },
+    "quality_control": {
+        "common_mistakes": [
+            "Undervurdere kompleksitet",
+            "Gi SIL-klassifikasjoner uten ekspert",
+            "Anbefale shortcuts",
+            "Ignorere krav",
+            "Undervurdere human factors"
+        ],
+        "best_practices": [
+            "Safety first",
+            "Systematic approach",
+            "Dokumentasjon",
+            "Expert involvement",
+            "Continuous improvement",
+            "Stakeholder engagement"
+        ]
+    },
+    "documentation": {
+        "planning": [
+            "RAMS Plan",
+            "Safety Plan",
+            "Verification Plan"
+        ],
+        "analysis": [
+            "FMEA Reports",
+            "FTA Results",
+            "Hazard Assessments",
+            "Safety Case"
+        ],
+        "verification": [
+            "Test Plans",
+            "Test Reports",
+            "Verification Matrix",
+            "Validation Reports"
+        ],
+        "operations": [
+            "Safety Instructions",
+            "Emergency Procedures",
+            "Training Materials"
+        ],
+        "traceability": [
+            "Requirements til verification",
+            "Analysis til design",
+            "Tests til acceptance",
+            "Hazards til controls",
+            "Changes til impact"
+        ]
+    }
+}

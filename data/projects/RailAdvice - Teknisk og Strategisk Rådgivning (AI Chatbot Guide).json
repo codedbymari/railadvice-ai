@@ -1,0 +1,137 @@
+{
+    "title": "RailAdvice - Teknisk og Strategisk Rådgivning",
+    "category": "consulting_services",
+    "content": "AI-assistentens kunnskapsbase for å støtte konsulenter med teknisk og strategisk rådgivning innen jernbane.",
+    "technical_consulting": {
+        "domains": {
+            "rullende_materiell": [
+                "Type- og leverandørvurderinger",
+                "Tekniske spesifikasjoner og kravstilling",
+                "Kompatibilitet med infrastruktur",
+                "Ytelsesoptimalisering",
+                "Livssyklusanalyser",
+                "Vedlikeholdsstrategier"
+            ],
+            "signalanlegg": [
+                "CBTC-systemer",
+                "ERTMS/ETCS implementering",
+                "Konvensjonelle signalanlegg",
+                "ATC/ATP",
+                "Cybersikkerhet"
+            ],
+            "infrastruktur": [
+                "Spor og sporanlegg",
+                "Kjøreledningsanlegg",
+                "Stasjonsanlegg",
+                "Depot og verksted",
+                "Telekommunikasjon"
+            ]
+        },
+        "delivery_models": [
+            "Ad-hoc teknisk support",
+            "Second opinions",
+            "Teknisk due diligence",
+            "Langsiktige rådgivningsavtaler",
+            "Strategisk teknologirådgivning",
+            "Kompetanseutvikling"
+        ]
+    },
+    "strategic_consulting": {
+        "areas": {
+            "markedsanalyser": [
+                "Konkurranseanalyser",
+                "Teknologitrender",
+                "Regulatoriske endringer",
+                "Forretningsmuligheter"
+            ],
+            "organisasjonsutvikling": [
+                "Kompetansebehov",
+                "Strukturtilpasning",
+                "Endringsledelse",
+                "Sikkerhetskultur"
+            ],
+            "regelverk": [
+                "Fourth Railway Package",
+                "TSI",
+                "CSM",
+                "Miljøkrav"
+            ]
+        },
+        "support": [
+            "Regelverkstolkning",
+            "Sertifiseringsprosesser",
+            "Compliance-sjekker",
+            "Regulatorisk rapportering"
+        ]
+    },
+    "tools_methods": {
+        "systemanalyse": [
+            "Requirements engineering",
+            "Systemarkitektur",
+            "Interface-design",
+            "Kompatibilitetsanalyser",
+            "Teknisk risikovurdering"
+        ],
+        "økonomiske_analyser": [
+            "LCC-modellering",
+            "TCO-beregninger",
+            "NPV og IRR",
+            "Cost-benefit analyser"
+        ],
+        "strategiverktøy": [
+            "SWOT-analyser",
+            "Scenario-planlegging",
+            "Stakeholder-mapping",
+            "Roadmap-utvikling"
+        ]
+    },
+    "ai_guidance": {
+        "identifikasjon": [
+            "Teknisk domene",
+            "Kompleksitetsnivå",
+            "Tidsperspektiv",
+            "Kundens modenhet"
+        ],
+        "response_structure": [
+            "Bekreft forståelse",
+            "Gi initial veiledning",
+            "Referer til ekspert",
+            "Pek på relevante standarder",
+            "Foreslå neste steg"
+        ],
+        "red_flags": [
+            "Sikkerhetskritiske systemer",
+            "Nye regulatoriske krav",
+            "Komplekse integrasjonsutfordringer",
+            "Budsjettoverskridelser",
+            "Konflikter med leverandører"
+        ],
+        "quality_checks": [
+            "Vurder sikkerhetsimplikasjoner",
+            "Sjekk regulatoriske krav",
+            "Anbefal tverrfaglig tilnærming",
+            "Pek på dokumentasjonsbehov",
+            "Foreslå risikohåndtering"
+        ]
+    },
+    "special_situations": {
+        "akutt_hjelp": [
+            "Gi praktisk veiledning",
+            "Kontakt ekspert",
+            "Dokumenter henvendelsen",
+            "Sett opp hasteoppfølging"
+        ],
+        "kompetansegap": [
+            "Vær ærlig om begrensninger",
+            "Referer til trusted partners",
+            "Foreslå eksterne eksperter",
+            "Dokumenter gap for utvikling"
+        ],
+        "tverrfaglige_utfordringer": [
+            "Identifiser berørte fagområder",
+            "Sett sammen tverrfaglig team",
+            "Sikre helhetlig tilnærming",
+            "Etabler kommunikasjonsplan"
+        ]
+    }
+}

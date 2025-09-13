@@ -1,0 +1,168 @@
+[
+  {
+    "title": "Fornebu Base Depot - Fullservice depotutvikling",
+    "client": "Prosjekteringsgruppen Fornebubanen",
+    "project_code": "FB-DEPOT-2023",
+    "type": "depot_development",
+    "status": "Pågående",
+    "start_date": "2023-01-15",
+    "estimated_completion": "2024-12-31",
+    "description": "Komplett utvikling av depot med verksted, renhold og hensetting for Fornebubanen. Inkluderer teknisk design, RAMS analyse og prosjektledelse.",
+    "scope": [
+      "Depotlayout og optimalisering",
+      "Verkstedutforming for vedlikehold",
+      "Renholdsanlegg design",
+      "Hensettingskapasitet beregning",
+      "RAMS dokumentasjon for depot"
+    ],
+    "technologies": [
+      "depot",
+      "workshop",
+      "maintenance",
+      "cleaning_systems"
+    ],
+    "deliverables": [
+      "Tekniske tegninger",
+      "RAMS rapport",
+      "Kostnadsanalyse"
+    ],
+    "budget": "Konfidensielt - kontakt for estimat",
+    "year": 2023,
+    "outcome": "Pågående - foreløpige resultater positive"
+  },
+  {
+    "title": "Flytoget Type 78 - RAMS og LCC optimalisering",
+    "client": "Flytoget AS",
+    "project_code": "FLY-T78-2019",
+    "type": "rolling_stock",
+    "status": "Pågående (langtidskontrakt)",
+    "start_date": "2019-05-01",
+    "description": "Teknisk bistand for nye flytogsett Type 78. Lars Mortvedt har RAMS/LCC ansvar og deltar i designoptimalisering.",
+    "scope": [
+      "RAMS analyse for Type 78",
+      "Life Cycle Cost (LCC) beregninger",
+      "Vedlikeholdsstrategi utvikling",
+      "Pålitelighetsvurderinger",
+      "Teknisk support til leverandør"
+    ],
+    "technologies": [
+      "RAM",
+      "LCC",
+      "rolling_stock",
+      "reliability_analysis"
+    ],
+    "consultant": "Lars Mortvedt",
+    "key_metrics": {
+      "target_availability": "98.5%",
+      "mtbf_target": "50,000 km",
+      "lifecycle_years": "30 år"
+    },
+    "estimated_value": "450 millioner NOK (totalt Type 78 program)",
+    "railadvice_fee": "Konfidensielt - flerårig rammeavtale",
+    "year": 2019,
+    "outcome": "Suksess - forbedret pålitelighet og reduserte LCC-kostnader"
+  },
+  {
+    "title": "SJ Norge Materiellavdeling - Kontraktsansvar Trafikkpakke 2",
+    "client": "SJ Norge AS",
+    "project_code": "SJ-TP2-2020",
+    "type": "contract_management",
+    "status": "Avsluttet",
+    "start_date": "2020-03-01",
+    "end_date": "2021-08-31",
+    "description": "Kontraktsansvarlig for trafikkpakke 2 omfattende Dovrebanen og dieselstrekninger nord. Teknisk ledelse av materiell og drift.",
+    "scope": [
+      "Materiellstrategi for Dovrebanen",
+      "Dieseltog optimalisering",
+      "Vedlikeholdsplanlegging",
+      "Kontraktsoppfølging",
+      "Teknisk rådgivning til drift"
+    ],
+    "routes": [
+      "Dovrebanen",
+      "Nordlandsbanen",
+      "Meråkerbanen"
+    ],
+    "technologies": [
+      "contract",
+      "diesel",
+      "operations",
+      "maintenance_planning"
+    ],
+    "key_results": [
+      "15% forbedring i punktlighet",
+      "12% reduksjon i vedlikeholdskostnader",
+      "Forbedret materiellytelse"
+    ],
+    "contract_value": "Konfidensielt",
+    "year": 2020,
+    "outcome": "Suksess - kontrakt levert i henhold til plan"
+  },
+  {
+    "title": "Bybanen Utvikling - Sikkerhetssjef (Rammeavtale)",
+    "client": "Bybanen Utvikling AS",
+    "project_code": "BY-SIKK-2023",
+    "type": "safety_management",
+    "status": "Aktiv rammeavtale",
+    "start_date": "2023-06-01",
+    "description": "Rammeavtale som sikkerhetssjef for Bybanen Utvikling. Ansvar for sikkerhetsstyring og RAMS i bybaneutvikling.",
+    "scope": [
+      "Sikkerhetsledelse og -styring",
+      "HAZOP og HAZID gjennomføring",
+      "Risikovurdering bybaneprosjekter",
+      "Safety case utarbeidelse",
+      "Koordinering med myndigheter"
+    ],
+    "technologies": [
+      "safety",
+      "light_rail",
+      "management",
+      "hazop",
+      "risk_assessment"
+    ],
+    "deliverables": [
+      "Sikkerhetspolitikk",
+      "RAMS dokumentasjon",
+      "Safety cases"
+    ],
+    "framework_value": "Rammeavtale - timepris basis",
+    "year": 2023,
+    "outcome": "Pågående - god fremdrift i sikkerhetsstyring"
+  },
+  {
+    "title": "Bane NOR RAMS Signal - Multippel signalprosjekter",
+    "client": "Bane NOR SF",
+    "project_code": "BN-RAMS-SIG-2024",
+    "type": "RAMS_analysis",
+    "status": "Pågående",
+    "start_date": "2024-01-01",
+    "description": "RAMS-rådgiving i flere signalprosjekter for Bane NOR. Omfatter både nye installasjoner og oppgraderinger.",
+    "scope": [
+      "RAMS analyse signalsystemer",
+      "FMEA for kritiske komponenter",
+      "Sikkerhetsdokumentasjon",
+      "CSM-RA samsvarsvurdering",
+      "Teknisk support under installasjon"
+    ],
+    "signal_types": [
+      "ETCS Level 2",
+      "ATC",
+      "Conventional signaling"
+    ],
+    "technologies": [
+      "RAMS",
+      "signaling",
+      "safety",
+      "ETCS",
+      "FMEA"
+    ],
+    "geographical_scope": [
+      "Østlandet",
+      "Sørlandet",
+      "Vestlandet"
+    ],
+    "estimated_value": "2-5 millioner NOK (total portefølje)",
+    "year": 2024,
+    "outcome": "Pågående - flere milepæler levert i tide"
+  }
+]

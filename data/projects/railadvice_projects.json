@@ -1,0 +1,63 @@
+[
+    {
+        "title": "Fornebu Base Depot",
+        "client": "Prosjekteringsgruppen Fornebubanen",
+        "type": "depot_development",
+        "description": "Utvikling av depot med verksted, renhold og hensetting for Fornebubanen",
+        "technologies": [
+            "depot",
+            "workshop",
+            "maintenance"
+        ],
+        "year": 2023
+    },
+    {
+        "title": "Flytoget Type 78",
+        "client": "Flytoget",
+        "type": "rolling_stock",
+        "description": "Teknisk bistand for nye flytogsett. Lars har RAM/LCC ansvar siden mai 2019.",
+        "technologies": [
+            "RAM",
+            "LCC",
+            "rolling_stock"
+        ],
+        "consultant": "Lars Mortvedt",
+        "year": 2019
+    },
+    {
+        "title": "SJ Norge Materiellavdeling",
+        "client": "SJ Norge",
+        "type": "contract_management",
+        "description": "Kontraktsansvarlig for trafikkpakke 2 - Dovrebanen og dieselstrekninger nord",
+        "technologies": [
+            "contract",
+            "diesel",
+            "operations"
+        ],
+        "year": 2020
+    },
+    {
+        "title": "Bybanen Sikkerhetssjef",
+        "client": "Bybanen Utvikling",
+        "type": "safety",
+        "description": "Rammeavtale som sikkerhetssjef for Bybanen Utvikling",
+        "technologies": [
+            "safety",
+            "light_rail",
+            "management"
+        ],
+        "year": 2023
+    },
+    {
+        "title": "Bane NOR RAMS Signal",
+        "client": "Bane NOR",
+        "type": "RAMS",
+        "description": "RAMS-rådgiving i flere signalprosjekter for Bane NOR",
+        "technologies": [
+            "RAMS",
+            "signaling",
+            "safety"
+        ],
+        "year": 2024
+    }
+]

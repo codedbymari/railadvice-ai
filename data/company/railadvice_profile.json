@@ -1,0 +1,98 @@
+{
+  "basic_info": {
+    "name": "RailAdvice AS",
+    "founded": "2018",
+    "location": "Oslo, Norge",
+    "website": "www.railadvice.no",
+    "industry": "Jernbanekonsulenter",
+    "employees": "10-20 ansatte",
+    "languages": [
+      "Norsk",
+      "Engelsk",
+      "Svensk",
+      "Dansk"
+    ]
+  },
+  "core_competencies": [
+    "RAMS (Reliability, Availability, Maintainability, Safety) analyse",
+    "ETCS (European Train Control System) implementering",
+    "TSI (Technical Specifications for Interoperability) samsvar",
+    "Jernbaneinfrastruktur design og optimalisering",
+    "Sikkerhetsanalyse (HAZOP, FMEA, HAZID)",
+    "Prosjektledelse for jernbaneprosjekter",
+    "Due diligence og teknisk rådgivning",
+    "Regelverk og godkjenningsprosesser",
+    "Rolling stock evaluering og optimalisering",
+    "Depot design og drift"
+  ],
+  "certifications": [
+    "CENELEC sertifiseringer",
+    "EU TSI ekspertise",
+    "ETCS Level 1 og 2 kompetanse",
+    "RAMS analysemetodikk",
+    "Norsk jernbaneregelverk",
+    "Internasjonal jernbanestandard"
+  ],
+  "key_personnel": {
+    "Lars Mortvedt": {
+      "role": "Senior konsulent / Prosjektleder",
+      "expertise": [
+        "RAMS",
+        "LCC",
+        "Rolling stock",
+        "Prosjektledelse"
+      ],
+      "experience": "15+ år jernbaneerfaring",
+      "active_since": "Mai 2019",
+      "current_projects": [
+        "Flytoget Type 78 RAM/LCC ansvar",
+        "Bane NOR RAMS signalprosjekter"
+      ]
+    }
+  },
+  "service_areas": {
+    "RAMS_services": {
+      "description": "Komplett RAMS analyse og dokumentasjon",
+      "deliverables": [
+        "RAMS plan",
+        "Sikkerhetsdokumentasjon",
+        "Risikoanalyse"
+      ],
+      "standards": [
+        "EN 50126",
+        "EN 50128",
+        "EN 50129"
+      ],
+      "typical_cost": "500,000 - 2,000,000 NOK per prosjekt"
+    },
+    "ETCS_services": {
+      "description": "ETCS implementering og optimalisering",
+      "levels": [
+        "ETCS Level 1",
+        "ETCS Level 2",
+        "ETCS Level 3"
+      ],
+      "deliverables": [
+        "ETCS design",
+        "Kostnad-nytte analyse",
+        "Implementeringsplan"
+      ],
+      "typical_cost": "15-25 millioner NOK per 100km implementering"
+    },
+    "project_management": {
+      "description": "Prosjektledelse for jernbaneprosjekter",
+      "project_types": [
+        "Infrastruktur",
+        "Rolling stock",
+        "Signaling",
+        "Depot"
+      ],
+      "methodologies": [
+        "PRINCE2",
+        "PMI",
+        "Jernbanespesifikk"
+      ],
+      "typical_duration": "6-36 måneder"
+    }
+  }
+}
