@@ -210,7 +210,8 @@ Muligheter: {' | '.join(market_item.get('opportunities', []))}"""
     
     # Now initialize AI with the loaded documents
     print("\n🤖 Initializing AI engine with loaded documents...")
-    ai = RailAdviceAI(use_manual_docs=True)
+
+    ai = RailAdviceAI()
     print("✅ RailAdvice AI ready with complete knowledge base!")
     
     return ai

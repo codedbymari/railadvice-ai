@@ -1,0 +1,39 @@
+{
+  "title": "RailAdvice AI Knowledge Base - Additional Information",
+  "doc_type": "questions",
+  "category": "generell informasjon",
+  "tags": ["faq", "spørsmål", "svar", "vedlikehold", "sikkerhet"],
+  "questions_and_answers": [
+    {
+      "id": "q_om_tsi",
+      "question": "Hva er TSI?",
+      "answer": "TSI står for Technical Specifications for Interoperability. Dette er tekniske krav som skal sikre at jernbanenettverket, infrastruktur, rullende materiell og kontrollsystemer fungerer sømløst sammen på tvers av europeiske land.",
+      "related_documents": ["TSI Infrastructure - Tekniske krav infrastruktur"]
+    },
+    {
+      "id": "q_om_lcc",
+      "question": "Hva er LCC?",
+      "answer": "LCC står for Life Cycle Cost, eller livssykluskostnad. Det er en analysemetode som vurderer alle kostnader knyttet til et system eller produkt gjennom hele dets levetid, fra design og produksjon til drift, vedlikehold og avhending.",
+      "related_documents": ["Rolling Stock LCC - Life Cycle Cost analyse", "Flytoget Type 78 - RAMS og LCC optimalisering"]
+    },
+    {
+      "id": "q_om_markedet",
+      "question": "Hva er status for det norske jernbanemarkedet?",
+      "answer": "Det norske jernbanemarkedet er i konstant utvikling, med fokus på digitalisering, elektrifisering og nye signalsystemer. Dokumentasjonen vår fra 2024 beskriver status og trender, og peker på økt behov for kompetanse innen teknologier som ERTMS og vedlikeholdsanalyser.",
+      "related_documents": ["Norsk jernbanemarked - Status og trender 2024"]
+    },
+    {
+      "id": "q_om_etcs_marked",
+      "question": "Hva er markedstrendene for ETCS i Norden?",
+      "answer": "ETCS-markedet i Norden er preget av store infrastrukturprosjekter. Dokumentasjonen vår 'ETCS markedet i Norden' beskriver muligheter og utfordringer, spesielt knyttet til implementering av den nye signalteknologien og tilhørende kostnader.",
+      "related_documents": ["ETCS markedet i Norden - Muligheter og utfordringer"]
+    },
+    {
+      "id": "q_om_sikkerhet",
+      "question": "Hvilken rolle har RailAdvice innen sikkerhetsstyring?",
+      "answer": "Vi bistår kunder med å oppfylle strenge sikkerhetskrav i jernbanesektoren, spesielt gjennom implementering av RAMS-metodikk. Vi har erfaring fra store prosjekter som Bybanen Utvikling, hvor vi har hatt en rammeavtale for sikkerhetssjef-tjenester.",
+      "related_documents": ["Bybanen Utvikling - Sikkerhetssjef (Rammeavtale)", "RAMS metodikk - EN 50126 implementering"]
+    }
+  ]
+}
+

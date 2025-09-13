@@ -11,8 +11,8 @@ import uvicorn
 import logging
 
 # Import both document manager and AI engine
-from src.document_manager import EnhancedFileDocumentManager
-from src.ai_engine import RailAdviceAI
+from document_manager import EnhancedFileDocumentManager
+from ai_engine import RailAdviceAI
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -21,6 +21,7 @@ logger = logging.getLogger(__name__)
 # Global instances
 doc_manager = None
 ai_engine = None
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -31,9 +32,13 @@ async def lifespan(app: FastAPI):
         # Initialize document manager
         doc_manager = EnhancedFileDocumentManager()
         logger.info("✅ Document manager loaded")
+
+        # Call the method to load documents from projects/ and regulations/
+        doc_manager.load_external_documents()
+        logger.info("✅ External documents loaded")
         
-        # Initialize AI engine with manual documents
-        ai_engine = RailAdviceAI(use_manual_docs=True)
+        # Initialize AI engine
+        ai_engine = RailAdviceAI()
         logger.info("✅ AI engine loaded with knowledge base")
         
         # Get initial stats
@@ -286,7 +291,6 @@ async def get_stats():
 # ---------------------------
 # AI Chat endpoints
 # ---------------------------
-
 @app.get("/api/greet")
 async def greet():
     """Get AI greeting message"""
@@ -294,12 +298,20 @@ async def greet():
         raise HTTPException(status_code=503, detail="AI engine not available")
     
     try:
-        greeting = ai_engine.get_greeting()
+        # Check if get_greeting method exists
+        if hasattr(ai_engine, 'get_greeting'):
+            greeting = ai_engine.get_greeting()
+        else:
+            # Fallback greeting since method doesn't exist
+            doc_count = len(doc_manager.list_documents()) if doc_manager else 0
+            greeting = f"Hei! Jeg er RailAdvice AI-assistenten din med tilgang til {doc_count} dokumenter. Jeg kan hjelpe deg med ETCS, jernbaneteknologi og RailAdvice sine prosjekter."
+        
         return {"greeting": greeting}
     except Exception as e:
         logger.error(f"Error getting greeting: {e}")
-        return {"greeting": "RailAdvice AI er ikke tilgjengelig for øyeblikket."}
-
+        # Return proper greeting instead of error message
+        doc_count = len(doc_manager.list_documents()) if doc_manager else 0
+        return {"greeting": f"Hei! Jeg er RailAdvice AI-assistenten din med tilgang til {doc_count} dokumenter. Jeg kan hjelpe deg med ETCS, jernbaneteknologi og RailAdvice sine prosjekter."}
 
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(message: ChatMessage):

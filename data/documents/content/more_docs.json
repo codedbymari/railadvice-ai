@@ -1,0 +1,101 @@
+[
+  {
+    "id": "flytoget-type-78-project",
+    "title": "Flytoget - Technical Assistance Type 78",
+    "type": "project",
+    "category": "rolling_stock",
+    "content": "RailAdvice provided technical assistance for Flytoget's acquisition of eight new Type 78 train sets from the Spanish manufacturer CAF. The trains, with a top speed of 245 km/h, are the fastest in Norway. Lars Bengtsson, a RAMS and LCC engineer, was involved in verifying maintenance activities, planning to reduce workshop time, and quality-assuring documentation. Erlend Rehn was the technical project manager for the project.",
+    "tags": ["flytoget", "type 78", "rams", "lcc", "rolling stock", "lars bengtsson", "erlend rehn"],
+    "source": "Referanser (1).pdf"
+  },
+  {
+    "id": "bane-nor-rams-signal-project",
+    "title": "Bane NOR - RAMS Signal",
+    "type": "project",
+    "category": "signaling",
+    "content": "RailAdvice provides RAMS consulting services to multiple Bane NOR signaling projects. Robin Reiten, a senior consultant, works as a RAMS advisor on these projects. His tasks include facilitating risk analysis, controlling supplier work, and preparing documentation for the Norwegian Railway Authority (Statens jernbanetilsyn).",
+    "tags": ["bane nor", "rams", "signal", "robin reiten"],
+    "source": "Referanser (1).pdf"
+  },
+  {
+    "id": "bybanen-utvikling-project",
+    "title": "Bybanen Utvikling - Safety Manager",
+    "type": "project",
+    "category": "safety",
+    "content": "In December 2023, RailAdvice was awarded a framework agreement for the role of safety manager for Bybanen Utvikling. Senior consultant Fredrik Schumann is responsible for this role.",
+    "tags": ["bybanen", "safety", "fredrik schumann"],
+    "source": "Referanser (1).pdf"
+  },
+  {
+    "id": "norske-tog-project",
+    "title": "Norske tog - Project Documentation",
+    "type": "project",
+    "category": "rolling_stock",
+    "content": "Ole Johansen was the Project Documentation Manager for the acquisition of new local trains from Alstom for Norske tog.",
+    "tags": ["norske tog", "documentation", "ole johansen"],
+    "source": "Referanser (1).pdf"
+  },
+  {
+    "id": "sporveien-project",
+    "title": "Sporveien - Tramway Fleet Upgrade",
+    "type": "project",
+    "category": "infrastructure",
+    "content": "Lars Mortvedt is the project manager for upgrading Sporveien's tramway machine fleet. Other consultants involved include Ali Reza Rogha, Ingmar Hemsen, and Henning Brustad.",
+    "tags": ["sporveien", "tramway", "lars mortvedt", "ali reza rogha", "ingmar hemsens", "henning brustad"],
+    "source": "Referanser (1).pdf"
+  },
+  {
+    "id": "personnel-lars-bengtsson",
+    "title": "Lars Bengtsson",
+    "type": "key_personnel",
+    "category": "personer",
+    "content": "Lars Bengtsson is a RAMS and LCC engineer at RailAdvice. He was involved in Flytoget's Type 78 train acquisition project, focusing on verifying maintenance, reducing workshop time, and quality-assuring documentation.",
+    "tags": ["lars bengtsson", "rams", "lcc", "flytoget"],
+    "source": "Referanser (1).pdf"
+  },
+  {
+    "id": "personnel-erlend-rehn",
+    "title": "Erlend Rehn",
+    "type": "key_personnel",
+    "category": "personer",
+    "content": "Erlend Rehn is a technical project manager at RailAdvice. He served in this role during Flytoget's acquisition of new Type 78 trains from CAF.",
+    "tags": ["erlend rehn", "project manager", "flytoget"],
+    "source": "Referanser (1).pdf"
+  },
+  {
+    "id": "personnel-robin-reiten",
+    "title": "Robin Reiten",
+    "type": "key_personnel",
+    "category": "personer",
+    "content": "Robin Reiten is a senior consultant and RAMS advisor at RailAdvice. He works on multiple signaling projects for Bane NOR, handling risk analysis and documentation for the Norwegian Railway Authority.",
+    "tags": ["robin reiten", "rams", "bane nor"],
+    "source": "Referanser (1).pdf"
+  },
+  {
+    "id": "personnel-fredrik-schumann",
+    "title": "Fredrik Schumann",
+    "type": "key_personnel",
+    "category": "personer",
+    "content": "Fredrik Schumann is a senior consultant at RailAdvice who has been responsible for the safety manager role for Bybanen Utvikling since December 2023.",
+    "tags": ["fredrik schumann", "safety", "bybanen"],
+    "source": "Referanser (1).pdf"
+  },
+  {
+    "id": "personnel-ole-johansen",
+    "title": "Ole Johansen",
+    "type": "key_personnel",
+    "category": "personer",
+    "content": "Ole Johansen was the Project Documentation Manager for Norske tog's acquisition of new local trains from Alstom.",
+    "tags": ["ole johansen", "documentation", "norske tog"],
+    "source": "Referanser (1).pdf"
+  },
+  {
+    "id": "personnel-lars-mortvedt",
+    "title": "Lars Mortvedt",
+    "type": "key_personnel",
+    "category": "personer",
+    "content": "Lars Mortvedt is a project manager at RailAdvice who is currently responsible for upgrading Sporveien's tramway machine fleet.",
+    "tags": ["lars mortvedt", "sporveien", "project manager"],
+    "source": "Referanser (1).pdf"
+  }
+]

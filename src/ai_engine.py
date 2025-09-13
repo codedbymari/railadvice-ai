@@ -7,8 +7,7 @@ import json
 from datetime import datetime
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-from src.document_manager import EnhancedFileDocumentManager as DocumentManager
+from .document_manager import EnhancedFileDocumentManager as DocumentManager
 import os
 from pathlib import Path
 
@@ -31,9 +30,8 @@ def fix_metadata(metadata):
     return fixed
 
 
-
 class RailAdviceAI:
-    def __init__(self, use_manual_docs=True):
+    def __init__(self):
         print("🚀 Initializing RailAdvice AI...")
         
         # Load NLP models
@@ -54,19 +52,17 @@ class RailAdviceAI:
         # Setup vector database
         self.client = chromadb.PersistentClient(path="./data/chromadb")
         
-        # Clear existing collection if using manual docs
-        if use_manual_docs:
-            try:
-                self.client.delete_collection("railadvice")
-                print("🗑️ Cleared existing synthetic data")
-            except:
-                pass
+        # We always want to clear old data to ensure the latest documents are loaded
+        try:
+            self.client.delete_collection("railadvice")
+            print("🗑️ Cleared existing knowledge base")
+        except:
+            pass
         
         self.collection = self.client.get_or_create_collection("railadvice")
         
-        # Document manager for manual documents
+        # Document manager for all documents
         self.doc_manager = DocumentManager()
-        self.use_manual_docs = use_manual_docs
         
         # TF-IDF for keyword matching
         self.tfidf = TfidfVectorizer(stop_words=None, ngram_range=(1, 3))
@@ -102,9 +98,8 @@ class RailAdviceAI:
             "erfaring": ["erfaring", "kompetanse", "ekspertise", "kunnskap", "sertifisering", "utdanning"]
         }
         
-        # Load manual documents if enabled
-        if use_manual_docs:
-            self.load_manual_documents()
+        # Load all documents from document manager upon initialization
+        self.load_knowledge_base()
         
         print("✅ RailAdvice AI ready!")
         
@@ -230,36 +225,41 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
             return f"Du spør om {category_name}. Hva spesifikt vil du vite? For eksempel: kostnader, implementering, eller tekniske detaljer?"
 
     def extract_meaningful_content(self, text, max_sentences=3):
-        """Extract meaningful content, avoiding metadata and JSON"""
+        """
+        Extract meaningful content, avoiding metadata and JSON.
+        Updated to better handle and clean up document content.
+        """
         if not text:
             return []
         
-        # Split into sentences
-        sentences = []
-        for delimiter in ['.', '!', '?', '\n']:
-            if delimiter in text:
-                parts = text.split(delimiter)
-                sentences.extend([s.strip() for s in parts if s.strip()])
-                break
+        # First, aggressively remove known metadata patterns
+        cleaned_text = re.sub(r'^(PROSJEKT|TEKNISK KUNNSKAP|KOMPETANSE|MARKEDSINNSATS|INNHOLD):.*?\s*', '', text, flags=re.IGNORECASE | re.DOTALL)
         
-        if not sentences:
-            sentences = [text.strip()]
+        # Remove key-value pairs that are common metadata
+        cleaned_text = re.sub(r'(Kunde|Type|Status|År|Kode|Kategori|Tittel):\s*[^ \n]+', '', cleaned_text, flags=re.IGNORECASE)
+        
+        # Split into sentences
+        sentences = re.split(r'(?<=[.!?])\s+', cleaned_text)
         
         good_sentences = []
         for sentence in sentences:
-            # Skip if too short or looks like metadata
-            if (len(sentence) < 20 or 
+            sentence = sentence.strip()
+            # Skip if too short or looks like metadata/json
+            if (len(sentence) < 30 or 
                 sentence.startswith(('{', '[', '"')) or
                 'json' in sentence.lower() or
                 'metadata' in sentence.lower() or
-                sentence.count('"') > 2):
+                sentence.count('"') > 2 or
+                'ID:' in sentence or
+                len(sentence.split()) < 5):
                 continue
             
-            # Clean up the sentence
-            sentence = re.sub(r'\s+', ' ', sentence)
-            sentence = sentence.strip()
+            # Remove any trailing source/id tags
+            sentence = re.sub(r'\(ID: [0-9a-f-]+\)', '', sentence)
             
-            if sentence and len(sentence) > 20:
+            # Clean up and append
+            sentence = re.sub(r'\s+', ' ', sentence).strip()
+            if sentence:
                 good_sentences.append(sentence)
             
             if len(good_sentences) >= max_sentences:
@@ -268,7 +268,10 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
         return good_sentences
 
     def generate_smart_response(self, question, docs, confidence, input_type):
-        """Generate intelligent, natural responses based on input type"""
+        """
+        Generate intelligent, natural responses based on input type.
+        Updated to create more coherent and human-like answers.
+        """
         
         # Handle special input types first
         if input_type == "greeting":
@@ -291,48 +294,34 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
             return self.generate_intelligent_fallback(question, input_type)
         
         # Process documents and generate response
-        question_lower = question.lower()
         response_parts = []
         
         # Extract meaningful content from documents
-        for doc in docs[:2]:  # Use max 2 documents
-            if isinstance(doc, str):
-                meaningful_sentences = self.extract_meaningful_content(doc, max_sentences=2)
-                response_parts.extend(meaningful_sentences)
+        for doc in docs:
+            meaningful_sentences = self.extract_meaningful_content(doc, max_sentences=2)
+            response_parts.extend(meaningful_sentences)
         
         if not response_parts:
             return "Jeg fant relevante dokumenter, men ikke klart innhold som svarer på spørsmålet ditt. Kan du være mer spesifikk?"
         
         # Build natural response
-        if input_type == "question":
-            # For questions, provide direct answers
-            main_content = response_parts[0]
-            
-            # Add specific handling for common question types
-            if any(word in question_lower for word in ['hva er', 'what is', 'kan du forklare']):
-                response = f"{main_content}"
-                if len(response_parts) > 1:
-                    response += f" {response_parts[1]}"
-            else:
-                response = main_content
-            
-            # Add follow-up based on confidence
-            if confidence == "High" and len(response_parts) > 1:
-                response += " Ønsker du mer detaljert informasjon?"
-            elif confidence == "Medium":
-                response += " Trenger du mer spesifikke detaljer?"
-            
-        else:
-            # For statements, provide relevant information
-            response = f"Basert på dokumentasjonen: {response_parts[0]}"
+        intro_phrases = ["Basert på min kunnskapsbase", "Dokumentasjon viser at", "Angående ditt spørsmål", "Jeg fant følgende informasjon"]
+        intro = intro_phrases[np.random.randint(0, len(intro_phrases))]
+        
+        if confidence == "High":
+            main_content = " ".join(response_parts)
+            response = f"{intro}: {main_content}"
             if len(response_parts) > 1:
-                response += f" {response_parts[1]}"
+                response += " Ønsker du mer detaljert informasjon?"
+        elif confidence == "Medium":
+            main_content = " ".join(response_parts) # Combine all relevant sentences for a more complete answer
+            response = f"Basert på min kunnskapsbase: {main_content}."
+        else: # Low confidence
+            main_content = " ".join(response_parts[:1]) # Use only the most relevant part
+            response = f"Jeg fant noe relevant informasjon: {main_content} Kan du omformulere spørsmålet?"
         
-        # Clean up response
+        # Clean up and finalize response
         response = re.sub(r'\s+', ' ', response).strip()
-        response = re.sub(r'([.!?])\s*([.!?])', r'\1', response)
-        
-        # Ensure response ends properly
         if not response.endswith(('.', '!', '?')):
             response += '.'
         
@@ -362,55 +351,45 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
         else:
             return f"Jeg forstår spørsmålet ditt, men fant ikke svar i de {manual_doc_count} dokumentene. Prøv å omformulere spørsmålet eller legg til mer relevant dokumentasjon."
     
-    def load_manual_documents(self):
-        """Load all manually added documents into the AI"""
-        manual_docs = self.doc_manager.load_all_documents()
+    def load_knowledge_base(self):
+        """Loads all documents from the document manager into the AI's knowledge base."""
+        all_docs = self.doc_manager.load_all_documents()
         
-        if not manual_docs:
-            print("⚠️ No manual documents found. Use document_manager.py to add documents.")
+        if not all_docs:
+            print("⚠️ No documents found. Use document_manager.py to add documents.")
             return
         
-        print(f"📄 Loading {len(manual_docs)} manual documents...")
+        print(f"📄 Loading {len(all_docs)} documents...")
         
-        for doc in manual_docs:
+        for doc in all_docs:
             try:
-                content = None
-                if isinstance(doc, dict):
-                    content = (doc.get('content') or 
-                              doc.get('text') or 
-                              doc.get('body') or
-                              doc.get('description') or
-                              str(doc))
-                else:
-                    content = str(doc)
-                
+                content = doc.get("content")
                 if not content:
                     print(f"⚠️ Skipping document with no content: {doc.get('title', 'Unknown')}")
                     continue
-                
+
                 metadata = {
-                    "type": doc.get('type', 'unknown'),
-                    "category": doc.get('category', 'general'),
-                    "title": doc.get('title', 'Untitled'),
-                    "tags": doc.get('tags', []),
+                    "type": doc.get("type", "unknown"),
+                    "category": doc.get("category", "general"),
+                    "title": doc.get("title", "Untitled"),
+                    "tags": doc.get("tags", []),
                     "source": "manual",
-                    "doc_id": doc.get('id', 'unknown'),
-                    "added_date": doc.get('added_date', datetime.now().isoformat())
+                    "doc_id": doc.get("id", "unknown"),
+                    "added_date": doc.get("created_at", datetime.now().isoformat())
                 }
-                
+
                 self.add_document_to_ai(
                     text=content,
                     metadata=metadata
                 )
-                
             except Exception as e:
                 print(f"⚠️ Error loading document {doc.get('title', 'Unknown')}: {e}")
                 continue
         
-        print(f"✅ Loaded documents into AI (attempted {len(manual_docs)})")
+        print(f"✅ Loaded documents into AI (attempted {len(all_docs)})")
     
     def reload_documents(self):
-        """Reload all manual documents (call this after adding/removing documents)"""
+        """Reload all documents (call this after adding/removing documents)"""
         try:
             self.client.delete_collection("railadvice")
         except:
@@ -420,7 +399,7 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
         self.documents_text = []
         self.documents_metadata = []
         
-        self.load_manual_documents()
+        self.load_knowledge_base()
         
         print("🔄 Documents reloaded successfully")
     
@@ -505,52 +484,67 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
         }
     
     def find_best_response(self, question, intent_analysis):
-        """Find best response using semantic search with improved relevance"""
+        """
+        Find best response using semantic search with improved relevance.
         
+        Updated to combine semantic similarity with keyword matching from titles.
+        """
         if not self.documents_text:
             return [], "No Documents", intent_analysis
         
         try:
             query_embedding = self.embedder.encode([question])[0].tolist()
             
-            # Adjust number of results based on query complexity
-            max_results = min(5, len(self.documents_text))
-            if intent_analysis['length'] < 3:  # Simple queries
-                max_results = min(2, len(self.documents_text))
-            
+            # Perform a standard semantic search
             semantic_results = self.collection.query(
                 query_embeddings=[query_embedding],
-                n_results=max_results
+                n_results=10, # Fetch a larger set to re-rank
+                include=["documents", "metadatas", "distances"]
             )
             
             print(f"🔍 Semantic search returned {len(semantic_results.get('documents', [[]])[0])} documents")
             
-            best_docs = []
-            confidence = "Medium"
-            
+            ranked_results = []
             if semantic_results['documents'] and semantic_results['documents'][0]:
-                documents = semantic_results['documents'][0]
-                distances = semantic_results.get('distances', [[]])[0] if semantic_results.get('distances') else []
-                
-                # Filter documents by relevance
-                for i, doc in enumerate(documents):
-                    # Skip if document is too irrelevant (distance too high)
-                    if distances and len(distances) > i and distances[i] > 1.2:
-                        continue
-                    best_docs.append(doc)
-                    if len(best_docs) >= 2:  # Limit to 2 most relevant documents
-                        break
-                
-                # Determine confidence based on relevance and matches
-                if distances and len(distances) > 0:
-                    best_distance = distances[0]
-                    if best_distance < 0.7:
-                        confidence = "High"
-                    elif best_distance < 1.0:
-                        confidence = "Medium"
-                    else:
-                        confidence = "Low"
+                for i in range(len(semantic_results['documents'][0])):
+                    doc_text = semantic_results['documents'][0][i]
+                    metadata = semantic_results['metadatas'][0][i]
+                    distance = semantic_results['distances'][0][i]
+                    
+                    score = 1 - distance # Convert distance to a similarity score (0 to 1)
+                    
+                    # Apply a bonus for keyword matches in the title
+                    title_lower = metadata.get('title', '').lower()
+                    question_lower = question.lower()
+                    
+                    if any(word in title_lower for word in question_lower.split()):
+                        score += 0.4 # INCREASED BONUS FOR TITLE MATCHES
+                    
+                    # Also give a small bonus for category matches
+                    question_categories = intent_analysis.get('categories', [])
+                    doc_category = metadata.get('category', '')
+                    if doc_category in question_categories:
+                        score += 0.2
+                    
+                    ranked_results.append({'doc': doc_text, 'score': score})
             
+            # Sort by the new combined score
+            ranked_results.sort(key=lambda x: x['score'], reverse=True)
+            
+            # Get the top 2 documents for the response
+            best_docs = [item['doc'] for item in ranked_results[:2]]
+            
+            # Determine confidence based on the top document's score
+            confidence = "Low"
+            if ranked_results:
+                top_score = ranked_results[0]['score']
+                if top_score > 1.0: # New, higher threshold for high confidence
+                    confidence = "High"
+                elif top_score > 0.7:
+                    confidence = "Medium"
+                else:
+                    confidence = "Low"
+
             print(f"🔍 Returning {len(best_docs)} documents with confidence: {confidence}")
             return best_docs, confidence, intent_analysis
             
@@ -628,8 +622,8 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
 
 
 class ContextualRailAdviceAI(RailAdviceAI):
-    def __init__(self, use_manual_docs=True, memory_file="conversation_memory.json"):
-        super().__init__(use_manual_docs)
+    def __init__(self, memory_file="conversation_memory.json"):
+        super().__init__()
         self.memory_file = Path(memory_file)
         self.conversation_history = self.load_memory()
         self.farewell_patterns = [
@@ -673,7 +667,7 @@ class ContextualRailAdviceAI(RailAdviceAI):
 
 # Test function
 if __name__ == "__main__":
-    ai = RailAdviceAI(use_manual_docs=True)
+    ai = RailAdviceAI()
     
     # Test different input types
     test_inputs = [

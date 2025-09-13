@@ -1,6 +1,0 @@
-{
-  "id": "f6890582-6209-4e47-a0bd-525a53751d63",
-  "title": "RailAdvice - key_personnel",
-  "content": "RailAdvice key_personnel:\n{\n  \"Lars Mortvedt\": {\n    \"role\": \"Senior konsulent / Prosjektleder\",\n    \"expertise\": [\n      \"RAMS\",\n      \"LCC\",\n      \"Rolling stock\",\n      \"Prosjektledelse\"\n    ],\n    \"experience\": \"15+ år jernbaneerfaring\",\n    \"active_since\": \"Mai 2019\",\n    \"current_projects\": [\n      \"Flytoget Type 78 RAM/LCC ansvar\",\n      \"Bane NOR RAMS signalprosjekter\"\n    ]\n  }\n}",
-  "created_at": "2025-09-13T20:41:45.443909"
-}

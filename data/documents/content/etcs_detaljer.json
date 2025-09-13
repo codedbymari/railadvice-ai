@@ -1,0 +1,37 @@
+{
+  "title": "ETCS: Systemdetaljer, funksjoner og nivåer",
+  "doc_type": "technical_guide",
+  "category": "signaling",
+  "tags": ["etcs", "ertms", "signalsystemer", "teknologi", "level 2", "implementering"],
+  "sections": [
+    {
+      "heading": "Hva er ETCS?",
+      "content": "ETCS (European Train Control System) er en del av ERTMS (European Rail Traffic Management System) og fungerer som et felles signalsystem for europeisk jernbane. Målet er å erstatte nasjonale signalsystemer for å sikre full interoperabilitet, økt sikkerhet og høyere kapasitet. Systemet overvåker kontinuerlig togets hastighet og posisjon, og kan automatisk bremse toget for å forhindre farlige situasjoner.",
+      "keywords": ["ERTMS", "European Train Control System", "interoperabilitet", "sikkerhet", "kapasitet"]
+    },
+    {
+      "heading": "ETCS Nivåer (Levels)",
+      "content": "ETCS er delt inn i flere implementeringsnivåer, hvor de vanligste er Level 1, Level 2 og Level 3. Hvert nivå tilbyr forskjellige funksjoner og grad av automatisering og overvåking.",
+      "sub_sections": [
+        {
+          "title": "ETCS Level 1",
+          "content": "Bruker baliser (transpondere i sporet) for å overføre data til toget. Informasjonen er punktvis, og den kontinuerlige overvåkingen av togets bevegelse skjer kun når toget passerer en balise."
+        },
+        {
+          "title": "ETCS Level 2",
+          "content": "Dette nivået er basert på kontinuerlig toveis kommunikasjon mellom toget og et Radio Block Centre (RBC) via GSM-R (GSM-Railway). Dette gir sanntids informasjon om hastigheter og bevegelser, noe som eliminerer behovet for de fleste fysiske signaler langs sporet. Dokumentasjonen vår 'ETCS Level 2 - Implementeringskrav og kostnader' beskriver de ulike elementene som påvirker kostnaden, som Radio Block Centre (RBC) og onboard-enheter."
+        },
+        {
+          "title": "ETCS Level 3",
+          "content": "Representerer det høyeste nivået av automatisering og effektivitet. Her er toget selv ansvarlig for å rapportere sin egen posisjon og integritet. Dette muliggjør 'bevegelig blokk' (moving block), som gir maksimal kapasitet på sporet."
+        }
+      ],
+      "keywords": ["ETCS Level 1", "ETCS Level 2", "ETCS Level 3", "GSM-R", "RBC", "bevegelig blokk"]
+    },
+    {
+      "heading": "Fordeler med ETCS-implementering",
+      "content": "De viktigste fordelene med ETCS er forbedret sikkerhet, økt kapasitet på eksisterende spor, reduserte driftskostnader over tid (færre fysiske signaler å vedlikeholde) og et standardisert system som muliggjør grenseoverskridende trafikk uten bytte av signalsystem.",
+      "keywords": ["sikkerhet", "kapasitet", "kostnadsreduksjon", "standardisering"]
+    }
+  ]
+}

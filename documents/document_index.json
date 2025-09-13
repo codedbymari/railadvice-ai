@@ -1,7 +1,7 @@
 {
   "documents": {
-    "ffa10b37-4b54-45d7-8dd7-c773e59758e9": {
-      "id": "ffa10b37-4b54-45d7-8dd7-c773e59758e9",
+    "4781de5c-cef8-448d-b299-4bf8500ac45d": {
+      "id": "4781de5c-cef8-448d-b299-4bf8500ac45d",
       "title": "RailAdvice - basic_info",
       "type": "company_profile",
       "category": "company",
@@ -10,16 +10,16 @@
         "company",
         "basic_info"
       ],
-      "created_at": "2025-09-13T20:41:45.442129",
-      "updated_at": "2025-09-13T20:41:45.442129",
-      "file_path": "ffa10b37-4b54-45d7-8dd7-c773e59758e9.json",
+      "created_at": "2025-09-13T23:21:31.014907",
+      "updated_at": "2025-09-13T23:21:31.014907",
+      "file_path": "4781de5c-cef8-448d-b299-4bf8500ac45d.json",
       "metadata": {
         "section": "basic_info",
         "source": "company_profile"
       }
     },
-    "3711f2bf-4054-4326-a191-fa801fc096ad": {
-      "id": "3711f2bf-4054-4326-a191-fa801fc096ad",
+    "6c12dcd3-0022-4e3b-97ee-a257d3940bdd": {
+      "id": "6c12dcd3-0022-4e3b-97ee-a257d3940bdd",
       "title": "RailAdvice - core_competencies",
       "type": "company_profile",
       "category": "company",
@@ -28,16 +28,16 @@
         "company",
         "core_competencies"
       ],
-      "created_at": "2025-09-13T20:41:45.442683",
-      "updated_at": "2025-09-13T20:41:45.442683",
-      "file_path": "3711f2bf-4054-4326-a191-fa801fc096ad.json",
+      "created_at": "2025-09-13T23:21:31.015725",
+      "updated_at": "2025-09-13T23:21:31.015725",
+      "file_path": "6c12dcd3-0022-4e3b-97ee-a257d3940bdd.json",
       "metadata": {
         "section": "core_competencies",
         "source": "company_profile"
       }
     },
-    "327e55b7-ab6d-454e-93ba-382740980f3b": {
-      "id": "327e55b7-ab6d-454e-93ba-382740980f3b",
+    "14fa40c1-082a-4519-98a1-99bf8879bee1": {
+      "id": "14fa40c1-082a-4519-98a1-99bf8879bee1",
       "title": "RailAdvice - certifications",
       "type": "company_profile",
       "category": "company",
@@ -46,16 +46,16 @@
         "company",
         "certifications"
       ],
-      "created_at": "2025-09-13T20:41:45.443235",
-      "updated_at": "2025-09-13T20:41:45.443235",
-      "file_path": "327e55b7-ab6d-454e-93ba-382740980f3b.json",
+      "created_at": "2025-09-13T23:21:31.015974",
+      "updated_at": "2025-09-13T23:21:31.015974",
+      "file_path": "14fa40c1-082a-4519-98a1-99bf8879bee1.json",
       "metadata": {
         "section": "certifications",
         "source": "company_profile"
       }
     },
-    "f6890582-6209-4e47-a0bd-525a53751d63": {
-      "id": "f6890582-6209-4e47-a0bd-525a53751d63",
+    "14e69cca-b33b-4672-b558-d24ec4e659a1": {
+      "id": "14e69cca-b33b-4672-b558-d24ec4e659a1",
       "title": "RailAdvice - key_personnel",
       "type": "company_profile",
       "category": "company",
@@ -64,16 +64,16 @@
         "company",
         "key_personnel"
       ],
-      "created_at": "2025-09-13T20:41:45.443909",
-      "updated_at": "2025-09-13T20:41:45.443909",
-      "file_path": "f6890582-6209-4e47-a0bd-525a53751d63.json",
+      "created_at": "2025-09-13T23:21:31.016309",
+      "updated_at": "2025-09-13T23:21:31.016309",
+      "file_path": "14e69cca-b33b-4672-b558-d24ec4e659a1.json",
       "metadata": {
         "section": "key_personnel",
         "source": "company_profile"
       }
     },
-    "33b53aae-27c2-4175-b7d1-57a7ae6cd153": {
-      "id": "33b53aae-27c2-4175-b7d1-57a7ae6cd153",
+    "a6898100-721e-423c-8700-a8fc85f21dc9": {
+      "id": "a6898100-721e-423c-8700-a8fc85f21dc9",
       "title": "RailAdvice - service_areas",
       "type": "company_profile",
       "category": "company",
@@ -82,16 +82,265 @@
         "company",
         "service_areas"
       ],
-      "created_at": "2025-09-13T20:41:45.444984",
-      "updated_at": "2025-09-13T20:41:45.444984",
-      "file_path": "33b53aae-27c2-4175-b7d1-57a7ae6cd153.json",
+      "created_at": "2025-09-13T23:21:31.016632",
+      "updated_at": "2025-09-13T23:21:31.016632",
+      "file_path": "a6898100-721e-423c-8700-a8fc85f21dc9.json",
       "metadata": {
         "section": "service_areas",
         "source": "company_profile"
       }
     },
-    "956673e1-d6ce-473a-8ff9-a018ec3d7f51": {
-      "id": "956673e1-d6ce-473a-8ff9-a018ec3d7f51",
+    "c6c29917-f4eb-4907-9214-fa2c01a6d689": {
+      "id": "c6c29917-f4eb-4907-9214-fa2c01a6d689",
+      "title": "RailAdvice AI Knowledge Base - Additional Information",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.017040",
+      "updated_at": "2025-09-13T23:21:31.017040",
+      "file_path": "c6c29917-f4eb-4907-9214-fa2c01a6d689.json",
+      "metadata": {
+        "source_file": "qa.json"
+      }
+    },
+    "d6cdc121-d92e-4d9e-8dcc-6d7aa84c783b": {
+      "id": "d6cdc121-d92e-4d9e-8dcc-6d7aa84c783b",
+      "title": "RailAdvice AI Kunnskapsbase - Spørsmål om tekniske detaljer og vedlikehold",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.017403",
+      "updated_at": "2025-09-13T23:21:31.017403",
+      "file_path": "d6cdc121-d92e-4d9e-8dcc-6d7aa84c783b.json",
+      "metadata": {
+        "source_file": "questions.json"
+      }
+    },
+    "48ad7c1c-fca3-4d53-81e0-98934a09ee8d": {
+      "id": "48ad7c1c-fca3-4d53-81e0-98934a09ee8d",
+      "title": "ETCS: Systemdetaljer, funksjoner og nivåer",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.017876",
+      "updated_at": "2025-09-13T23:21:31.017876",
+      "file_path": "48ad7c1c-fca3-4d53-81e0-98934a09ee8d.json",
+      "metadata": {
+        "source_file": "etcs_detaljer.json"
+      }
+    },
+    "1ae66337-c3b4-4e2b-a5fa-800beee09790": {
+      "id": "1ae66337-c3b4-4e2b-a5fa-800beee09790",
+      "title": "Flytoget - Technical Assistance Type 78",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.018276",
+      "updated_at": "2025-09-13T23:21:31.018276",
+      "file_path": "1ae66337-c3b4-4e2b-a5fa-800beee09790.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 1
+      }
+    },
+    "caacd439-211b-4758-8357-437a324a4225": {
+      "id": "caacd439-211b-4758-8357-437a324a4225",
+      "title": "Bane NOR - RAMS Signal",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.018634",
+      "updated_at": "2025-09-13T23:21:31.018634",
+      "file_path": "caacd439-211b-4758-8357-437a324a4225.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 2
+      }
+    },
+    "6bb06217-e848-4487-956e-54ac44251ebe": {
+      "id": "6bb06217-e848-4487-956e-54ac44251ebe",
+      "title": "Bybanen Utvikling - Safety Manager",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.018996",
+      "updated_at": "2025-09-13T23:21:31.018996",
+      "file_path": "6bb06217-e848-4487-956e-54ac44251ebe.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 3
+      }
+    },
+    "d82a80f1-d1d8-4435-b41f-e6a15f1bb5c8": {
+      "id": "d82a80f1-d1d8-4435-b41f-e6a15f1bb5c8",
+      "title": "Norske tog - Project Documentation",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.019360",
+      "updated_at": "2025-09-13T23:21:31.019360",
+      "file_path": "d82a80f1-d1d8-4435-b41f-e6a15f1bb5c8.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 4
+      }
+    },
+    "28bc251e-f506-4fad-aaf8-5822e51f95fc": {
+      "id": "28bc251e-f506-4fad-aaf8-5822e51f95fc",
+      "title": "Sporveien - Tramway Fleet Upgrade",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.019736",
+      "updated_at": "2025-09-13T23:21:31.019736",
+      "file_path": "28bc251e-f506-4fad-aaf8-5822e51f95fc.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 5
+      }
+    },
+    "ac3087bb-709d-42b1-8ef7-45f37c66246c": {
+      "id": "ac3087bb-709d-42b1-8ef7-45f37c66246c",
+      "title": "Lars Bengtsson",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.020165",
+      "updated_at": "2025-09-13T23:21:31.020165",
+      "file_path": "ac3087bb-709d-42b1-8ef7-45f37c66246c.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 6
+      }
+    },
+    "408c5227-5393-438c-a0bd-75244dd31231": {
+      "id": "408c5227-5393-438c-a0bd-75244dd31231",
+      "title": "Erlend Rehn",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.020624",
+      "updated_at": "2025-09-13T23:21:31.020624",
+      "file_path": "408c5227-5393-438c-a0bd-75244dd31231.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 7
+      }
+    },
+    "73547105-3e44-4a93-bbcd-553066f0ee13": {
+      "id": "73547105-3e44-4a93-bbcd-553066f0ee13",
+      "title": "Robin Reiten",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.021108",
+      "updated_at": "2025-09-13T23:21:31.021108",
+      "file_path": "73547105-3e44-4a93-bbcd-553066f0ee13.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 8
+      }
+    },
+    "1d23ae9e-f179-40d4-9c17-f5edf2676894": {
+      "id": "1d23ae9e-f179-40d4-9c17-f5edf2676894",
+      "title": "Fredrik Schumann",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.021618",
+      "updated_at": "2025-09-13T23:21:31.021618",
+      "file_path": "1d23ae9e-f179-40d4-9c17-f5edf2676894.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 9
+      }
+    },
+    "69a5b466-de91-4b5d-bbb3-cbc0b0b6887d": {
+      "id": "69a5b466-de91-4b5d-bbb3-cbc0b0b6887d",
+      "title": "Ole Johansen",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.022099",
+      "updated_at": "2025-09-13T23:21:31.022099",
+      "file_path": "69a5b466-de91-4b5d-bbb3-cbc0b0b6887d.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 10
+      }
+    },
+    "24d9ed93-e988-4bb4-a5b9-32d249a612e1": {
+      "id": "24d9ed93-e988-4bb4-a5b9-32d249a612e1",
+      "title": "Lars Mortvedt",
+      "type": "content_guide",
+      "category": "railadvice_guides",
+      "tags": [
+        "railadvice",
+        "guide",
+        "content"
+      ],
+      "created_at": "2025-09-13T23:21:31.022570",
+      "updated_at": "2025-09-13T23:21:31.022570",
+      "file_path": "24d9ed93-e988-4bb4-a5b9-32d249a612e1.json",
+      "metadata": {
+        "source_file": "more_docs.json",
+        "part": 11
+      }
+    },
+    "cbd9a13e-9be6-4397-9173-54c8cd88a5f6": {
+      "id": "cbd9a13e-9be6-4397-9173-54c8cd88a5f6",
       "title": "Fornebu Base Depot - Fullservice depotutvikling",
       "type": "project",
       "category": "projects",
@@ -101,9 +350,9 @@
         "depot_development",
         "2023"
       ],
-      "created_at": "2025-09-13T20:41:45.445716",
-      "updated_at": "2025-09-13T20:41:45.445716",
-      "file_path": "956673e1-d6ce-473a-8ff9-a018ec3d7f51.json",
+      "created_at": "2025-09-13T23:21:31.023338",
+      "updated_at": "2025-09-13T23:21:31.023338",
+      "file_path": "cbd9a13e-9be6-4397-9173-54c8cd88a5f6.json",
       "metadata": {
         "client": "Prosjekteringsgruppen Fornebubanen",
         "year": 2023,
@@ -111,8 +360,8 @@
         "status": "Pågående"
       }
     },
-    "2b718c18-4aa1-4acc-a035-ef3b9d528c37": {
-      "id": "2b718c18-4aa1-4acc-a035-ef3b9d528c37",
+    "460bbd5e-fa62-448a-b9a9-a139f3e621c4": {
+      "id": "460bbd5e-fa62-448a-b9a9-a139f3e621c4",
       "title": "Flytoget Type 78 - RAMS og LCC optimalisering",
       "type": "project",
       "category": "projects",
@@ -122,9 +371,9 @@
         "rolling_stock",
         "2019"
       ],
-      "created_at": "2025-09-13T20:41:45.446291",
-      "updated_at": "2025-09-13T20:41:45.446291",
-      "file_path": "2b718c18-4aa1-4acc-a035-ef3b9d528c37.json",
+      "created_at": "2025-09-13T23:21:31.023936",
+      "updated_at": "2025-09-13T23:21:31.023936",
+      "file_path": "460bbd5e-fa62-448a-b9a9-a139f3e621c4.json",
       "metadata": {
         "client": "Flytoget AS",
         "year": 2019,
@@ -132,8 +381,8 @@
         "status": "Pågående (langtidskontrakt)"
       }
     },
-    "09224b63-3c9f-4a8b-96bf-f099ded0ee06": {
-      "id": "09224b63-3c9f-4a8b-96bf-f099ded0ee06",
+    "59672f08-0c07-4a4e-ba39-92355a8675e9": {
+      "id": "59672f08-0c07-4a4e-ba39-92355a8675e9",
       "title": "SJ Norge Materiellavdeling - Kontraktsansvar Trafikkpakke 2",
       "type": "project",
       "category": "projects",
@@ -143,9 +392,9 @@
         "contract_management",
         "2020"
       ],
-      "created_at": "2025-09-13T20:41:45.446881",
-      "updated_at": "2025-09-13T20:41:45.446881",
-      "file_path": "09224b63-3c9f-4a8b-96bf-f099ded0ee06.json",
+      "created_at": "2025-09-13T23:21:31.024491",
+      "updated_at": "2025-09-13T23:21:31.024491",
+      "file_path": "59672f08-0c07-4a4e-ba39-92355a8675e9.json",
       "metadata": {
         "client": "SJ Norge AS",
         "year": 2020,
@@ -153,8 +402,8 @@
         "status": "Avsluttet"
       }
     },
-    "064c9c84-6011-4875-a985-3c426baee979": {
-      "id": "064c9c84-6011-4875-a985-3c426baee979",
+    "fd42e522-a77c-4f55-a773-0c36402e275e": {
+      "id": "fd42e522-a77c-4f55-a773-0c36402e275e",
       "title": "Bybanen Utvikling - Sikkerhetssjef (Rammeavtale)",
       "type": "project",
       "category": "projects",
@@ -164,9 +413,9 @@
         "safety_management",
         "2023"
       ],
-      "created_at": "2025-09-13T20:41:45.447375",
-      "updated_at": "2025-09-13T20:41:45.447375",
-      "file_path": "064c9c84-6011-4875-a985-3c426baee979.json",
+      "created_at": "2025-09-13T23:21:31.025053",
+      "updated_at": "2025-09-13T23:21:31.025053",
+      "file_path": "fd42e522-a77c-4f55-a773-0c36402e275e.json",
       "metadata": {
         "client": "Bybanen Utvikling AS",
         "year": 2023,
@@ -174,8 +423,8 @@
         "status": "Aktiv rammeavtale"
       }
     },
-    "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3": {
-      "id": "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3",
+    "909991ce-eb5c-412e-a1f4-8c48001b4d7a": {
+      "id": "909991ce-eb5c-412e-a1f4-8c48001b4d7a",
       "title": "Bane NOR RAMS Signal - Multippel signalprosjekter",
       "type": "project",
       "category": "projects",
@@ -185,9 +434,9 @@
         "RAMS_analysis",
         "2024"
       ],
-      "created_at": "2025-09-13T20:41:45.448681",
-      "updated_at": "2025-09-13T20:41:45.448681",
-      "file_path": "aa6c0700-a14b-45df-ba4a-7a7d59ce50a3.json",
+      "created_at": "2025-09-13T23:21:31.025686",
+      "updated_at": "2025-09-13T23:21:31.025686",
+      "file_path": "909991ce-eb5c-412e-a1f4-8c48001b4d7a.json",
       "metadata": {
         "client": "Bane NOR SF",
         "year": 2024,
@@ -195,8 +444,8 @@
         "status": "Pågående"
       }
     },
-    "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb": {
-      "id": "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb",
+    "86ea2a86-00ca-46ec-b127-766f0bbdf37d": {
+      "id": "86ea2a86-00ca-46ec-b127-766f0bbdf37d",
       "title": "ETCS Level 2 - Implementeringskrav og kostnader",
       "type": "technical_knowledge",
       "category": "signaling",
@@ -205,16 +454,16 @@
         "signaling",
         "ETCS-L2-IMPL"
       ],
-      "created_at": "2025-09-13T20:41:45.450135",
-      "updated_at": "2025-09-13T20:41:45.450135",
-      "file_path": "ee9ddd61-88db-4ee0-abf8-fb7ac4c568bb.json",
+      "created_at": "2025-09-13T23:21:31.026248",
+      "updated_at": "2025-09-13T23:21:31.026248",
+      "file_path": "86ea2a86-00ca-46ec-b127-766f0bbdf37d.json",
       "metadata": {
         "category": "signaling",
         "code": "ETCS-L2-IMPL"
       }
     },
-    "b18a5f64-e86a-43fc-8364-59f1e1b232ad": {
-      "id": "b18a5f64-e86a-43fc-8364-59f1e1b232ad",
+    "8ac5b955-2408-4f82-8c84-036685f37a0a": {
+      "id": "8ac5b955-2408-4f82-8c84-036685f37a0a",
       "title": "RAMS metodikk - EN 50126 implementering",
       "type": "technical_knowledge",
       "category": "safety",
@@ -223,16 +472,16 @@
         "safety",
         "RAMS-EN50126"
       ],
-      "created_at": "2025-09-13T20:41:45.450838",
-      "updated_at": "2025-09-13T20:41:45.450838",
-      "file_path": "b18a5f64-e86a-43fc-8364-59f1e1b232ad.json",
+      "created_at": "2025-09-13T23:21:31.026874",
+      "updated_at": "2025-09-13T23:21:31.026874",
+      "file_path": "8ac5b955-2408-4f82-8c84-036685f37a0a.json",
       "metadata": {
         "category": "safety",
         "code": "RAMS-EN50126"
       }
     },
-    "033f4dd4-9e4b-4ae9-855f-bae9533a5c71": {
-      "id": "033f4dd4-9e4b-4ae9-855f-bae9533a5c71",
+    "cc93c848-efb4-4368-9b18-e08cc3085be3": {
+      "id": "cc93c848-efb4-4368-9b18-e08cc3085be3",
       "title": "TSI Infrastructure - Tekniske krav infrastruktur",
       "type": "technical_knowledge",
       "category": "infrastructure",
@@ -241,16 +490,16 @@
         "infrastructure",
         "TSI-INF-2023"
       ],
-      "created_at": "2025-09-13T20:41:45.451431",
-      "updated_at": "2025-09-13T20:41:45.451431",
-      "file_path": "033f4dd4-9e4b-4ae9-855f-bae9533a5c71.json",
+      "created_at": "2025-09-13T23:21:31.027482",
+      "updated_at": "2025-09-13T23:21:31.027482",
+      "file_path": "cc93c848-efb4-4368-9b18-e08cc3085be3.json",
       "metadata": {
         "category": "infrastructure",
         "code": "TSI-INF-2023"
       }
     },
-    "6623bd33-73a0-434b-8bda-d00e99a63085": {
-      "id": "6623bd33-73a0-434b-8bda-d00e99a63085",
+    "1d5e7f52-4904-4a20-a6c9-fb33c4f5badb": {
+      "id": "1d5e7f52-4904-4a20-a6c9-fb33c4f5badb",
       "title": "Rolling Stock LCC - Life Cycle Cost analyse",
       "type": "technical_knowledge",
       "category": "rolling_stock",
@@ -259,16 +508,16 @@
         "rolling_stock",
         "RS-LCC-METHOD"
       ],
-      "created_at": "2025-09-13T20:41:45.452142",
-      "updated_at": "2025-09-13T20:41:45.452142",
-      "file_path": "6623bd33-73a0-434b-8bda-d00e99a63085.json",
+      "created_at": "2025-09-13T23:21:31.028084",
+      "updated_at": "2025-09-13T23:21:31.028084",
+      "file_path": "1d5e7f52-4904-4a20-a6c9-fb33c4f5badb.json",
       "metadata": {
         "category": "rolling_stock",
         "code": "RS-LCC-METHOD"
       }
     },
-    "5f092f7f-ef12-4912-a3da-18a3f1c3a96f": {
-      "id": "5f092f7f-ef12-4912-a3da-18a3f1c3a96f",
+    "fb6ef2c9-4b10-4b17-942f-8f8bee9207f7": {
+      "id": "fb6ef2c9-4b10-4b17-942f-8f8bee9207f7",
       "title": "Norsk jernbanemarked - Status og trender 2024",
       "type": "market_insight",
       "category": "market_analysis",
@@ -277,15 +526,15 @@
         "analyse",
         "market_analysis"
       ],
-      "created_at": "2025-09-13T20:41:45.452693",
-      "updated_at": "2025-09-13T20:41:45.452693",
-      "file_path": "5f092f7f-ef12-4912-a3da-18a3f1c3a96f.json",
+      "created_at": "2025-09-13T23:21:31.028706",
+      "updated_at": "2025-09-13T23:21:31.028706",
+      "file_path": "fb6ef2c9-4b10-4b17-942f-8f8bee9207f7.json",
       "metadata": {
         "category": "market_analysis"
       }
     },
-    "0f934966-b44c-4297-8571-92f55800c82b": {
-      "id": "0f934966-b44c-4297-8571-92f55800c82b",
+    "ae7bba46-ae09-41ab-9a49-6a801cad8913": {
+      "id": "ae7bba46-ae09-41ab-9a49-6a801cad8913",
       "title": "ETCS markedet i Norden - Muligheter og utfordringer",
       "type": "market_insight",
       "category": "technology_market",
@@ -294,9 +543,9 @@
         "analyse",
         "technology_market"
       ],
-      "created_at": "2025-09-13T20:41:45.453200",
-      "updated_at": "2025-09-13T20:41:45.453200",
-      "file_path": "0f934966-b44c-4297-8571-92f55800c82b.json",
+      "created_at": "2025-09-13T23:21:31.029293",
+      "updated_at": "2025-09-13T23:21:31.029293",
+      "file_path": "ae7bba46-ae09-41ab-9a49-6a801cad8913.json",
       "metadata": {
         "category": "technology_market"
       }
@@ -305,6 +554,6 @@
   "metadata": {
     "created": "2025-09-13T17:03:53.440791",
     "version": "2.0",
-    "last_updated": "2025-09-13T20:41:45.453280"
+    "last_updated": "2025-09-13T23:21:31.029368"
   }
 }

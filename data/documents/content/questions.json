@@ -1,0 +1,32 @@
+{
+  "title": "RailAdvice AI Kunnskapsbase - Spørsmål om tekniske detaljer og vedlikehold",
+  "doc_type": "questions",
+  "category": "teknisk",
+  "tags": ["faq", "spørsmål", "vedlikehold", "infrastruktur", "rullende materiell"],
+  "questions_and_answers": [
+    {
+      "id": "q_om_vedlikehold",
+      "question": "Hvordan optimaliseres vedlikeholdskostnader for rullende materiell?",
+      "answer": "Vedlikeholdskostnader for rullende materiell kan optimaliseres gjennom en grundig LCC-analyse (Life Cycle Cost). Dette innebærer å identifisere og redusere kostnader knyttet til drift, service og reparasjoner over kjøretøyets totale levetid, for å maksimere lønnsomheten. RailAdvice har spesialisert seg på slike analyser.",
+      "related_documents": ["Rolling Stock LCC - Life Cycle Cost analyse", "Flytoget Type 78 - RAMS og LCC optimalisering"]
+    },
+    {
+      "id": "q_om_sikkerhetsstyring",
+      "question": "Hva er en Sikkerhetsstyringsdokumentasjon (SMS)?",
+      "answer": "Et Sikkerhetsstyringsdokument (SMS - Safety Management System) er et sentralt system som beskriver hvordan en organisasjon håndterer sikkerhet. Det inkluderer prosedyrer, retningslinjer og ansvar for å sikre at alle operasjoner er sikre og i samsvar med relevante lover og standarder. RailAdvice bistår med utarbeidelse og implementering av slike systemer.",
+      "related_documents": ["RAMS metodikk - EN 50126 implementering"]
+    },
+    {
+      "id": "q_om_interoperabilitet",
+      "question": "Hva betyr interoperabilitet i jernbanesektoren?",
+      "answer": "Interoperabilitet betyr evnen til å operere tog og systemer sømløst på tvers av ulike jernbanenettverk. Dette er et hovedmål i Europa, og oppnås gjennom implementering av Technical Specifications for Interoperability (TSI) for å standardisere systemer som signalering, infrastruktur og rullende materiell.",
+      "related_documents": ["TSI Infrastructure - Tekniske krav infrastruktur"]
+    },
+    {
+      "id": "q_om_teknologi_utfordringer",
+      "question": "Hvilke utfordringer er det ved innføring av ny jernbaneteknologi?",
+      "answer": "Utfordringene ved innføring av ny teknologi kan inkludere høye implementeringskostnader, behov for omfattende opplæring av personell, teknisk kompleksitet og utfordringer med å integrere nye systemer med eksisterende infrastruktur. Dette er noe RailAdvice ofte gir råd om i prosjekter.",
+      "related_documents": ["ETCS Level 2 - Implementeringskrav og kostnader"]
+    }
+  ]
+}

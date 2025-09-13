@@ -1,0 +1,6 @@
+{
+  "id": "8ac5b955-2408-4f82-8c84-036685f37a0a",
+  "title": "RAMS metodikk - EN 50126 implementering",
+  "content": "TEKNISK KUNNSKAP: RAMS metodikk - EN 50126 implementering\nKategori: safety\nKode: RAMS-EN50126\n\nINNHOLD:\nEN 50126 definerer RAMS-krav for jernbanesystemer:\n                \n                Reliability: MTBF > 50,000 timer for kritiske systemer\n                Availability: 99.9% for persontransport, 99.5% for godstransport  \n                Maintainability: MTTR < 4 timer for kritiske feil\n                Safety: SIL-4 for kritiske sikkerhetsfunksjoner\n                \n                RAMS-prosess:\n                1. RAMS-krav definisjon (3-6 måneder)\n                2. HAZOP/HAZID analyse (2-4 måneder) \n                3. FMEA gjennomføring (4-6 måneder)\n                4. Safety case utarbeidelse (6-12 måneder)\n                5. Verifikasjon og validering (6-18 måneder)\n                \n                Typisk kostnad: 500,000 - 2,000,000 NOK per prosjekt.\n\nAnvendelser: \nFordeler: \nUtfordringer: ",
+  "created_at": "2025-09-13T23:21:31.026874"
+}
