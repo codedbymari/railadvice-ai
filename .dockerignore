@@ -1,23 +1,82 @@
-# Python virtual environment
-venv/
-
-# Cache and temp files
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.DS_Store
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv/
+
+# IDE
+.vscode/
+.idea/
 *.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
 
 # Git
 .git/
 .gitignore
 
+# Documentation
+*.md
+docs/
+
+# Large model files (download at runtime instead)
+models/
+*.bin
+*.safetensors
+*.onnx
+
+# Logs and databases
+*.log
+*.db
+*.sqlite3
+
+# Test files
+test/
+tests/
+*_test.py
+*_test.go
+
+# Docker
+Dockerfile*
+docker-compose*
+
+# Jupyter notebooks
+*.ipynb
+
 # Large data files
 data/
-documents/
+datasets/
+*.csv
+*.json
+*.parquet
 
-# OS-specific
-*.dmg
-*.img
-*.sqlite
+# Cache directories
+.cache/
+.pytest_cache/
+.coverage
