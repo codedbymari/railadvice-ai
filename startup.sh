@@ -5,16 +5,22 @@ echo "========================================="
 echo "Starting application setup..."
 echo "========================================="
 
-# Install requests first for healthcheck
-echo "Installing requests for healthcheck..."
-python -m pip install --user requests
+# Set PATH to include user-installed packages - THIS IS THE KEY FIX
+export PATH="/home/appuser/.local/bin:$PATH"
 
-# Installer base requirements
+# Install basic requirements FIRST (including uvicorn)
 echo "Installing base requirements..."
 python -m pip install --user -r requirements.txt
 echo "Base requirements installed successfully!"
 
-# Check om tunge ML-pakker allerede er installert
+# Verify uvicorn is available
+echo "Verifying uvicorn installation..."
+python -c "import uvicorn; print('uvicorn available')" || {
+    echo "uvicorn not found, installing directly..."
+    python -m pip install --user uvicorn[standard]==0.24.0
+}
+
+# Check if ML packages are already installed
 echo "Checking for ML packages..."
 if ! python -c "import torch, sentence_transformers, transformers, spacy" 2>/dev/null; then
     echo "ML packages not found. Installing heavy ML packages..."
@@ -35,5 +41,5 @@ echo "========================================="
 echo "Starting FastAPI application..."
 echo "========================================="
 
-# Start the application
+# Start the application (uvicorn is now installed and in PATH)
 exec python -m uvicorn src.api:app --host 0.0.0.0 --port 8000 --workers 1
