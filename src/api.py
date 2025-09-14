@@ -3,16 +3,14 @@ import os
 from pathlib import Path
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import uvicorn
 import logging
 
-# Import both document manager and AI engine
-from document_manager import EnhancedFileDocumentManager
-from ai_engine import RailAdviceAI
+# Import your modules
+from .document_manager import EnhancedFileDocumentManager
+from .ai_engine import RailAdviceAI
 
 # Setup logging
 logging.basicConfig(level=logging.INFO)
@@ -21,7 +19,6 @@ logger = logging.getLogger(__name__)
 # Global instances
 doc_manager = None
 ai_engine = None
-
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -33,9 +30,10 @@ async def lifespan(app: FastAPI):
         doc_manager = EnhancedFileDocumentManager()
         logger.info("✅ Document manager loaded")
 
-        # Call the method to load documents from projects/ and regulations/
-        doc_manager.load_external_documents()
-        logger.info("✅ External documents loaded")
+        # Load external documents if they exist
+        if hasattr(doc_manager, 'load_external_documents'):
+            doc_manager.load_external_documents()
+            logger.info("✅ External documents loaded")
         
         # Initialize AI engine
         ai_engine = RailAdviceAI()
@@ -53,49 +51,31 @@ async def lifespan(app: FastAPI):
     yield
     logger.info("🔄 Shutting down RailAdvice AI System...")
 
-
 app = FastAPI(
-    title="RailAdvice AI API",
-    description="AI-powered railway consulting assistant",
-    version="3.2.0",
+    title="RailAdvice AI Backend",
+    description="AI-powered railway consulting assistant - Backend API",
+    version="1.0.0",
     lifespan=lifespan
 )
 
-# CORS setup
+# CORS setup - Allow frontend domains
+FRONTEND_URLS = [
+    "https://railadvice-frontend.vercel.app",  # Replace with your Vercel domain
+    "https://your-custom-domain.com",         # Replace with custom domain
+    "http://localhost:3000",                  # Local development
+    "http://localhost:8080",                  # Local development
+    "http://127.0.0.1:3000",                  # Local development
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=FRONTEND_URLS + ["*"],  # Remove "*" in production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# ---------------------------
 # Data models
-# ---------------------------
-class DocumentRequest(BaseModel):
-    title: str
-    content: str
-    doc_type: str = "general"
-    category: str = "general"
-    tags: list[str] = []
-    metadata: dict = {}
-
-class DocumentUpdateRequest(BaseModel):
-    title: str | None = None
-    content: str | None = None
-    doc_type: str | None = None
-    category: str | None = None
-    tags: list[str] | None = None
-    metadata: dict | None = None
-
-class SearchRequest(BaseModel):
-    query: str | None = None
-    doc_type: str | None = None
-    category: str | None = None
-    tags: list[str] | None = None
-    limit: int = 50
-
 class ChatMessage(BaseModel):
     message: str
     context: str = "general"
@@ -108,211 +88,36 @@ class ChatResponse(BaseModel):
     specific_terms: list = []
     analysis_summary: str = ""
 
-# ---------------------------
-# Utility functions
-# ---------------------------
-def safe_reload_ai():
-    """Safely reload AI engine with error handling"""
-    global ai_engine
-    if ai_engine:
-        try:
-            ai_engine.reload_documents()
-            logger.info("🔄 AI engine reloaded with updated documents")
-            return True
-        except Exception as e:
-            logger.error(f"⚠️ Failed to reload AI engine: {e}")
-            return False
-    return False
-
-def check_services():
-    """Check if required services are available"""
-    if not doc_manager:
-        raise HTTPException(status_code=503, detail="Document manager not available")
-    if not ai_engine:
-        raise HTTPException(status_code=503, detail="AI engine not available")
-
-# ---------------------------
-# Document Management API endpoints
-# ---------------------------
-
-@app.post("/api/documents")
-async def add_document(req: DocumentRequest):
-    if not doc_manager:
-        raise HTTPException(status_code=503, detail="Document manager not available")
-
+# Health check
+@app.get("/api/health")
+async def health_check():
+    """Health check endpoint"""
     try:
-        doc_id = doc_manager.add_document(
-            title=req.title,
-            content=req.content,
-            doc_type=req.doc_type,
-            category=req.category,
-            tags=req.tags,
-            metadata=req.metadata
-        )
+        doc_manager_ok = doc_manager is not None
+        ai_engine_ok = ai_engine is not None
         
-        # Reload AI engine to include new document
-        reload_success = safe_reload_ai()
+        doc_count = 0
+        if doc_manager_ok:
+            try:
+                doc_count = len(doc_manager.list_documents())
+            except:
+                doc_manager_ok = False
+        
+        status = "healthy" if (doc_manager_ok and ai_engine_ok) else "partial"
         
         return {
-            "id": doc_id, 
-            "status": "created",
-            "ai_reloaded": reload_success
+            "status": status,
+            "doc_manager_loaded": doc_manager_ok,
+            "ai_engine_loaded": ai_engine_ok,
+            "documents_count": doc_count,
+            "service": "RailAdvice AI Backend",
+            "version": "1.0.0"
         }
     except Exception as e:
-        logger.error(f"Error adding document: {e}")
-        raise HTTPException(status_code=500, detail="Failed to add document")
+        logger.error(f"Health check error: {e}")
+        return {"status": "error", "error": str(e)}
 
-
-@app.get("/api/documents/{doc_id}")
-async def get_document(doc_id: str):
-    if not doc_manager:
-        raise HTTPException(status_code=503, detail="Document manager not available")
-
-    try:
-        doc = doc_manager.get_document(doc_id)
-        if not doc:
-            raise HTTPException(status_code=404, detail="Document not found")
-        return doc
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error getting document {doc_id}: {e}")
-        raise HTTPException(status_code=500, detail="Failed to retrieve document")
-
-
-@app.get("/api/documents")
-async def list_documents(limit: int = 100):
-    if not doc_manager:
-        raise HTTPException(status_code=503, detail="Document manager not available")
-
-    try:
-        documents = doc_manager.list_documents(limit=limit)
-        return {"documents": documents, "count": len(documents)}
-    except Exception as e:
-        logger.error(f"Error listing documents: {e}")
-        raise HTTPException(status_code=500, detail="Failed to list documents")
-
-
-@app.post("/api/search")
-async def search_documents(req: SearchRequest):
-    if not doc_manager:
-        raise HTTPException(status_code=503, detail="Document manager not available")
-
-    try:
-        results = doc_manager.search_documents(
-            query=req.query,
-            doc_type=req.doc_type,
-            category=req.category,
-            tags=req.tags,
-            limit=req.limit
-        )
-        return {"results": results, "count": len(results)}
-    except Exception as e:
-        logger.error(f"Error searching documents: {e}")
-        raise HTTPException(status_code=500, detail="Failed to search documents")
-
-
-@app.delete("/api/documents/{doc_id}")
-async def delete_document(doc_id: str):
-    if not doc_manager:
-        raise HTTPException(status_code=503, detail="Document manager not available")
-
-    try:
-        success = doc_manager.remove_document(doc_id)
-        if not success:
-            raise HTTPException(status_code=404, detail="Document not found")
-        
-        # Reload AI engine after deletion
-        reload_success = safe_reload_ai()
-        
-        return {
-            "status": "deleted", 
-            "id": doc_id,
-            "ai_reloaded": reload_success
-        }
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error deleting document {doc_id}: {e}")
-        raise HTTPException(status_code=500, detail="Failed to delete document")
-
-
-@app.put("/api/documents/{doc_id}")
-async def update_document(doc_id: str, req: DocumentUpdateRequest):
-    if not doc_manager:
-        raise HTTPException(status_code=503, detail="Document manager not available")
-
-    try:
-        # Filter out None values
-        update_data = {k: v for k, v in req.model_dump().items() if v is not None}
-        
-        updated = doc_manager.update_document(doc_id, **update_data)
-        if not updated:
-            raise HTTPException(status_code=404, detail="Document not found or update failed")
-        
-        # Reload AI engine after update
-        reload_success = safe_reload_ai()
-        
-        return {
-            "status": "updated", 
-            "id": doc_id,
-            "ai_reloaded": reload_success
-        }
-    except HTTPException:
-        raise
-    except Exception as e:
-        logger.error(f"Error updating document {doc_id}: {e}")
-        raise HTTPException(status_code=500, detail="Failed to update document")
-
-
-@app.get("/api/stats")
-async def get_stats():
-    if not doc_manager:
-        raise HTTPException(status_code=503, detail="Document manager not available")
-
-    try:
-        stats = doc_manager.get_stats()
-        
-        # Add AI engine stats if available
-        if ai_engine:
-            stats["ai_engine"] = {
-                "loaded": True,
-                "documents_in_ai": len(ai_engine.documents_text) if hasattr(ai_engine, 'documents_text') else 0,
-                "embedder_model": "all-MiniLM-L6-v2"
-            }
-        else:
-            stats["ai_engine"] = {"loaded": False}
-            
-        return stats
-    except Exception as e:
-        logger.error(f"Error getting stats: {e}")
-        raise HTTPException(status_code=500, detail="Failed to get statistics")
-
-# ---------------------------
-# AI Chat endpoints
-# ---------------------------
-@app.get("/api/greet")
-async def greet():
-    """Get AI greeting message"""
-    if not ai_engine:
-        raise HTTPException(status_code=503, detail="AI engine not available")
-    
-    try:
-        # Check if get_greeting method exists
-        if hasattr(ai_engine, 'get_greeting'):
-            greeting = ai_engine.get_greeting()
-        else:
-            # Fallback greeting since method doesn't exist
-            doc_count = len(doc_manager.list_documents()) if doc_manager else 0
-            greeting = f"Hei! Jeg er RailAdvice AI-assistenten din med tilgang til {doc_count} dokumenter. Jeg kan hjelpe deg med ETCS, jernbaneteknologi og RailAdvice sine prosjekter."
-        
-        return {"greeting": greeting}
-    except Exception as e:
-        logger.error(f"Error getting greeting: {e}")
-        # Return proper greeting instead of error message
-        doc_count = len(doc_manager.list_documents()) if doc_manager else 0
-        return {"greeting": f"Hei! Jeg er RailAdvice AI-assistenten din med tilgang til {doc_count} dokumenter. Jeg kan hjelpe deg med ETCS, jernbaneteknologi og RailAdvice sine prosjekter."}
-
+# Chat endpoint
 @app.post("/api/chat", response_model=ChatResponse)
 async def chat(message: ChatMessage):
     """Chat with RailAdvice AI"""
@@ -325,15 +130,11 @@ async def chat(message: ChatMessage):
     try:
         logger.info(f"Processing query: {message.message}")
         
-        # Query the AI engine directly
         result = ai_engine.query(message.message)
         
-        # Create analysis summary
         analysis_summary = f"Processed with {result['confidence']} confidence"
         if result['sources'] > 0:
             analysis_summary += f" using {result['sources']} sources"
-        if result['intent_categories']:
-            analysis_summary += f". Intent: {', '.join(result['intent_categories'])}"
         
         return ChatResponse(
             response=result["answer"],
@@ -348,152 +149,67 @@ async def chat(message: ChatMessage):
         logger.error(f"Error processing chat: {e}")
         raise HTTPException(status_code=500, detail="Error processing your question")
 
-
-@app.get("/api/ai-status")
-async def ai_status():
-    """Get AI system status"""
+# Greeting endpoint
+@app.get("/api/greet")
+async def greet():
+    """Get AI greeting message"""
     try:
         doc_count = len(doc_manager.list_documents()) if doc_manager else 0
-        ai_doc_count = len(ai_engine.documents_text) if (ai_engine and hasattr(ai_engine, 'documents_text')) else 0
-        
-        return {
-            "ai_engine_loaded": ai_engine is not None,
-            "doc_manager_loaded": doc_manager is not None,
-            "documents_count": doc_count,
-            "ai_documents_loaded": ai_doc_count,
-            "ai_knowledge_status": "loaded" if ai_engine else "not_loaded",
-            "system_health": "healthy" if (doc_manager and ai_engine and doc_count > 0) else "needs_attention"
-        }
+        greeting = f"Hei! Jeg er RailAdvice AI-assistenten din med tilgang til {doc_count} dokumenter. Jeg kan hjelpe deg med ETCS, jernbaneteknologi og RailAdvice sine prosjekter."
+        return {"greeting": greeting}
     except Exception as e:
-        logger.error(f"Error getting AI status: {e}")
-        return {
-            "ai_engine_loaded": False,
-            "doc_manager_loaded": False,
-            "error": str(e)
-        }
+        logger.error(f"Error getting greeting: {e}")
+        return {"greeting": "Hei! Jeg er RailAdvice AI-assistenten din."}
 
+# Stats endpoint
+@app.get("/api/stats")
+async def get_stats():
+    """Get system statistics"""
+    if not doc_manager:
+        raise HTTPException(status_code=503, detail="Document manager not available")
 
-@app.post("/api/reload-ai")
-async def reload_ai():
-    """Force reload AI engine (useful after adding documents)"""
-    if not ai_engine:
-        raise HTTPException(status_code=503, detail="AI engine not available")
-    
     try:
-        logger.info("Manual AI reload requested")
-        success = safe_reload_ai()
+        stats = doc_manager.get_stats()
         
-        if success:
-            doc_count = len(ai_engine.documents_text) if hasattr(ai_engine, 'documents_text') else 0
-            return {
-                "status": "success", 
-                "message": f"AI engine reloaded successfully with {doc_count} documents"
+        if ai_engine:
+            stats["ai_engine"] = {
+                "loaded": True,
+                "documents_in_ai": len(ai_engine.documents_text) if hasattr(ai_engine, 'documents_text') else 0
             }
         else:
-            raise HTTPException(status_code=500, detail="Failed to reload AI engine")
+            stats["ai_engine"] = {"loaded": False}
             
-    except HTTPException:
-        raise
+        return stats
     except Exception as e:
-        logger.error(f"Error reloading AI: {e}")
-        raise HTTPException(status_code=500, detail="Failed to reload AI engine")
+        logger.error(f"Error getting stats: {e}")
+        raise HTTPException(status_code=500, detail="Failed to get statistics")
 
-
-# ---------------------------
-# Health and system endpoints
-# ---------------------------
-
-@app.get("/api/health", tags=["Health"])
-async def health_check():
-    """Comprehensive health check"""
-    try:
-        doc_manager_ok = doc_manager is not None
-        ai_engine_ok = ai_engine is not None
-        
-        doc_count = 0
-        ai_doc_count = 0
-        
-        if doc_manager_ok:
-            try:
-                doc_count = len(doc_manager.list_documents())
-            except:
-                doc_manager_ok = False
-                
-        if ai_engine_ok:
-            try:
-                ai_doc_count = len(ai_engine.documents_text) if hasattr(ai_engine, 'documents_text') else 0
-            except:
-                ai_engine_ok = False
-        
-        status = "healthy" if (doc_manager_ok and ai_engine_ok and doc_count > 0) else "partial"
-        
-        return {
-            "status": status,
-            "doc_manager_loaded": doc_manager_ok,
-            "ai_engine_loaded": ai_engine_ok,
-            "documents_count": doc_count,
-            "ai_documents_loaded": ai_doc_count,
-            "service": "RailAdvice AI",
-            "version": "3.2.0"
-        }
-    except Exception as e:
-        logger.error(f"Health check error: {e}")
-        return {
-            "status": "error",
-            "error": str(e),
-            "service": "RailAdvice AI"
-        }
-
-# ---------------------------
-# Static file serving
-# ---------------------------
-
-# Serve static frontend if exists
-if os.path.exists("static"):
-    app.mount("/static", StaticFiles(directory="static"), name="static")
-
-# Serve images if exists
-if os.path.exists("img"):
-    app.mount("/img", StaticFiles(directory="img"), name="images")
-
+# Root endpoint
 @app.get("/")
-async def serve_frontend():
-    """Serve frontend or API info"""
-    html_path = Path("static") / "index.html"
-    if html_path.exists():
-        return FileResponse(html_path)
-    else:
-        try:
-            # Get system status for API root
-            doc_count = len(doc_manager.list_documents()) if doc_manager else 0
-            ai_loaded = ai_engine is not None
-            
-            return {
-                "message": "RailAdvice AI API running", 
-                "version": "3.2.0",
-                "docs": "/docs",
+async def root():
+    """API information"""
+    try:
+        doc_count = len(doc_manager.list_documents()) if doc_manager else 0
+        ai_loaded = ai_engine is not None
+        
+        return {
+            "message": "RailAdvice AI Backend API", 
+            "version": "1.0.0",
+            "status": "running",
+            "ai_loaded": ai_loaded,
+            "documents": doc_count,
+            "endpoints": {
                 "health": "/api/health",
-                "ai_status": f"AI Engine: {'✅' if ai_loaded else '❌'}, Documents: {doc_count}",
-                "endpoints": {
-                    "chat": "/api/chat",
-                    "documents": "/api/documents",
-                    "stats": "/api/stats"
-                }
+                "chat": "/api/chat",
+                "greet": "/api/greet",
+                "stats": "/api/stats",
+                "docs": "/docs"
             }
-        except Exception as e:
-            logger.error(f"Error in root endpoint: {e}")
-            return {
-                "message": "RailAdvice AI API running with errors", 
-                "docs": "/docs",
-                "error": str(e)
-            }
-
+        }
+    except Exception as e:
+        logger.error(f"Error in root endpoint: {e}")
+        return {"message": "RailAdvice AI Backend API", "error": str(e)}
 
 if __name__ == "__main__":
-    print("🚆 Starting RailAdvice AI API Server...")
-    uvicorn.run(
-        app,
-        host="0.0.0.0",
-        port=8000,
-        log_level="info"
-    )
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
