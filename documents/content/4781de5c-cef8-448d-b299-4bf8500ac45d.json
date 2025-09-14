@@ -1,6 +1,0 @@
-{
-  "id": "4781de5c-cef8-448d-b299-4bf8500ac45d",
-  "title": "RailAdvice - basic_info",
-  "content": "RailAdvice basic_info:\n{\n  \"name\": \"RailAdvice AS\",\n  \"founded\": \"2018\",\n  \"location\": \"Oslo, Norge\",\n  \"website\": \"www.railadvice.no\",\n  \"industry\": \"Jernbanekonsulenter\",\n  \"employees\": \"10-20 ansatte\",\n  \"languages\": [\n    \"Norsk\",\n    \"Engelsk\",\n    \"Svensk\",\n    \"Dansk\"\n  ]\n}",
-  "created_at": "2025-09-13T23:21:31.014907"
-}

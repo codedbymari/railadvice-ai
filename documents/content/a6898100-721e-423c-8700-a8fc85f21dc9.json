@@ -1,6 +1,0 @@
-{
-  "id": "a6898100-721e-423c-8700-a8fc85f21dc9",
-  "title": "RailAdvice - service_areas",
-  "content": "RailAdvice service_areas:\n{\n  \"RAMS_services\": {\n    \"description\": \"Komplett RAMS analyse og dokumentasjon\",\n    \"deliverables\": [\n      \"RAMS plan\",\n      \"Sikkerhetsdokumentasjon\",\n      \"Risikoanalyse\"\n    ],\n    \"standards\": [\n      \"EN 50126\",\n      \"EN 50128\",\n      \"EN 50129\"\n    ],\n    \"typical_cost\": \"500,000 - 2,000,000 NOK per prosjekt\"\n  },\n  \"ETCS_services\": {\n    \"description\": \"ETCS implementering og optimalisering\",\n    \"levels\": [\n      \"ETCS Level 1\",\n      \"ETCS Level 2\",\n      \"ETCS Level 3\"\n    ],\n    \"deliverables\": [\n      \"ETCS design\",\n      \"Kostnad-nytte analyse\",\n      \"Implementeringsplan\"\n    ],\n    \"typical_cost\": \"15-25 millioner NOK per 100km implementering\"\n  },\n  \"project_management\": {\n    \"description\": \"Prosjektledelse for jernbaneprosjekter\",\n    \"project_types\": [\n      \"Infrastruktur\",\n      \"Rolling stock\",\n      \"Signaling\",\n      \"Depot\"\n    ],\n    \"methodologies\": [\n      \"PRINCE2\",\n      \"PMI\",\n      \"Jernbanespesifikk\"\n    ],\n    \"typical_duration\": \"6-36 måneder\"\n  }\n}",
-  "created_at": "2025-09-13T23:21:31.016632"
-}

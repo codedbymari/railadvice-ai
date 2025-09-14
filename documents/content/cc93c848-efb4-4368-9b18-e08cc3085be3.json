@@ -1,6 +1,0 @@
-{
-  "id": "cc93c848-efb4-4368-9b18-e08cc3085be3",
-  "title": "TSI Infrastructure - Tekniske krav infrastruktur",
-  "content": "TEKNISK KUNNSKAP: TSI Infrastructure - Tekniske krav infrastruktur\nKategori: infrastructure\nKode: TSI-INF-2023\n\nINNHOLD:\nTSI Infrastructure definerer tekniske krav for jernbaneinfrastruktur:\n                \n                Sporvidde: 1435mm (normalspor) ±2mm toleranse\n                Lastefri profil: Minimum GA struktur, GC for høyhastighetsbaner\n                Minimum kurveradius: 150m for nye baner (300m anbefalt)\n                Maksimal gradient: 35‰ (3.5%) for persontog, 25‰ for godstog\n                \n                Konstruksjonskrav:\n                - Ballast: Minimum 30cm under sviller\n                - Fundamentering: Frostfritt under -20°C\n                - Drenering: Kapasitet for 100-års regn\n                - Bæreevne: 250 kN aksellast (godstog)\n                \n                Byggetoleranse: ±10mm horisontal, ±5mm vertikal\n                Vedlikeholdsintervall: 5-8 år sporstabilisering\n                \n                Kostnad ny bane: 150-300 millioner NOK per km (avhenger av terreng)\n\nAnvendelser: \nFordeler: \nUtfordringer: ",
-  "created_at": "2025-09-13T23:21:31.027482"
-}

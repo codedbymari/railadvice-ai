@@ -1,19 +1,23 @@
-from sentence_transformers import SentenceTransformer
-import chromadb
-import re
-import spacy
-from collections import Counter
-import json
-from datetime import datetime
-import numpy as np
-from sklearn.feature_extraction.text import TfidfVectorizer
-from .document_manager import EnhancedFileDocumentManager as DocumentManager
 import os
+import asyncio
+import json
+import re
+from datetime import datetime
 from pathlib import Path
+from collections import Counter
+import numpy as np
 
 
+# Set environment variables before any imports
 os.environ["ANONYMIZED_TELEMETRY"] = "False"
 os.environ["CHROMA_SERVER_NOFILE"] = "1"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+
+# Global variables for lazy loading
+_embedder = None
+_nlp = None
+_chroma_client = None
+_loading_lock = asyncio.Lock() if 'asyncio' in globals() else None
 
 
 def fix_metadata(metadata):
@@ -26,48 +30,75 @@ def fix_metadata(metadata):
         if isinstance(value, list):
             fixed[key] = ", ".join(str(v) for v in value)
         else:
-            fixed[key] = value
+            fixed[key] = str(value) if value is not None else ""
     return fixed
 
 
+class LazyLoader:
+    """Handles lazy loading of heavy dependencies"""
+    
+    @staticmethod
+    def get_embedder():
+        global _embedder
+        if _embedder is None:
+            try:
+                from sentence_transformers import SentenceTransformer
+                print("🧠 Loading SentenceTransformer model...")
+                _embedder = SentenceTransformer('all-MiniLM-L6-v2')
+                print("✅ SentenceTransformer loaded")
+            except Exception as e:
+                print(f"❌ Failed to load SentenceTransformer: {e}")
+                raise
+        return _embedder
+    
+    @staticmethod
+    def get_nlp():
+        global _nlp
+        if _nlp is None:
+            try:
+                import spacy
+                try:
+                    _nlp = spacy.load("nb_core_news_sm")
+                    print("✅ Norwegian NLP model loaded")
+                except:
+                    try:
+                        _nlp = spacy.load("en_core_web_sm")
+                        print("✅ English NLP model loaded")
+                    except:
+                        print("⚠️ No spaCy model found - using basic processing")
+                        _nlp = None
+            except Exception as e:
+                print(f"⚠️ spaCy not available: {e}")
+                _nlp = None
+        return _nlp
+    
+    @staticmethod
+    def get_chroma_client():
+        global _chroma_client
+        if _chroma_client is None:
+            try:
+                import chromadb
+                print("🗄️ Initializing ChromaDB...")
+                _chroma_client = chromadb.PersistentClient(path="./data/chromadb")
+                print("✅ ChromaDB client ready")
+            except Exception as e:
+                print(f"❌ Failed to initialize ChromaDB: {e}")
+                raise
+        return _chroma_client
+
+
 class RailAdviceAI:
-    def __init__(self):
+    def __init__(self, lazy_init=True):
         print("🚀 Initializing RailAdvice AI...")
         
-        # Load NLP models
-        self.embedder = SentenceTransformer('all-MiniLM-L6-v2')
-        
-        # Try to load Norwegian spaCy model, fallback to English
-        try:
-            self.nlp = spacy.load("nb_core_news_sm")
-            print("✅ Norwegian NLP model loaded")
-        except:
-            try:
-                self.nlp = spacy.load("en_core_web_sm")
-                print("✅ English NLP model loaded")
-            except:
-                print("⚠️ No spaCy model found - install: python -m spacy download nb_core_news_sm")
-                self.nlp = None
-        
-        # Setup vector database
-        self.client = chromadb.PersistentClient(path="./data/chromadb")
-        
-        # We always want to clear old data to ensure the latest documents are loaded
-        try:
-            self.client.delete_collection("railadvice")
-            print("🗑️ Cleared existing knowledge base")
-        except:
-            pass
-        
-        self.collection = self.client.get_or_create_collection("railadvice")
-        
-        # Document manager for all documents
-        self.doc_manager = DocumentManager()
-        
-        # TF-IDF for keyword matching
-        self.tfidf = TfidfVectorizer(stop_words=None, ngram_range=(1, 3))
+        # Initialize light components immediately
+        self.lazy_init = lazy_init
         self.documents_text = []
         self.documents_metadata = []
+        self.collection = None
+        self.tfidf = None
+        self._initialized = False
+        self._doc_manager = None
         
         # Enhanced patterns for better recognition
         self.greeting_patterns = [
@@ -98,15 +129,81 @@ class RailAdviceAI:
             "erfaring": ["erfaring", "kompetanse", "ekspertise", "kunnskap", "sertifisering", "utdanning"]
         }
         
-        # Load all documents from document manager upon initialization
-        self.load_knowledge_base()
+        if not lazy_init:
+            self.initialize_heavy_components()
         
-        print("✅ RailAdvice AI ready!")
+        print("✅ RailAdvice AI ready for queries!")
+
+    def initialize_heavy_components(self):
+        """Initialize the heavy ML components"""
+        if self._initialized:
+            return
         
-        # Show knowledge base status
-        doc_count = len(self.collection.get()['ids'])
-        manual_count = len(self.doc_manager.list_documents())
-        print(f"📊 Knowledge base: {doc_count} loaded documents ({manual_count} manual documents available)")
+        try:
+            print("🔄 Loading ML components...")
+            
+            # Load embedder
+            self.embedder = LazyLoader.get_embedder()
+            
+            # Load NLP
+            self.nlp = LazyLoader.get_nlp()
+            
+            # Setup ChromaDB
+            self.client = LazyLoader.get_chroma_client()
+            
+            # Get or create collection (don't delete existing unless explicitly needed)
+            try:
+                self.collection = self.client.get_collection("railadvice")
+                print("✅ Using existing ChromaDB collection")
+            except:
+                self.collection = self.client.create_collection("railadvice")
+                print("✅ Created new ChromaDB collection")
+            
+            # Initialize document manager
+            try:
+                from document_manager import EnhancedFileDocumentManager
+                self._doc_manager = EnhancedFileDocumentManager()
+                print("✅ Document manager loaded")
+            except Exception as e:
+                print(f"⚠️ Document manager failed to load: {e}")
+            
+            # Initialize TF-IDF
+            try:
+                from sklearn.feature_extraction.text import TfidfVectorizer
+                self.tfidf = TfidfVectorizer(stop_words=None, ngram_range=(1, 3))
+            except Exception as e:
+                print(f"⚠️ TF-IDF not available: {e}")
+                self.tfidf = None
+            
+            self._initialized = True
+            
+            # Load documents if document manager is available
+            if self._doc_manager:
+                self.load_knowledge_base()
+            
+            print("✅ Heavy components loaded successfully")
+            
+        except Exception as e:
+            print(f"❌ Failed to initialize heavy components: {e}")
+            self._initialized = False
+            raise
+
+    def ensure_initialized(self):
+        """Ensure heavy components are loaded"""
+        if not self._initialized:
+            self.initialize_heavy_components()
+        return self._initialized
+
+    def get_initialization_status(self):
+        """Get current initialization status"""
+        return {
+            "initialized": self._initialized,
+            "embedder_ready": _embedder is not None,
+            "nlp_ready": _nlp is not None,
+            "chroma_ready": _chroma_client is not None,
+            "documents_loaded": len(self.documents_text),
+            "collection_ready": self.collection is not None
+        }
 
     def classify_input_type(self, text):
         """Classify the type of input to handle it appropriately"""
@@ -147,7 +244,7 @@ class RailAdviceAI:
 
     def get_identity_response(self):
         """Response for identity questions"""
-        doc_count = len(self.doc_manager.list_documents())
+        doc_count = len(self.documents_text)
         
         if doc_count == 0:
             return """Jeg er RailAdvice AI, din jernbanetekniske assistent. 
@@ -188,8 +285,7 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
         
         if word_type == "single_word":
             # Try to find relevant information about the word
-            if len(self.documents_text) > 0:
-                # Search for the word in documents
+            if len(self.documents_text) > 0 and self.ensure_initialized():
                 try:
                     query_embedding = self.embedder.encode([word])[0].tolist()
                     results = self.collection.query(
@@ -204,8 +300,8 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
                         if sentences:
                             best_sentence = sentences[0][:200] + "..." if len(sentences[0]) > 200 else sentences[0]
                             return f"Angående '{word}': {best_sentence}. Ønsker du mer informasjon?"
-                except:
-                    pass
+                except Exception as e:
+                    print(f"⚠️ Error in single word search: {e}")
             
             return f"Du skrev '{word}'. Kan du utdype hva du vil vite om dette, eller still et mer spesifikt spørsmål?"
         
@@ -225,17 +321,12 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
             return f"Du spør om {category_name}. Hva spesifikt vil du vite? For eksempel: kostnader, implementering, eller tekniske detaljer?"
 
     def extract_meaningful_content(self, text, max_sentences=3):
-        """
-        Extract meaningful content, avoiding metadata and JSON.
-        Updated to better handle and clean up document content.
-        """
+        """Extract meaningful content, avoiding metadata and JSON"""
         if not text:
             return []
         
-        # First, aggressively remove known metadata patterns
+        # Clean up metadata patterns
         cleaned_text = re.sub(r'^(PROSJEKT|TEKNISK KUNNSKAP|KOMPETANSE|MARKEDSINNSATS|INNHOLD):.*?\s*', '', text, flags=re.IGNORECASE | re.DOTALL)
-        
-        # Remove key-value pairs that are common metadata
         cleaned_text = re.sub(r'(Kunde|Type|Status|År|Kode|Kategori|Tittel):\s*[^ \n]+', '', cleaned_text, flags=re.IGNORECASE)
         
         # Split into sentences
@@ -244,7 +335,7 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
         good_sentences = []
         for sentence in sentences:
             sentence = sentence.strip()
-            # Skip if too short or looks like metadata/json
+            # Skip if too short or looks like metadata
             if (len(sentence) < 30 or 
                 sentence.startswith(('{', '[', '"')) or
                 'json' in sentence.lower() or
@@ -254,11 +345,10 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
                 len(sentence.split()) < 5):
                 continue
             
-            # Remove any trailing source/id tags
+            # Clean up
             sentence = re.sub(r'\(ID: [0-9a-f-]+\)', '', sentence)
-            
-            # Clean up and append
             sentence = re.sub(r'\s+', ' ', sentence).strip()
+            
             if sentence:
                 good_sentences.append(sentence)
             
@@ -268,14 +358,11 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
         return good_sentences
 
     def generate_smart_response(self, question, docs, confidence, input_type):
-        """
-        Generate intelligent, natural responses based on input type.
-        Updated to create more coherent and human-like answers.
-        """
+        """Generate intelligent, natural responses based on input type"""
         
         # Handle special input types first
         if input_type == "greeting":
-            doc_count = len(self.doc_manager.list_documents())
+            doc_count = len(self.documents_text)
             if doc_count == 0:
                 return "Hei! Jeg er RailAdvice AI. Jeg har ingen dokumenter å jobbe med ennå - legg til dokumenter så kan jeg hjelpe deg!"
             return f"Hei! Jeg er RailAdvice AI med {doc_count} dokumenter tilgjengelig. Hva kan jeg hjelpe deg med?"
@@ -306,7 +393,7 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
         
         # Build natural response
         intro_phrases = ["Basert på min kunnskapsbase", "Dokumentasjon viser at", "Angående ditt spørsmål", "Jeg fant følgende informasjon"]
-        intro = intro_phrases[np.random.randint(0, len(intro_phrases))]
+        intro = intro_phrases[np.random.randint(0, len(intro_phrases))] if len(intro_phrases) > 0 else "Basert på dokumentene"
         
         if confidence == "High":
             main_content = " ".join(response_parts)
@@ -314,13 +401,13 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
             if len(response_parts) > 1:
                 response += " Ønsker du mer detaljert informasjon?"
         elif confidence == "Medium":
-            main_content = " ".join(response_parts) # Combine all relevant sentences for a more complete answer
+            main_content = " ".join(response_parts)
             response = f"Basert på min kunnskapsbase: {main_content}."
-        else: # Low confidence
-            main_content = " ".join(response_parts[:1]) # Use only the most relevant part
+        else:  # Low confidence
+            main_content = " ".join(response_parts[:1])
             response = f"Jeg fant noe relevant informasjon: {main_content} Kan du omformulere spørsmålet?"
         
-        # Clean up and finalize response
+        # Clean up response
         response = re.sub(r'\s+', ' ', response).strip()
         if not response.endswith(('.', '!', '?')):
             response += '.'
@@ -329,80 +416,96 @@ Prøv å spørre om noe - jeg lærer fra dokumentene dine!"""
 
     def generate_intelligent_fallback(self, question, input_type):
         """Generate intelligent responses when no documents match"""
-        manual_doc_count = len(self.doc_manager.list_documents())
+        doc_count = len(self.documents_text)
         
-        if manual_doc_count == 0:
+        if doc_count == 0:
             return """Jeg har ingen dokumenter å svare basert på ennå. 
             
-Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe deg med jernbanerelaterte spørsmål!"""
+Legg til dokumenter via document manager, så kan jeg hjelpe deg med jernbanerelaterte spørsmål!"""
         
         question_lower = question.lower()
         
         # Try to be helpful based on question content
         if any(word in question_lower for word in ['etcs', 'ertms']):
-            return f"Jeg ser du spør om ETCS/ERTMS, men fant ikke spesifikk informasjon i de {manual_doc_count} dokumentene. Legg gjerne til mer teknisk dokumentasjon om signalsystemer."
+            return f"Jeg ser du spør om ETCS/ERTMS, men fant ikke spesifikk informasjon i de {doc_count} dokumentene. Legg gjerne til mer teknisk dokumentasjon om signalsystemer."
         
         elif any(word in question_lower for word in ['kostnad', 'pris', 'kost']):
             return f"Du spør om kostnader, men jeg fant ikke prisopplysninger i dokumentene. Har du budsjett- eller kostnadsdokumenter du kan legge til?"
         
         elif any(word in question_lower for word in ['rams', 'sikkerhet']):
-            return f"RAMS og sikkerhet er viktige tema. Jeg har {manual_doc_count} dokumenter, men fant ikke svar på ditt spesifikke spørsmål. Prøv å være mer spesifikk eller legg til flere tekniske dokumenter."
+            return f"RAMS og sikkerhet er viktige tema. Jeg har {doc_count} dokumenter, men fant ikke svar på ditt spesifikke spørsmål. Prøv å være mer spesifikk eller legg til flere tekniske dokumenter."
         
         else:
-            return f"Jeg forstår spørsmålet ditt, men fant ikke svar i de {manual_doc_count} dokumentene. Prøv å omformulere spørsmålet eller legg til mer relevant dokumentasjon."
-    
+            return f"Jeg forstår spørsmålet ditt, men fant ikke svar i de {doc_count} dokumentene. Prøv å omformulere spørsmålet eller legg til mer relevant dokumentasjon."
+
     def load_knowledge_base(self):
-        """Loads all documents from the document manager into the AI's knowledge base."""
-        all_docs = self.doc_manager.load_all_documents()
-        
-        if not all_docs:
-            print("⚠️ No documents found. Use document_manager.py to add documents.")
+        """Load all documents from document manager"""
+        if not self._doc_manager:
+            print("⚠️ Document manager not available")
             return
         
-        print(f"📄 Loading {len(all_docs)} documents...")
-        
-        for doc in all_docs:
-            try:
-                content = doc.get("content")
-                if not content:
-                    print(f"⚠️ Skipping document with no content: {doc.get('title', 'Unknown')}")
-                    continue
-
-                metadata = {
-                    "type": doc.get("type", "unknown"),
-                    "category": doc.get("category", "general"),
-                    "title": doc.get("title", "Untitled"),
-                    "tags": doc.get("tags", []),
-                    "source": "manual",
-                    "doc_id": doc.get("id", "unknown"),
-                    "added_date": doc.get("created_at", datetime.now().isoformat())
-                }
-
-                self.add_document_to_ai(
-                    text=content,
-                    metadata=metadata
-                )
-            except Exception as e:
-                print(f"⚠️ Error loading document {doc.get('title', 'Unknown')}: {e}")
-                continue
-        
-        print(f"✅ Loaded documents into AI (attempted {len(all_docs)})")
-    
-    def reload_documents(self):
-        """Reload all documents (call this after adding/removing documents)"""
         try:
+            all_docs = self._doc_manager.load_all_documents()
+            
+            if not all_docs:
+                print("⚠️ No documents found")
+                return
+            
+            print(f"📄 Loading {len(all_docs)} documents...")
+            
+            # Clear existing documents
+            self.documents_text = []
+            self.documents_metadata = []
+            
+            for doc in all_docs:
+                try:
+                    content = doc.get("content")
+                    if not content:
+                        continue
+
+                    metadata = {
+                        "type": doc.get("type", "unknown"),
+                        "category": doc.get("category", "general"),
+                        "title": doc.get("title", "Untitled"),
+                        "tags": doc.get("tags", []),
+                        "source": "manual",
+                        "doc_id": doc.get("id", "unknown"),
+                        "added_date": doc.get("created_at", datetime.now().isoformat())
+                    }
+
+                    self.add_document_to_ai(text=content, metadata=metadata)
+                    
+                except Exception as e:
+                    print(f"⚠️ Error loading document {doc.get('title', 'Unknown')}: {e}")
+                    continue
+            
+            print(f"✅ Loaded {len(self.documents_text)} documents into AI")
+            
+        except Exception as e:
+            print(f"❌ Failed to load knowledge base: {e}")
+
+    def reload_documents(self):
+        """Reload all documents"""
+        if not self.ensure_initialized():
+            return
+        
+        try:
+            # Clear collection
             self.client.delete_collection("railadvice")
-        except:
-            pass
-        self.collection = self.client.get_or_create_collection("railadvice")
-        
-        self.documents_text = []
-        self.documents_metadata = []
-        
-        self.load_knowledge_base()
-        
-        print("🔄 Documents reloaded successfully")
-    
+            self.collection = self.client.create_collection("railadvice")
+            
+            # Clear local storage
+            self.documents_text = []
+            self.documents_metadata = []
+            
+            # Reload documents
+            self.load_knowledge_base()
+            
+            print("🔄 Documents reloaded successfully")
+            
+        except Exception as e:
+            print(f"❌ Failed to reload documents: {e}")
+
     def add_document_to_ai(self, text, metadata):
         """Add document to AI (internal method)"""
         try:
@@ -410,46 +513,54 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
                 text = str(text)
             
             if not text.strip():
-                print("⚠️ Skipping empty document")
                 return
             
-            embedding = self.embedder.encode([text])[0].tolist()
-            
-            self.documents_text.append(text)
-            self.documents_metadata.append(metadata)
-            
-            metadata = metadata.copy()
-            metadata['ai_added_date'] = datetime.now().isoformat()
-            metadata['text_length'] = len(text)
-            metadata['doc_index'] = len(self.documents_text) - 1
-            
-            doc_id = f"doc_{len(self.collection.get()['ids']) + 1}"
-            
-            fixed_metadata = fix_metadata(metadata)
-            
-            self.collection.add(
-                documents=[text],
-                metadatas=[fixed_metadata],
-                ids=[doc_id],
-                embeddings=[embedding]
-            )
-            
-            if len(self.documents_text) > 1:
-                try:
-                    self.tfidf.fit(self.documents_text)
-                except Exception as e:
-                    print(f"⚠️ TF-IDF update failed: {e}")
-                    
+            # Only add to ChromaDB if initialized
+            if self.ensure_initialized() and self.collection:
+                embedding = self.embedder.encode([text])[0].tolist()
+                
+                # Add to local storage
+                self.documents_text.append(text)
+                self.documents_metadata.append(metadata)
+                
+                # Prepare metadata for ChromaDB
+                chroma_metadata = metadata.copy()
+                chroma_metadata['ai_added_date'] = datetime.now().isoformat()
+                chroma_metadata['text_length'] = len(text)
+                chroma_metadata['doc_index'] = len(self.documents_text) - 1
+                
+                doc_id = f"doc_{len(self.collection.get()['ids']) + 1}"
+                
+                fixed_metadata = fix_metadata(chroma_metadata)
+                
+                self.collection.add(
+                    documents=[text],
+                    metadatas=[fixed_metadata],
+                    ids=[doc_id],
+                    embeddings=[embedding]
+                )
+                
+                # Update TF-IDF if available
+                if self.tfidf and len(self.documents_text) > 1:
+                    try:
+                        self.tfidf.fit(self.documents_text)
+                    except Exception as e:
+                        print(f"⚠️ TF-IDF update failed: {e}")
+            else:
+                # Just add to local storage if ChromaDB not ready
+                self.documents_text.append(text)
+                self.documents_metadata.append(metadata)
+                
         except Exception as e:
             print(f"⚠️ Failed to add document to AI: {e}")
-    
+
     def extract_keywords_and_intent(self, text):
         """Enhanced keyword extraction and intent recognition"""
         text_lower = text.lower()
         
-        # Extract entities if spaCy is available
+        # Extract entities if NLP is available
         entities = []
-        if self.nlp:
+        if self.ensure_initialized() and self.nlp:
             try:
                 doc = self.nlp(text)
                 entities = [(ent.text, ent.label_) for ent in doc.ents]
@@ -462,7 +573,7 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
             if any(keyword in text_lower for keyword in keywords):
                 found_categories.append(category)
         
-        # Extract specific terms from document tags and titles
+        # Extract specific terms from document metadata
         specific_terms = []
         for doc_meta in self.documents_metadata:
             title_words = doc_meta.get('title', '').lower().split()
@@ -470,7 +581,10 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
                 if len(word) > 3 and word in text_lower:
                     specific_terms.append(word)
             
-            for tag in doc_meta.get('tags', []):
+            tags = doc_meta.get('tags', [])
+            if isinstance(tags, str):
+                tags = tags.split(', ')
+            for tag in tags:
                 if isinstance(tag, str) and tag.lower() in text_lower:
                     specific_terms.append(tag)
         
@@ -482,27 +596,24 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
             "specific_terms": specific_terms,
             "length": len(text.split())
         }
-    
+
     def find_best_response(self, question, intent_analysis):
-        """
-        Find best response using semantic search with improved relevance.
-        
-        Updated to combine semantic similarity with keyword matching from titles.
-        """
+        """Find best response using semantic search"""
         if not self.documents_text:
             return [], "No Documents", intent_analysis
         
+        if not self.ensure_initialized():
+            return [], "Not Initialized", intent_analysis
+
         try:
             query_embedding = self.embedder.encode([question])[0].tolist()
             
-            # Perform a standard semantic search
+            # Perform semantic search
             semantic_results = self.collection.query(
                 query_embeddings=[query_embedding],
-                n_results=10, # Fetch a larger set to re-rank
+                n_results=10,
                 include=["documents", "metadatas", "distances"]
             )
-            
-            print(f"🔍 Semantic search returned {len(semantic_results.get('documents', [[]])[0])} documents")
             
             ranked_results = []
             if semantic_results['documents'] and semantic_results['documents'][0]:
@@ -511,16 +622,16 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
                     metadata = semantic_results['metadatas'][0][i]
                     distance = semantic_results['distances'][0][i]
                     
-                    score = 1 - distance # Convert distance to a similarity score (0 to 1)
+                    score = 1 - distance
                     
-                    # Apply a bonus for keyword matches in the title
+                    # Bonus for title matches
                     title_lower = metadata.get('title', '').lower()
                     question_lower = question.lower()
                     
                     if any(word in title_lower for word in question_lower.split()):
-                        score += 0.4 # INCREASED BONUS FOR TITLE MATCHES
+                        score += 0.4
                     
-                    # Also give a small bonus for category matches
+                    # Bonus for category matches
                     question_categories = intent_analysis.get('categories', [])
                     doc_category = metadata.get('category', '')
                     if doc_category in question_categories:
@@ -528,39 +639,38 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
                     
                     ranked_results.append({'doc': doc_text, 'score': score})
             
-            # Sort by the new combined score
+            # Sort by combined score
             ranked_results.sort(key=lambda x: x['score'], reverse=True)
             
-            # Get the top 2 documents for the response
+            # Get top documents
             best_docs = [item['doc'] for item in ranked_results[:2]]
             
-            # Determine confidence based on the top document's score
+            # Determine confidence
             confidence = "Low"
             if ranked_results:
                 top_score = ranked_results[0]['score']
-                if top_score > 1.0: # New, higher threshold for high confidence
+                if top_score > 1.0:
                     confidence = "High"
                 elif top_score > 0.7:
                     confidence = "Medium"
                 else:
                     confidence = "Low"
-
-            print(f"🔍 Returning {len(best_docs)} documents with confidence: {confidence}")
+            
             return best_docs, confidence, intent_analysis
             
         except Exception as e:
             print(f"⚠️ Error in find_best_response: {e}")
             return [], "Error", intent_analysis
-    
+
     def query(self, question):
         """Main query function with enhanced response generation"""
         print(f"❓ Processing: {question}")
         
-        # Classify input type for better handling
+        # Classify input type
         input_type = self.classify_input_type(question)
         print(f"🎯 Input type: {input_type}")
         
-        # Handle special cases that don't need document search
+        # Handle special cases that don't need heavy ML components
         if input_type in ["greeting", "identity", "help"]:
             if input_type == "greeting":
                 response = self.generate_smart_response(question, [], "Greeting", input_type)
@@ -579,7 +689,34 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
                 "analysis": {}
             }
         
-        # Check if we have any documents for content queries
+        # For other queries, try to initialize heavy components if needed
+        if not self._initialized:
+            if self.lazy_init:
+                return {
+                    "answer": "AI engine is still loading. Please try again in a moment.",
+                    "sources": 0,
+                    "confidence": "Loading",
+                    "input_type": input_type,
+                    "intent_categories": [],
+                    "specific_terms": [],
+                    "analysis": {},
+                    "loading": True
+                }
+            else:
+                try:
+                    self.initialize_heavy_components()
+                except Exception as e:
+                    return {
+                        "answer": f"AI engine initialization failed: {str(e)}. Please try again later.",
+                        "sources": 0,
+                        "confidence": "Error",
+                        "input_type": input_type,
+                        "intent_categories": [],
+                        "specific_terms": [],
+                        "analysis": {}
+                    }
+        
+        # Check if we have documents
         if not self.documents_text and input_type not in ["single_word", "single_keyword"]:
             return {
                 "answer": "Jeg har ingen dokumenter å svare basert på. Legg til dokumenter med document manager, så kan jeg hjelpe deg!",
@@ -622,8 +759,8 @@ Legg til dokumenter via document manager (python main.py), så kan jeg hjelpe de
 
 
 class ContextualRailAdviceAI(RailAdviceAI):
-    def __init__(self, memory_file="conversation_memory.json"):
-        super().__init__()
+    def __init__(self, memory_file="conversation_memory.json", lazy_init=True):
+        super().__init__(lazy_init=lazy_init)
         self.memory_file = Path(memory_file)
         self.conversation_history = self.load_memory()
         self.farewell_patterns = [
@@ -641,8 +778,11 @@ class ContextualRailAdviceAI(RailAdviceAI):
         return []
 
     def save_memory(self):
-        with open(self.memory_file, "w", encoding="utf-8") as f:
-            json.dump(self.conversation_history, f, indent=2, ensure_ascii=False)
+        try:
+            with open(self.memory_file, "w", encoding="utf-8") as f:
+                json.dump(self.conversation_history, f, indent=2, ensure_ascii=False)
+        except Exception as e:
+            print(f"⚠️ Failed to save memory: {e}")
 
     def classify_input_type(self, text):
         text_lower = text.lower().strip()
@@ -653,21 +793,36 @@ class ContextualRailAdviceAI(RailAdviceAI):
 
     def generate_smart_response(self, question, docs, confidence, input_type):
         if input_type == "farewell":
-            return "Takk for praten! 🚆 Ta kontakt igjen når du trenger hjelp med jernbaneprosjekter."
+            return "Takk for praten! Ta kontakt igjen når du trenger hjelp med jernbaneprosjekter."
         return super().generate_smart_response(question, docs, confidence, input_type)
 
     def query(self, question):
         result = super().query(question)
+        
+        # Save conversation history
         self.conversation_history.append({"user": question, "ai": result["answer"]})
         if len(self.conversation_history) > 20:
             self.conversation_history = self.conversation_history[-20:]
         self.save_memory()
+        
         return result
+
+
+# Factory function for creating AI instances
+def create_ai_engine(lazy=True, contextual=False):
+    """Factory function to create AI engine instances"""
+    if contextual:
+        return ContextualRailAdviceAI(lazy_init=lazy)
+    else:
+        return RailAdviceAI(lazy_init=lazy)
 
 
 # Test function
 if __name__ == "__main__":
-    ai = RailAdviceAI()
+    print("Testing Optimized RailAdvice AI")
+    
+    # Test with lazy loading
+    ai = RailAdviceAI(lazy_init=True)
     
     # Test different input types
     test_inputs = [

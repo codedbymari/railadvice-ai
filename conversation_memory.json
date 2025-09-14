@@ -1,0 +1,18 @@
+[
+  {
+    "user": "string",
+    "ai": "Du skrev 'string'. Kan du utdype hva du vil vite om dette, eller still et mer spesifikt spørsmål?"
+  },
+  {
+    "user": "Hello",
+    "ai": "Hei! Jeg er RailAdvice AI med 30 dokumenter tilgjengelig. Hva kan jeg hjelpe deg med?"
+  },
+  {
+    "user": "string",
+    "ai": "Du skrev 'string'. Kan du utdype hva du vil vite om dette, eller still et mer spesifikt spørsmål?"
+  },
+  {
+    "user": "hei",
+    "ai": "Hei! Jeg er RailAdvice AI med 30 dokumenter tilgjengelig. Hva kan jeg hjelpe deg med?"
+  }
+]

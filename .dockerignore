@@ -1,0 +1,23 @@
+# Python virtual environment
+venv/
+
+# Cache and temp files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.DS_Store
+*.swp
+
+# Git
+.git/
+.gitignore
+
+# Large data files
+data/
+documents/
+
+# OS-specific
+*.dmg
+*.img
+*.sqlite
