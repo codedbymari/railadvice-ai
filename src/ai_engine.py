@@ -161,7 +161,7 @@ class RailAdviceAI:
             
             # Initialize document manager
             try:
-                from document_manager import EnhancedFileDocumentManager
+                from src.document_manager import EnhancedFileDocumentManager
                 self._doc_manager = EnhancedFileDocumentManager()
                 print("✅ Document manager loaded")
             except Exception as e:
