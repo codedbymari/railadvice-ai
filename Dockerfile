@@ -1,45 +1,43 @@
-# ==============================
-# Production stage with runtime installation
-# ==============================
 FROM python:3.11-slim
 
-# Sett miljøvariabler
+# Set environment variables
 ENV PYTHONUNBUFFERED=1 \
     PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1
+    PIP_NO_CACHE_DIR=1
 
-# Installer runtime-avhengigheter
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
     gcc \
     g++ \
     curl \
-    git \
     && rm -rf /var/lib/apt/lists/*
-
-# Opprett appuser og mapper med riktige permissions
-RUN useradd -m -u 1000 appuser && \
-    mkdir -p /app /tmp/uploads /data /home/appuser/.cache && \
-    chown -R appuser:appuser /app /tmp/uploads /data /home/appuser
 
 WORKDIR /app
 
-# Kopier app-kode først
-COPY --chown=appuser:appuser . .
+# Copy and install requirements
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Sett executable permission på startup script
-RUN chmod +x startup.sh
+# Install ML packages
+RUN pip install --no-cache-dir torch==2.1.0 sentence-transformers==2.7.0 transformers==4.44.0 spacy==3.6.0
 
-# Switch til ikke-root bruker
+# Download spaCy models
+RUN python -m spacy download en_core_web_sm && \
+    python -m spacy download nb_core_news_sm
+
+# Copy application code
+COPY . .
+
+# Create non-root user and change ownership
+RUN useradd -m -u 1000 appuser && \
+    chown -R appuser:appuser /app
 USER appuser
 
-# Expose port
 EXPOSE 8000
 
-# Extended healthcheck to allow for ML package installation
-# Uses curl which is more reliable than python requests during startup
-HEALTHCHECK --interval=30s --timeout=10s --start-period=300s --retries=5 \
+# Simple healthcheck
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD curl -f http://localhost:8000/health || exit 1
 
-# Start med startup script som installerer pakker hvis nødvendig
-CMD ["./startup.sh"]
+# Start application
+CMD ["python", "-m", "uvicorn", "src.api:app", "--host", "0.0.0.0", "--port", "8000"]

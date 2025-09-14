@@ -22,3 +22,4 @@ chromadb==0.4.15
 requests==2.32.3
 aiofiles==23.2.1
 PyYAML==6.0.2
+spacy==3.6.0
