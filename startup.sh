@@ -1,45 +1,24 @@
 #!/bin/bash
-set -e  # Exit on any error
+set -e
 
-echo "========================================="
-echo "Starting application setup..."
-echo "========================================="
+# Debug: Print environment variables
+echo "PORT environment variable: '$PORT'"
+echo "All environment variables with PORT:"
+env | grep -i port || echo "No PORT variables found"
 
-# Set PATH to include user-installed packages - THIS IS THE KEY FIX
-export PATH="/home/appuser/.local/bin:$PATH"
-
-# Install basic requirements FIRST (including uvicorn)
-echo "Installing base requirements..."
-python -m pip install --user -r requirements.txt
-echo "Base requirements installed successfully!"
-
-# Verify uvicorn is available
-echo "Verifying uvicorn installation..."
-python -c "import uvicorn; print('uvicorn available')" || {
-    echo "uvicorn not found, installing directly..."
-    python -m pip install --user uvicorn[standard]==0.24.0
-}
-
-# Check if ML packages are already installed
-echo "Checking for ML packages..."
-if ! python -c "import torch, sentence_transformers, transformers, spacy" 2>/dev/null; then
-    echo "ML packages not found. Installing heavy ML packages..."
-    echo "This may take several minutes on first startup..."
-    
-    python -m pip install --user torch==2.1.0 sentence-transformers==2.7.0 transformers==4.44.0 spacy==3.6.0
-    echo "ML packages installed successfully!"
-    
-    echo "Downloading spaCy models..."
-    python -m spacy download en_core_web_sm
-    python -m spacy download nb_core_news_sm
-    echo "spaCy models downloaded successfully!"
+# Set default port if PORT is not set or empty
+if [ -z "$PORT" ]; then
+    echo "PORT not set, using default 8000"
+    PORT=8000
 else
-    echo "ML packages already installed, skipping..."
+    echo "Using PORT: $PORT"
 fi
 
-echo "========================================="
-echo "Starting FastAPI application..."
-echo "========================================="
+# Validate that PORT is a number
+if ! [[ "$PORT" =~ ^[0-9]+$ ]]; then
+    echo "ERROR: PORT '$PORT' is not a valid number, using 8000"
+    PORT=8000
+fi
 
-# Start the application (uvicorn is now installed and in PATH)
-exec python -m uvicorn src.api:app --host 0.0.0.0 --port 8000 --workers 1
+echo "Starting uvicorn on port $PORT..."
+exec python -m uvicorn src.api:app --host 0.0.0.0 --port "$PORT"

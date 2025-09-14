@@ -55,8 +55,42 @@ RUN pip install --user --no-cache-dir --timeout 600 \
 RUN python -m spacy download en_core_web_sm && \
     python -m spacy download nb_core_news_sm
 
-# Copy application code last for better layer caching
+# Copy application code
 COPY --chown=appuser:appuser . .
+
+# Create startup script
+USER root
+RUN cat > /app/start.sh << 'EOF'
+#!/bin/bash
+set -e
+
+# Debug: Print environment variables
+echo "PORT environment variable: '$PORT'"
+echo "All environment variables with PORT:"
+env | grep -i port || echo "No PORT variables found"
+
+# Set default port if PORT is not set or empty
+if [ -z "$PORT" ]; then
+    echo "PORT not set, using default 8000"
+    PORT=8000
+else
+    echo "Using PORT: $PORT"
+fi
+
+# Validate that PORT is a number
+if ! [[ "$PORT" =~ ^[0-9]+$ ]]; then
+    echo "ERROR: PORT '$PORT' is not a valid number, using 8000"
+    PORT=8000
+fi
+
+echo "Starting uvicorn on port $PORT..."
+exec python -m uvicorn src.api:app --host 0.0.0.0 --port "$PORT"
+EOF
+
+RUN chmod +x /app/start.sh && chown appuser:appuser /app/start.sh
+
+# Switch back to non-root user
+USER appuser
 
 # Ensure PATH includes user-installed packages
 ENV PATH="/home/appuser/.local/bin:$PATH"
@@ -65,7 +99,7 @@ EXPOSE $PORT
 
 # Lightweight healthcheck
 HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=3 \
-    CMD curl -f http://localhost:$PORT/health || exit 1
+    CMD curl -f http://localhost:${PORT:-8000}/health || exit 1
 
-# Start application - use bash to properly expand environment variables
-CMD ["/bin/bash", "-c", "python -m uvicorn src.api:app --host 0.0.0.0 --port $PORT"]
+# Use the startup script
+CMD ["/app/start.sh"]
