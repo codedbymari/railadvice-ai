@@ -30,10 +30,9 @@ An AI-powered railway consulting assistant. RailAdvice AI combines domain expert
 - **Railway** - Backend deployment
 - **Docker** - Containerization support
 
-## 🚀 Getting Started
 
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 railadvice-ai/
