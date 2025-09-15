@@ -1,6 +1,6 @@
 # RailAdvice AI 🚆
 
-An AI-powered railway consulting assistant. RailAdvice AI combines domain expertise in railway projects and regulations with  AI technology to provide intelligent support for railway consultants.
+An AI-powered railway consulting assistant. RailAdvice AI combines domain expertise in railway projects and regulations with  AI technology to provide intelligent support for RailAdvice consultants.
 
 ## Project Overview
 
